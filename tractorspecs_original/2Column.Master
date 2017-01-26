@@ -1,0 +1,119 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="2Column.master.vb" Inherits="TractorSpecsWebApp._2Column" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register src="header.ascx" tagname="header" tagprefix="uc1" %>
+<%@ Register src="footer.ascx" tagname="footer" tagprefix="uc2" %>
+<%@ Register src="search.ascx" tagname="search" tagprefix="uc3" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<link href="/css/style_new.css" rel="stylesheet" type="text/css" />
+<asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-160765-6']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">window.google_analytics_uacct = "UA-160765-6";</script>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+<div class="wrap">
+<!--header_begin-->
+ <uc1:header ID="header1" runat="server" />
+<!--header_end-->
+<!--cotant_begin-->
+<div id="content">
+<uc3:search ID="search1" runat="server" /> 
+<div class="search_bg02"><asp:ContentPlaceHolder ID="ContentPlaceHolderSectionTop" runat="server"></asp:ContentPlaceHolder></div> 
+</div>   
+
+
+
+<div class="cont_bg01"><table width="979" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td colspan="3">
+</td>
+</tr>
+<tr>
+<td width="245" align="left" style="padding:4px 0 0 12px;"><div class="nav_t"></div></td>
+<td width="357" align="right" valign="bottom"><img src="/images/inner_right_03.jpg" width="347" height="11" /></td>
+<td width="377" align="center" valign="bottom"><img src="/images/inner_right_03.jpg" width="347" height="11" /></td>
+</tr>
+<tr>
+<td align="left" valign="top">
+<!--nav_begin-->
+<div class="nav_width">
+<div id="nav">
+<ul>
+<li class="home"><a href="http://www.tractorspecs.com">Home</a></li>
+<li class="search"><a href="/search.aspx">Search</a></li>
+<li class="compare"><a href="/compare.aspx">Compare</a></li>
+<li class="brand"><a href="/allmakes.aspx">Brands</a></li>
+<li class="type"><a href="/Categories.aspx">Equip Types</a></li>
+<li class="edit last"><a runat="server" id="print" href="#">Print</a></li>
+</ul>
+</div>
+<div class="nav_b"></div>
+</div>
+<!--nav_end-->
+<div class="pad01"><h2>Manufacturers</h2></div>
+<div id="mfs">
+<ul>
+<asp:Repeater ID="dlmakes" runat="server">
+    <ItemTemplate>
+    <li><a title="<%#DataBinder.Eval(Container.DataItem, "mfgName")%> tractor and equipment specs" href="/mfg/<%#DataBinder.Eval(Container.DataItem, "mfgurl")%>.aspx"><%#DataBinder.Eval(Container.DataItem, "mfgName")%> (<%#DataBinder.Eval(Container.DataItem, "expr1")%>)</a></li>
+    </ItemTemplate>
+    </asp:Repeater>
+</ul>
+</div>
+<div class="more"><a href="/allmakes.aspx">more</a></div>
+</td>
+<td align="left" valign="top" class="inner_bg01">
+<div> 
+ <asp:ContentPlaceHolder ID="ContentPlaceHolderLeft" runat="server">         </asp:ContentPlaceHolder>
+</div>
+</td>
+<td align="left" valign="top" class="inner_bg02">
+<div>
+<asp:ContentPlaceHolder ID="ContentPlaceHolderRight" runat="server">         </asp:ContentPlaceHolder>
+</div>
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td align="right" valign="top"><img src="/images/inner_right_12.jpg" width="347" height="11" /></td>
+<td align="center" valign="top"><img src="/images/inner_right_12.jpg" width="347" height="11" /></td>
+</tr>
+</table>
+</div>
+
+
+<!--nav_end-->
+
+
+<!--foot_begin-->
+<uc2:footer ID="footer1" runat="server" />
+<!--foot_end-->
+</div>
+       
+    </form>
+</body>
+</html>
+
+
+
+

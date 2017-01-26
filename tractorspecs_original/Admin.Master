@@ -1,0 +1,88 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Admin.master.vb" Inherits="TractorSpecsWebApp.Admin" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register src="header.ascx" tagname="header" tagprefix="uc1" %>
+<%@ Register src="footer.ascx" tagname="footer" tagprefix="uc2" %>
+<%@ Register src="search.ascx" tagname="search" tagprefix="uc3" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+ <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+ </head>
+
+<body>
+    <form id="form1" runat="server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>
+<div class="wrap">
+<!--header_begin-->
+ <uc1:header ID="header1" runat="server" />
+<!--header_end-->
+<!--cotant_begin-->
+<div id="content">
+<uc3:search ID="search1" runat="server" /> 
+<div class="search_bg02"><asp:ContentPlaceHolder ID="ContentPlaceHolderSectionTop" runat="server"></asp:ContentPlaceHolder></div> 
+</div>   
+<div class="cont_bg01">
+<div class="sec_right_bg">
+<!--sec_left_begin-->
+<!--sec_left_begin-->
+<div id="sec_left">
+<div class="nav_width">
+<div class="nav_t"></div>
+<!--nav_begin-->
+<div id="nav">
+<ul>
+
+<li class="home"><a href="#">Admin Menu</a></li>
+<li class="home"><a href="http://www.tractorspecs.com">Home</a></li>
+<li class="edit"><a href="/admin/misses.aspx">Missing Models</a></li>
+<li class="edit"><a href="/admin/EditModels.aspx">Edit model specs</a></li>
+<li class="edit"><a href="/admin/editcategories.aspx">Edit Categories</a></li>
+<li class="edit"><a href="/admin/specGroups.aspx">Edit Attributes</a></li>
+<li class="edit last"><a href="#"></a></li>
+</ul>
+</div>
+<!--nav_end-->
+<div class="nav_b"></div>
+</div>
+
+</div>
+<!--sec_left_end-->
+<!--sec_right_begin-->
+<div id="sec_right">
+<div class="sec_right_t"></div>
+<div class="pad02">
+
+ <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">        
+ </asp:ContentPlaceHolder>
+
+</div>
+</div>
+<!--sec_right_end-->
+<div class="c"></div>
+</div>
+<div class="sec_right_b"></div>
+</div>
+</div>
+<!--cotant_end-->
+<!--foot_begin-->
+<uc2:footer ID="footer1" runat="server" />
+<!--foot_end-->
+</div>
+    
+    </form>
+</body>
+</html>
+
+    </form>
+
+
+
+
+

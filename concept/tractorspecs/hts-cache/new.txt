@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+00:03:57	27/27	---M--	200	added ('OK')	text/plain	etag:%221b-48f91984c26c0%22	http://clients.e-visualizers.com/robots.txt		(from )
+00:03:57	5968/5968	---M--	200	added ('OK')	text/html	etag:%221750-54636945806fc%22	http://clients.e-visualizers.com/tractorspecs/	C:/dev/tractorspecs/tractorspecs/clients.e-visualizers.com/tractorspecs/index.html	(from )

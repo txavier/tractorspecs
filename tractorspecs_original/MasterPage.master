@@ -1,0 +1,57 @@
+﻿<%@ Master Language="VB" Inherits="TractorSpecsWebApp.MasterPage" Codebehind="MasterPage.master.vb" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+       <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5302599990463864",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+  
+   <div id="header">
+   	
+	<div id="logo">
+<a href = "http://www.tractorspecs.com"><img title="tractor specs, data, pricing, and information" src = "/images/logo.png" /></a>
+	
+	</div>
+	<div id="menu">
+		<ul>
+			<li><a href="http://www.tractorspecs.com">Homepage</a></li>
+			<li><a href="/Categories.aspx" title="Product Categories">Product Segments</a></li>
+			<li><a href="/Search.aspx">Search</a></li>
+			<li><a href="/about.aspx" title="Contact us">Contact Us</a></li>
+			
+		</ul>
+	</div>
+</div>
+<div id="page">
+	<!-- start content -->
+	
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">        
+        </asp:ContentPlaceHolder>
+        </div>  
+  <div style="clear: both;">&nbsp;</div>
+<div id="footer">
+	<p>Part of the Equipment Review Network Family of Sites</p>
+</div>
+    </form>
+    	
+	<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-160765-6");
+pageTracker._trackPageview();
+</script>
+</body>
+</html>
