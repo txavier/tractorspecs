@@ -8,7 +8,6 @@ namespace TractorSpecs.Core.Models
 
     public partial class review
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long reviewID { get; set; }
 
         [StringLength(8000)]

@@ -9,7 +9,6 @@ namespace TractorSpecs.Core.Models
     public partial class modelPicture
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long picID { get; set; }
 
         [StringLength(50)]

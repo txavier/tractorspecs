@@ -8,7 +8,6 @@ namespace TractorSpecs.Core.Models
 
     public partial class link
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long linkID { get; set; }
 
         [StringLength(200)]

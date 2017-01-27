@@ -9,7 +9,6 @@ namespace TractorSpecs.Core.Models
     public partial class make
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long mfgID { get; set; }
 
         [StringLength(50)]

@@ -8,7 +8,6 @@ namespace TractorSpecs.Core.Models
 
     public partial class model
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long modelID { get; set; }
 
         public long? mfgID { get; set; }

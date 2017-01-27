@@ -10,7 +10,6 @@ namespace TractorSpecs.Core.Models
     public partial class equipmentClass
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int classID { get; set; }
 
         [StringLength(50)]

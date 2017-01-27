@@ -9,7 +9,6 @@ namespace TractorSpecs.Core.Models
     public partial class Model_Alias
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long ModelAliasID { get; set; }
 
         public long? ModelID { get; set; }

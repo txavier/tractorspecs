@@ -9,7 +9,6 @@ namespace TractorSpecs.Core.Models
     public partial class make_alias
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long ThisID { get; set; }
 
         [StringLength(50)]

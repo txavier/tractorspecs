@@ -14,7 +14,6 @@ namespace TractorSpecs.Core.Models
         public int? EquClass { get; set; }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int thisID { get; set; }
     }
 }

@@ -8,7 +8,6 @@ namespace TractorSpecs.Core.Models
 
     public partial class SpecClass
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long SpecClassID { get; set; }
 
         [StringLength(50)]

@@ -13,7 +13,6 @@ namespace TractorSpecs.Core.Models
         public long? AttachmentID { get; set; }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long thisid { get; set; }
     }
 }

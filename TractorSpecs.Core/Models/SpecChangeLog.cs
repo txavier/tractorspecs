@@ -23,7 +23,6 @@ namespace TractorSpecs.Core.Models
         public string source { get; set; }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long thisid { get; set; }
     }
 }

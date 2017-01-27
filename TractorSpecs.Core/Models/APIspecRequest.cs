@@ -9,7 +9,6 @@ namespace TractorSpecs.Core.Models
     public partial class APIspecRequest
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long thisID { get; set; }
 
         [Column(TypeName = "date")]

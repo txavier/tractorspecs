@@ -9,7 +9,6 @@ namespace TractorSpecs.Core.Models
     public partial class b
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int i { get; set; }
 
         [StringLength(300)]

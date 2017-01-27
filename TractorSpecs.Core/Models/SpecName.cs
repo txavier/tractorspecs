@@ -8,7 +8,6 @@ namespace TractorSpecs.Core.Models
 
     public partial class SpecName
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long SpecNameID { get; set; }
 
         [Column("SpecName")]

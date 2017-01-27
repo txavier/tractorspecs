@@ -9,7 +9,6 @@ namespace TractorSpecs.Core.Models
     public partial class Miss
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long thisID { get; set; }
 
         [StringLength(50)]

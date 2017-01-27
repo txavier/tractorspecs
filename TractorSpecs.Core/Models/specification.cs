@@ -9,7 +9,6 @@ namespace TractorSpecs.Core.Models
     public partial class specification
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long specID { get; set; }
 
         public long? modelID { get; set; }

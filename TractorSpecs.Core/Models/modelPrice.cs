@@ -11,7 +11,6 @@ namespace TractorSpecs.Core.Models
         public long? unitid { get; set; }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long thisID { get; set; }
 
         [Column(TypeName = "money")]

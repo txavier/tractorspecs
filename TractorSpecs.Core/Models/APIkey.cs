@@ -9,7 +9,6 @@ namespace TractorSpecs.Core.Models
     public partial class APIkey
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long thisID { get; set; }
 
         [Column("APIkey")]

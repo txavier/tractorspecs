@@ -10,7 +10,6 @@ namespace TractorSpecs.Core.Models
     public partial class APIspecReqCounter
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long thisid { get; set; }
 
         [StringLength(50)]

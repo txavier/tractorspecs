@@ -18,7 +18,6 @@ namespace TractorSpecs.Infrastructure.Data
         public virtual DbSet<APIspecRequest> APIspecRequests { get; set; }
         public virtual DbSet<APISpecTracker> APISpecTrackers { get; set; }
         public virtual DbSet<attachment> attachments { get; set; }
-        public virtual DbSet<b> b { get; set; }
         public virtual DbSet<EquipClassSpecClass> EquipClassSpecClasses { get; set; }
         public virtual DbSet<equipmentClass> equipmentClasses { get; set; }
         public virtual DbSet<link> links { get; set; }
@@ -29,15 +28,14 @@ namespace TractorSpecs.Infrastructure.Data
         public virtual DbSet<modelPicture> modelPictures { get; set; }
         public virtual DbSet<modelPrice> modelPrices { get; set; }
         public virtual DbSet<model> models { get; set; }
-        public virtual DbSet<PrintView> PrintViews { get; set; }
         public virtual DbSet<review> reviews { get; set; }
         public virtual DbSet<rssDealerID> rssDealerIDs { get; set; }
         public virtual DbSet<SpecChangeLog> SpecChangeLogs { get; set; }
         public virtual DbSet<SpecClass> SpecClasses { get; set; }
         public virtual DbSet<specification> specifications { get; set; }
         public virtual DbSet<SpecName> SpecNames { get; set; }
-        public virtual DbSet<user> users { get; set; }
-        public virtual DbSet<setting> settings { get; set; }
+        public virtual DbSet<b> b { get; set; }
+        public virtual DbSet<PrintView> PrintViews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -186,46 +184,6 @@ namespace TractorSpecs.Infrastructure.Data
                 .Property(e => e.IP)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.mfgName)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.modelnumber)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.specValue)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.SpecMeasure)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.DisplayName)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.ClassName)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.Icon)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.mfgLogoImg)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.mfgURL)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PrintView>()
-                .Property(e => e.modelURL)
-                .IsUnicode(false);
-
             modelBuilder.Entity<review>()
                 .Property(e => e.reviewText)
                 .IsUnicode(false);
@@ -288,6 +246,46 @@ namespace TractorSpecs.Infrastructure.Data
 
             modelBuilder.Entity<SpecName>()
                 .Property(e => e.DisplayName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.mfgName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.modelnumber)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.specValue)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.SpecMeasure)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.DisplayName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.ClassName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.Icon)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.mfgLogoImg)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.mfgURL)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PrintView>()
+                .Property(e => e.modelURL)
                 .IsUnicode(false);
         }
     }

@@ -13,7 +13,6 @@ namespace TractorSpecs.Core.Models
         public string dealerid { get; set; }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int thisID { get; set; }
     }
 }
