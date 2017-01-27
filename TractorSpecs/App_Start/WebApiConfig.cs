@@ -40,22 +40,20 @@ namespace TractorSpecs
             // http://stackoverflow.com/questions/39515218/odata-error-the-query-specified-in-the-uri-is-not-valid-the-property-cannot-be
             config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
 
-            builder.EntitySet<blogEntry>("blogEntries");
+            builder.EntitySet<model>("models");
             // http://stackoverflow.com/questions/36344979/odata-include-custom-properties-added-to-entity-framework-models-via-partial-c
             // http://stackoverflow.com/questions/27277306/odata-read-only-property
-            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
-                .AddProperty((typeof(blogEntry)).GetProperty("blogBodySummaryHtml"));
+            //builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("model"))
+            //    .AddProperty((typeof(model)).GetProperty("blogBodySummaryHtml"));
 
-            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
-                .AddProperty((typeof(blogEntry)).GetProperty("monthAbbreviation"));
+            //builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
+            //    .AddProperty((typeof(blogEntry)).GetProperty("monthAbbreviation"));
 
-            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
-                .AddProperty((typeof(blogEntry)).GetProperty("day"));
+            //builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
+            //    .AddProperty((typeof(blogEntry)).GetProperty("day"));
 
-            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
-                .AddProperty((typeof(blogEntry)).GetProperty("year"));
-
-            builder.EntitySet<author>("authors");
+            //builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
+            //    .AddProperty((typeof(blogEntry)).GetProperty("year"));
 
             builder.EntitySet<user>("users");
 

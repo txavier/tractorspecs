@@ -10,10 +10,10 @@ using TractorSpecs.Core.Models;
 
 namespace TractorSpecs.Controllers
 {
-    public class blogEntriesController : ODataApiController<blogEntry>
+    public class modelsController : ODataApiController<model>
     {
-        public blogEntriesController(IService<blogEntry> blogEntryService, ILogService<blogEntry> blogEntryLogService)
-            : base(blogEntryService, blogEntryLogService)
+        public modelsController(IService<model> modelService, ILogService<model> modelLogService)
+            : base(modelService, modelLogService)
         { }
     }
 }

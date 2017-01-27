@@ -19,8 +19,6 @@ namespace TractorSpecs.Infrastructure
             modelBuilder.Entity<user>().TrackAllProperties();
 
             modelBuilder.Entity<setting>().TrackAllProperties();
-
-            modelBuilder.Entity<blogEntry>().TrackAllProperties();
         }
     }
 }

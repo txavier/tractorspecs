@@ -4,7 +4,7 @@
 
     // Private operations
     function cleanUpLocation() {
-        window.location.hash = "";
+        window.location.hash = "#";
 
         if (typeof (history.pushState) !== "undefined") {
             history.pushState("", document.title, location.pathname);

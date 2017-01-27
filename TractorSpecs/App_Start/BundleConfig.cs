@@ -78,14 +78,15 @@ namespace TractorSpecs
                 "~/wwwroot/lib/respond/dest/respond.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                //"~/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
-                //"~/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css",
+                "~/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+                "~/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css",
                 "~/wwwroot/lib/AngularJS-Toaster/toaster.min.css",
                 "~/Content/Site.css",
                 "~/wwwroot/lib/textAngular/dist/textAngular.css"));
 
-            bundles.Add(new StyleBundle("~/Content/theme").Include(
-                "~/assets/css/main.css"));
+            bundles.Add(new ScriptBundle("~/bundles/theme").Include(
+                "~/wwwroot/lib/superfish/dist/js/superfish.js",
+                "~/wwwroot/lib/jquery.easing/js/jquery.easing.js"));
         }
     }
 }

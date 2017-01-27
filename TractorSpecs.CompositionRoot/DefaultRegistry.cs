@@ -15,6 +15,7 @@ using AutoClutch.Log.Services;
 using TractorSpecs.Infrastructure;
 using TractorSpecs.Core.Interfaces;
 using TractorSpecs.Infrastructure.Getters;
+using TractorSpecs.Infrastructure.Data;
 
 namespace TractorSpecs.CompositionRoot
 {
