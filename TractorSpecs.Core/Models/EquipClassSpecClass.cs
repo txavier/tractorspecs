@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,14 +6,15 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("EquipClassSpecClass")]
-    public partial class EquipClassSpecClass
+    [Table("equipClassSpecClass")]
+    public partial class equipClassSpecClass
     {
-        public int? SpecClass { get; set; }
+        public int? specClassId { get; set; }
 
-        public int? EquClass { get; set; }
+        public int? equipmentClassId { get; set; }
 
-        [Key]
-        public int thisID { get; set; }
+        public int equipClassSpecClassId { get; set; }
+
+        public virtual equipmentClass equipmentClass { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,14 +6,24 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class SpecClass
+    [Table("specClass")]
+    public partial class specClass
     {
-        public long SpecClassID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public specClass()
+        {
+            specNames = new HashSet<specName>();
+        }
+
+        public long specClassID { get; set; }
 
         [StringLength(50)]
-        public string ClassName { get; set; }
+        public string className { get; set; }
 
         [StringLength(50)]
-        public string Icon { get; set; }
+        public string icon { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<specName> specNames { get; set; }
     }
 }

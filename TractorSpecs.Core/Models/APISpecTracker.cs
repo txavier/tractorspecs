@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,15 +6,14 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("APISpecTracker")]
-    public partial class APISpecTracker
+    [Table("apiSpecTracker")]
+    public partial class apiSpecTracker
     {
-        [Key]
-        public long ThisID { get; set; }
+        public long apiSpecTrackerId { get; set; }
 
         [StringLength(50)]
-        public string ApiKey { get; set; }
+        public string apiKey { get; set; }
 
-        public long? ModelID { get; set; }
+        public long? modelId { get; set; }
     }
 }

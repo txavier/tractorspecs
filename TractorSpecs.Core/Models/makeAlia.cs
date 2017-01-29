@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;

@@ -4,11 +4,12 @@ namespace TractorSpecs.Infrastructure.Data
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using Core.Models;
 
     public partial class EfDataDbContext : DbContext
     {
         public EfDataDbContext()
-            : base("name=EfDataDbContext1")
+            : base("name=EfDataDbContext")
         {
         }
 

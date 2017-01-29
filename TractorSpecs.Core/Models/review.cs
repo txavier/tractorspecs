@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,9 +6,10 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("review")]
     public partial class review
     {
-        public long reviewID { get; set; }
+        public long reviewId { get; set; }
 
         [StringLength(8000)]
         public string reviewText { get; set; }
@@ -23,9 +24,11 @@ namespace TractorSpecs.Infrastructure.Data
         [StringLength(20)]
         public string ip { get; set; }
 
-        public long? unitid { get; set; }
+        public long? modelId { get; set; }
 
         [StringLength(50)]
         public string email { get; set; }
+
+        public virtual model model { get; set; }
     }
 }

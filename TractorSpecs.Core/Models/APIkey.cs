@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,18 +6,18 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class APIkey
+    [Table("apiKey")]
+    public partial class apiKey
     {
-        [Key]
-        public long thisID { get; set; }
+        public long apiKeyId { get; set; }
 
-        [Column("APIkey")]
+        [Column("apiKey")]
         [StringLength(50)]
-        public string APIkey1 { get; set; }
+        public string apiKey1 { get; set; }
 
         [StringLength(50)]
-        public string CompanyName { get; set; }
+        public string companyName { get; set; }
 
-        public bool? AllowGetSpecs { get; set; }
+        public bool? allowGetSpecs { get; set; }
     }
 }

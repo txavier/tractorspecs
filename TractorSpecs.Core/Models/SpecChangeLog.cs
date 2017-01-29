@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,23 +6,26 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("SpecChangeLog")]
-    public partial class SpecChangeLog
+    [Table("specChangeLog")]
+    public partial class specChangeLog
     {
-        public long? modelID { get; set; }
+        public long? modelId { get; set; }
 
-        public int? SpecID { get; set; }
-
-        [StringLength(50)]
-        public string SpecValue { get; set; }
+        public long? specificationId { get; set; }
 
         [StringLength(50)]
-        public string IPaddr { get; set; }
+        public string specValue { get; set; }
+
+        [StringLength(50)]
+        public string ipAddr { get; set; }
 
         [StringLength(50)]
         public string source { get; set; }
 
-        [Key]
-        public long thisid { get; set; }
+        public long specChangeLogId { get; set; }
+
+        public virtual model model { get; set; }
+
+        public virtual specification specification { get; set; }
     }
 }

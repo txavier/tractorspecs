@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,18 +6,17 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("APIspecReqCounter")]
-    public partial class APIspecReqCounter
+    [Table("apiSpecReqCounter")]
+    public partial class apiSpecReqCounter
     {
-        [Key]
-        public long thisid { get; set; }
+        public long apiSpecReqCounterId { get; set; }
 
         [StringLength(50)]
-        public string API_key { get; set; }
+        public string apiKey { get; set; }
 
-        public long? ReqCount { get; set; }
+        public long? reqCount { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? StatDate { get; set; }
+        public DateTime? statDate { get; set; }
     }
 }

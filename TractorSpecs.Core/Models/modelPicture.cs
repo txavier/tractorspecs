@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,10 +6,10 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("modelPicture")]
     public partial class modelPicture
     {
-        [Key]
-        public long picID { get; set; }
+        public long modelPictureId { get; set; }
 
         [StringLength(50)]
         public string filename { get; set; }
@@ -17,6 +17,8 @@ namespace TractorSpecs.Infrastructure.Data
         [StringLength(50)]
         public string description { get; set; }
 
-        public long? UntiID { get; set; }
+        public long? modelId { get; set; }
+
+        public virtual model model { get; set; }
     }
 }

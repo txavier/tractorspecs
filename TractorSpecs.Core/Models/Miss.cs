@@ -1,4 +1,4 @@
-namespace TractorSpecs.Infrastructure.Data
+namespace TractorSpecs.Core.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,10 +6,9 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Miss
+    public partial class miss
     {
-        [Key]
-        public long thisID { get; set; }
+        public long missId { get; set; }
 
         [StringLength(50)]
         public string make { get; set; }
