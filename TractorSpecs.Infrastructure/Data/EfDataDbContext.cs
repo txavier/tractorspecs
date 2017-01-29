@@ -4,79 +4,77 @@ namespace TractorSpecs.Infrastructure.Data
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using Core.Models;
 
     public partial class EfDataDbContext : DbContext
     {
         public EfDataDbContext()
-            : base("name=EfDataDbContext")
+            : base("name=EfDataDbContext1")
         {
         }
 
-        public virtual DbSet<APIkey> APIkeys { get; set; }
-        public virtual DbSet<APIspecReqCounter> APIspecReqCounters { get; set; }
-        public virtual DbSet<APIspecRequest> APIspecRequests { get; set; }
-        public virtual DbSet<APISpecTracker> APISpecTrackers { get; set; }
+        public virtual DbSet<apiKey> apiKeys { get; set; }
+        public virtual DbSet<apiSpecReqCounter> apiSpecReqCounters { get; set; }
+        public virtual DbSet<apiSpecRequest> apiSpecRequests { get; set; }
+        public virtual DbSet<apiSpecTracker> apiSpecTrackers { get; set; }
         public virtual DbSet<attachment> attachments { get; set; }
-        public virtual DbSet<EquipClassSpecClass> EquipClassSpecClasses { get; set; }
+        public virtual DbSet<equipClassSpecClass> equipClassSpecClasses { get; set; }
         public virtual DbSet<equipmentClass> equipmentClasses { get; set; }
         public virtual DbSet<link> links { get; set; }
-        public virtual DbSet<make_alias> make_alias { get; set; }
         public virtual DbSet<make> makes { get; set; }
-        public virtual DbSet<Miss> Misses { get; set; }
-        public virtual DbSet<Model_Alias> Model_Alias { get; set; }
+        public virtual DbSet<makeAlia> makeAlias { get; set; }
+        public virtual DbSet<miss> misses { get; set; }
+        public virtual DbSet<model> models { get; set; }
+        public virtual DbSet<modelAlia> modelAlias { get; set; }
         public virtual DbSet<modelPicture> modelPictures { get; set; }
         public virtual DbSet<modelPrice> modelPrices { get; set; }
-        public virtual DbSet<model> models { get; set; }
         public virtual DbSet<review> reviews { get; set; }
         public virtual DbSet<rssDealerID> rssDealerIDs { get; set; }
-        public virtual DbSet<SpecChangeLog> SpecChangeLogs { get; set; }
-        public virtual DbSet<SpecClass> SpecClasses { get; set; }
+        public virtual DbSet<specChangeLog> specChangeLogs { get; set; }
+        public virtual DbSet<specClass> specClasses { get; set; }
         public virtual DbSet<specification> specifications { get; set; }
-        public virtual DbSet<SpecName> SpecNames { get; set; }
-        public virtual DbSet<b> b { get; set; }
+        public virtual DbSet<specName> specNames { get; set; }
         public virtual DbSet<PrintView> PrintViews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<APIkey>()
-                .Property(e => e.APIkey1)
+            modelBuilder.Entity<apiKey>()
+                .Property(e => e.apiKey1)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<APIkey>()
-                .Property(e => e.CompanyName)
+            modelBuilder.Entity<apiKey>()
+                .Property(e => e.companyName)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<APIspecReqCounter>()
-                .Property(e => e.API_key)
+            modelBuilder.Entity<apiSpecReqCounter>()
+                .Property(e => e.apiKey)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<APIspecRequest>()
-                .Property(e => e.API_key)
+            modelBuilder.Entity<apiSpecRequest>()
+                .Property(e => e.apiKey)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<APIspecRequest>()
-                .Property(e => e.PriorityNotes)
+            modelBuilder.Entity<apiSpecRequest>()
+                .Property(e => e.priorityNotes)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<APIspecRequest>()
-                .Property(e => e.Make)
+            modelBuilder.Entity<apiSpecRequest>()
+                .Property(e => e.make)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<APIspecRequest>()
-                .Property(e => e.Model)
+            modelBuilder.Entity<apiSpecRequest>()
+                .Property(e => e.model)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<APISpecTracker>()
-                .Property(e => e.ApiKey)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<equipmentClass>()
-                .Property(e => e.ClassName)
+            modelBuilder.Entity<apiSpecTracker>()
+                .Property(e => e.apiKey)
                 .IsUnicode(false);
 
             modelBuilder.Entity<equipmentClass>()
-                .Property(e => e.ClassURL)
+                .Property(e => e.className)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<equipmentClass>()
+                .Property(e => e.classURL)
                 .IsUnicode(false);
 
             modelBuilder.Entity<link>()
@@ -89,10 +87,6 @@ namespace TractorSpecs.Infrastructure.Data
 
             modelBuilder.Entity<link>()
                 .Property(e => e.IP)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<make_alias>()
-                .Property(e => e.MfgAlias)
                 .IsUnicode(false);
 
             modelBuilder.Entity<make>()
@@ -123,20 +117,40 @@ namespace TractorSpecs.Infrastructure.Data
                 .Property(e => e.mfgLink)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Miss>()
+            modelBuilder.Entity<makeAlia>()
+                .Property(e => e.mfgAlias)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<miss>()
                 .Property(e => e.make)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Miss>()
+            modelBuilder.Entity<miss>()
                 .Property(e => e.model)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Model_Alias>()
-                .Property(e => e.AliasName)
+            modelBuilder.Entity<model>()
+                .Property(e => e.msrp)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<model>()
+                .Property(e => e.modelNumber)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Model_Alias>()
-                .Property(e => e.AliasDescription)
+            modelBuilder.Entity<model>()
+                .Property(e => e.modelUrl)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<model>()
+                .Property(e => e.ip)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<modelAlia>()
+                .Property(e => e.aliasName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<modelAlia>()
+                .Property(e => e.aliasDescription)
                 .IsUnicode(false);
 
             modelBuilder.Entity<modelPicture>()
@@ -156,32 +170,16 @@ namespace TractorSpecs.Infrastructure.Data
                 .IsUnicode(false);
 
             modelBuilder.Entity<modelPrice>()
-                .Property(e => e.TRApicID)
+                .Property(e => e.traPicId)
                 .IsUnicode(false);
 
             modelBuilder.Entity<modelPrice>()
-                .Property(e => e.modelyear)
+                .Property(e => e.modelYear)
                 .IsUnicode(false);
 
             modelBuilder.Entity<modelPrice>()
                 .Property(e => e.DorP)
                 .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<model>()
-                .Property(e => e.msrp)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<model>()
-                .Property(e => e.modelnumber)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<model>()
-                .Property(e => e.modelURL)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<model>()
-                .Property(e => e.IP)
                 .IsUnicode(false);
 
             modelBuilder.Entity<review>()
@@ -204,24 +202,24 @@ namespace TractorSpecs.Infrastructure.Data
                 .Property(e => e.dealerid)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SpecChangeLog>()
-                .Property(e => e.SpecValue)
+            modelBuilder.Entity<specChangeLog>()
+                .Property(e => e.specValue)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SpecChangeLog>()
-                .Property(e => e.IPaddr)
+            modelBuilder.Entity<specChangeLog>()
+                .Property(e => e.ipAddr)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SpecChangeLog>()
+            modelBuilder.Entity<specChangeLog>()
                 .Property(e => e.source)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SpecClass>()
-                .Property(e => e.ClassName)
+            modelBuilder.Entity<specClass>()
+                .Property(e => e.className)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SpecClass>()
-                .Property(e => e.Icon)
+            modelBuilder.Entity<specClass>()
+                .Property(e => e.icon)
                 .IsUnicode(false);
 
             modelBuilder.Entity<specification>()
@@ -229,23 +227,23 @@ namespace TractorSpecs.Infrastructure.Data
                 .IsUnicode(false);
 
             modelBuilder.Entity<specification>()
-                .Property(e => e.IP)
+                .Property(e => e.ip)
                 .IsUnicode(false);
 
             modelBuilder.Entity<specification>()
                 .Property(e => e.extendedValue)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SpecName>()
-                .Property(e => e.SpecName1)
+            modelBuilder.Entity<specName>()
+                .Property(e => e.specName1)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SpecName>()
-                .Property(e => e.SpecMeasure)
+            modelBuilder.Entity<specName>()
+                .Property(e => e.specMeasure)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SpecName>()
-                .Property(e => e.DisplayName)
+            modelBuilder.Entity<specName>()
+                .Property(e => e.displayName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<PrintView>()

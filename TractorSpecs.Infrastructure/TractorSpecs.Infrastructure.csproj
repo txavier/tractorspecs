@@ -92,7 +92,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\apiKey.cs" />
+    <Compile Include="Data\apiSpecReqCounter.cs" />
+    <Compile Include="Data\apiSpecRequest.cs" />
+    <Compile Include="Data\apiSpecTracker.cs" />
+    <Compile Include="Data\attachment.cs" />
     <Compile Include="Data\EfDataDbContext.cs" />
+    <Compile Include="Data\equipClassSpecClass.cs" />
+    <Compile Include="Data\equipmentClass.cs" />
+    <Compile Include="Data\link.cs" />
+    <Compile Include="Data\make.cs" />
+    <Compile Include="Data\makeAlia.cs" />
+    <Compile Include="Data\miss.cs" />
+    <Compile Include="Data\model.cs" />
+    <Compile Include="Data\modelAlia.cs" />
+    <Compile Include="Data\modelPicture.cs" />
+    <Compile Include="Data\modelPrice.cs" />
+    <Compile Include="Data\PrintView.cs" />
+    <Compile Include="Data\review.cs" />
+    <Compile Include="Data\rssDealerID.cs" />
+    <Compile Include="Data\specChangeLog.cs" />
+    <Compile Include="Data\specClass.cs" />
+    <Compile Include="Data\specification.cs" />
+    <Compile Include="Data\specName.cs" />
     <Compile Include="Data\TrackingConfig.cs" />
     <Compile Include="Getters\EnvironmentConfigSettingsGetter.cs" />
     <Compile Include="Migrations\201701262142246_InitialMigration.cs" />

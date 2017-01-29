@@ -6,12 +6,12 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("modelPrice")]
     public partial class modelPrice
     {
-        public long? unitid { get; set; }
+        public long? modelId { get; set; }
 
-        [Key]
-        public long thisID { get; set; }
+        public long modelPriceId { get; set; }
 
         [Column(TypeName = "money")]
         public decimal? price { get; set; }
@@ -24,12 +24,14 @@ namespace TractorSpecs.Infrastructure.Data
         public string notes { get; set; }
 
         [StringLength(50)]
-        public string TRApicID { get; set; }
+        public string traPicId { get; set; }
 
         [StringLength(10)]
-        public string modelyear { get; set; }
+        public string modelYear { get; set; }
 
         [StringLength(10)]
         public string DorP { get; set; }
+
+        public virtual model model { get; set; }
     }
 }

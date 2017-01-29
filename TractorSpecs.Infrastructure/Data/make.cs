@@ -6,10 +6,17 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("make")]
     public partial class make
     {
-        [Key]
-        public long mfgID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public make()
+        {
+            makeAlias = new HashSet<makeAlia>();
+            models = new HashSet<model>();
+        }
+
+        public long makeId { get; set; }
 
         [StringLength(50)]
         public string mfgName { get; set; }
@@ -30,5 +37,11 @@ namespace TractorSpecs.Infrastructure.Data
 
         [StringLength(50)]
         public string mfgLink { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<makeAlia> makeAlias { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<model> models { get; set; }
     }
 }

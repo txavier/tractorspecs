@@ -6,9 +6,10 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("link")]
     public partial class link
     {
-        public long linkID { get; set; }
+        public long linkId { get; set; }
 
         [StringLength(200)]
         public string linkURL { get; set; }
@@ -21,6 +22,8 @@ namespace TractorSpecs.Infrastructure.Data
 
         public bool? showFlag { get; set; }
 
-        public long? modelID { get; set; }
+        public long? modelId { get; set; }
+
+        public virtual model model { get; set; }
     }
 }

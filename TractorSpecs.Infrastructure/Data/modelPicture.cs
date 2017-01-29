@@ -6,18 +6,19 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class APIkey
+    [Table("modelPicture")]
+    public partial class modelPicture
     {
-        [Key]
-        public long thisID { get; set; }
-
-        [Column("APIkey")]
-        [StringLength(50)]
-        public string APIkey1 { get; set; }
+        public long modelPictureId { get; set; }
 
         [StringLength(50)]
-        public string CompanyName { get; set; }
+        public string filename { get; set; }
 
-        public bool? AllowGetSpecs { get; set; }
+        [StringLength(50)]
+        public string description { get; set; }
+
+        public long? modelId { get; set; }
+
+        public virtual model model { get; set; }
     }
 }

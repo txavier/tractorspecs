@@ -6,24 +6,24 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class APIspecRequest
+    [Table("apiSpecRequest")]
+    public partial class apiSpecRequest
     {
-        [Key]
-        public long thisID { get; set; }
+        public long apiSpecRequestId { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? ReqDate { get; set; }
+        public DateTime? reqDate { get; set; }
 
         [StringLength(50)]
-        public string API_key { get; set; }
+        public string apiKey { get; set; }
 
         [StringLength(500)]
-        public string PriorityNotes { get; set; }
+        public string priorityNotes { get; set; }
 
         [StringLength(500)]
-        public string Make { get; set; }
+        public string make { get; set; }
 
         [StringLength(500)]
-        public string Model { get; set; }
+        public string model { get; set; }
     }
 }

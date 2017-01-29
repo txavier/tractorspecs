@@ -6,15 +6,14 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("APISpecTracker")]
-    public partial class APISpecTracker
+    [Table("attachment")]
+    public partial class attachment
     {
-        [Key]
-        public long ThisID { get; set; }
-
-        [StringLength(50)]
-        public string ApiKey { get; set; }
-
         public long? ModelID { get; set; }
+
+        public long? AttachmentID { get; set; }
+
+        [Key]
+        public long thisid { get; set; }
     }
 }

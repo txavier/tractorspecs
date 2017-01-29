@@ -6,15 +6,16 @@ namespace TractorSpecs.Infrastructure.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("APISpecTracker")]
-    public partial class APISpecTracker
+    public partial class makeAlia
     {
         [Key]
-        public long ThisID { get; set; }
+        public long makeAliasId { get; set; }
 
         [StringLength(50)]
-        public string ApiKey { get; set; }
+        public string mfgAlias { get; set; }
 
-        public long? ModelID { get; set; }
+        public long? makeId { get; set; }
+
+        public virtual make make { get; set; }
     }
 }
