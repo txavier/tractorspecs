@@ -8,7 +8,8 @@
             'ngAnimate',
             'ngSessionStorage',
             'textAngular',
-            'ng-file-model'
+            'ng-file-model',
+            'angular-carousel'
         ]);
 
 })();

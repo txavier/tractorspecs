@@ -9,6 +9,7 @@ using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 using System.Web.Http.Dispatcher;
 using TractorSpecs.Core.Models;
+using TractorSpecs.Core.Objects;
 
 namespace TractorSpecs
 {
@@ -41,6 +42,22 @@ namespace TractorSpecs
             config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
 
             builder.EntitySet<model>("models");
+
+            builder.EntitySet<equipmentClass>("equipmentClass");
+
+            builder.EntitySet<make>("makes");
+
+            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("make"))
+                .AddProperty((typeof(make)).GetProperty("modelCountCalculated"));
+
+            // Example: http://localhost:17753/odata/makes/makesService.GetMakesWithModelsCount
+            builder.EntityType<make>().Collection
+                .Function("GetMakesWithModelsCount")
+                .Returns<IEnumerable<make>>()
+                .Namespace = "makesService";
+
+            builder.EntitySet<specification>("specifications");
+
             // http://stackoverflow.com/questions/36344979/odata-include-custom-properties-added-to-entity-framework-models-via-partial-c
             // http://stackoverflow.com/questions/27277306/odata-read-only-property
             //builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("model"))

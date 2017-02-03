@@ -36,10 +36,26 @@
             getDashboardMetric: getDashboardMetric,
             // Application specific methods.
             getGeoClientInformation: getGeoClientInformation,
-            getVersion: getVersion
+            getVersion: getVersion,
+            getMakesWithModelsCount: getMakesWithModelsCount
         };
 
         return service;
+
+        function getMakesWithModelsCount() {
+            return $http.get(odataUrl + 'makes/makesService.GetMakesWithModelsCount')
+                .then(getMakesWithModelsCountComplete, getMakesWithModelsCountFailed);
+
+            function getMakesWithModelsCountComplete(response) {
+                return response.data;
+            }
+
+            function getMakesWithModelsCountFailed(error) {
+                errorService.handleError(error, showToaster || true, 'makes', failureMessage);
+
+                return $q.reject(error);
+            }
+        }
 
         function addEntity(entityDataStore, entity, showToaster, successMessage, failureMessage) {
             return $http.post(odataUrl + entityDataStore, entity).then(addEntityComplete, addEntityFailed);

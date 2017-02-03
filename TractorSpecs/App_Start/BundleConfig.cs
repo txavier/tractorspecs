@@ -42,7 +42,9 @@ namespace TractorSpecs
                       "~/wwwroot/lib/textAngular/dist/textAngular-rangy.min.js",
                       "~/wwwroot/lib/textAngular/dist/textAngular-sanitize.min.js",
                       "~/wwwroot/lib/textAngular/dist/textAngular.min.js",
-                      "~/wwwroot/lib/ng-file-model/ng-file-model.js"
+                      "~/wwwroot/lib/ng-file-model/ng-file-model.js",
+                      "~/wwwroot/lib/angular-carousel/dist/angular-carousel.min.js",
+                      "~/wwwroot/lib/angular-touch/angular-touch.min.js"
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-app").Include(
@@ -81,12 +83,15 @@ namespace TractorSpecs
                 "~/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
                 "~/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css",
                 "~/wwwroot/lib/AngularJS-Toaster/toaster.min.css",
-                "~/Content/Site.css",
-                "~/wwwroot/lib/textAngular/dist/textAngular.css"));
+                "~/wwwroot/lib/textAngular/dist/textAngular.css",
+                "~/wwwroot/lib/angular-carousel/dist/angular-carousel.min.css",
+                "~/Content/Site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/theme").Include(
                 "~/wwwroot/lib/superfish/dist/js/superfish.js",
                 "~/wwwroot/lib/jquery.easing/js/jquery.easing.js"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

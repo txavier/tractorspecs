@@ -119,6 +119,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IEfQueryMakesWithModelCount.cs" />
     <Compile Include="Interfaces\ISettingService.cs" />
     <Compile Include="Models\APIkey.cs" />
     <Compile Include="Models\APIspecReqCounter.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Models\modelAlia.cs" />
     <Compile Include="Models\modelPicture.cs" />
     <Compile Include="Models\modelPrice.cs" />
+    <Compile Include="Models\Partials\make.cs" />
     <Compile Include="Models\PrintView.cs" />
     <Compile Include="Models\review.cs" />
     <Compile Include="Models\rssDealerID.cs" />
@@ -147,6 +149,7 @@
     <Compile Include="Models\setting.cs" />
     <Compile Include="Interfaces\ILogService.cs" />
     <Compile Include="Objects\EventType.cs" />
+    <Compile Include="Objects\makesWithModelCount.cs" />
     <Compile Include="Services\SettingService.cs" />
     <Compile Include="Services\UserActionLogService.cs" />
     <Compile Include="Interfaces\IEnvironmentConfigSettingsGetter.cs" />
