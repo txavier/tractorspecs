@@ -12,9 +12,9 @@
         $httpProvider.interceptors.push('authInterceptorService');
 
         $routeProvider
-            .when('/update-author/:authorId', {
-                templateUrl: 'app/author/update-author.html',
-                controller: 'UpdateAuthorController',
+            .when('/make/:mfgURL', {
+                templateUrl: 'app/make/make.html',
+                controller: 'MakeController',
                 controllerAs: 'vm'
             })
             .when('/add-author', {

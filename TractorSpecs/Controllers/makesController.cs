@@ -8,6 +8,7 @@ using AutoClutch.Core.Interfaces;
 using AutoClutch.Controller;
 using TractorSpecs.Core.Models;
 using TractorSpecs.Core.Interfaces;
+using System.Web.OData;
 
 namespace TractorSpecs.Controllers
 {
@@ -21,9 +22,10 @@ namespace TractorSpecs.Controllers
             _makeService = makeService;
         }
 
+        [EnableQuery]
         public IHttpActionResult GetMakesWithModelsCount()
         {
-            var result = _makeService.Queryable().AsEnumerable().OrderByDescending(i => i.modelCountCalculated).Take(10);
+            var result = _makeService.Queryable().OrderByDescending(i => i.models.Count);
 
             return Ok(result);
         }

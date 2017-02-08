@@ -119,7 +119,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IEfQueryMakesWithModelCount.cs" />
     <Compile Include="Interfaces\ISettingService.cs" />
     <Compile Include="Models\APIkey.cs" />
     <Compile Include="Models\APIspecReqCounter.cs" />
@@ -147,11 +146,9 @@
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\Partials\user.cs" />
     <Compile Include="Models\setting.cs" />
-    <Compile Include="Interfaces\ILogService.cs" />
     <Compile Include="Objects\EventType.cs" />
     <Compile Include="Objects\makesWithModelCount.cs" />
     <Compile Include="Services\SettingService.cs" />
-    <Compile Include="Services\UserActionLogService.cs" />
     <Compile Include="Interfaces\IEnvironmentConfigSettingsGetter.cs" />
     <Compile Include="Interfaces\ITrackerEnabledService.cs" />
     <Compile Include="Objects\RequirementCheck.cs" />
@@ -164,14 +161,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Documents\new database schema rev1.pdf" />
+    <None Include="Documents\original database schema.pdf" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Documents\1.jpg" />
+    <Content Include="Documents\2.jpg" />
+    <Content Include="Documents\3.jpg" />
+    <Content Include="Documents\4.jpg" />
+    <Content Include="Documents\5.jpg" />
     <Content Include="Documents\image001.png" />
     <Content Include="Documents\image002.png" />
     <Content Include="Documents\image003.png" />
     <Content Include="Documents\image004.png" />
     <Content Include="Documents\image005.png" />
     <Content Include="Documents\image006.png" />
+    <Content Include="Documents\new database schema rev1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

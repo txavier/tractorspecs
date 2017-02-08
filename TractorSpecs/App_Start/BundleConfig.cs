@@ -67,7 +67,8 @@ namespace TractorSpecs
                       "~/app/author/authors.controller.js",
                       "~/app/author/view-author.controller.js",
                       "~/app/author/add-author.controller.js",
-                      "~/app/author/update-author.controller.js"
+                      "~/app/author/update-author.controller.js",
+                      "~/app/make/make.controller.js"
                       ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -80,11 +81,11 @@ namespace TractorSpecs
                 "~/wwwroot/lib/respond/dest/respond.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
-                "~/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css",
-                "~/wwwroot/lib/AngularJS-Toaster/toaster.min.css",
-                "~/wwwroot/lib/textAngular/dist/textAngular.css",
-                "~/wwwroot/lib/angular-carousel/dist/angular-carousel.min.css",
+                //"~/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+                //"~/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css",
+                //"~/wwwroot/lib/AngularJS-Toaster/toaster.min.css",
+                //"~/wwwroot/lib/textAngular/dist/textAngular.css",
+                //"~/wwwroot/lib/angular-carousel/dist/angular-carousel.min.css",
                 "~/Content/Site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/theme").Include(

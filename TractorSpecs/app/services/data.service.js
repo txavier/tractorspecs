@@ -42,16 +42,16 @@
 
         return service;
 
-        function getMakesWithModelsCount() {
-            return $http.get(odataUrl + 'makes/makesService.GetMakesWithModelsCount')
+        function getMakesWithModelsCount(top) {
+            return $http.get(odataUrl + 'makes/makesService.GetMakesWithModelsCount?$top=' + top)
                 .then(getMakesWithModelsCountComplete, getMakesWithModelsCountFailed);
 
             function getMakesWithModelsCountComplete(response) {
-                return response.data;
+                return response.data.value;
             }
 
             function getMakesWithModelsCountFailed(error) {
-                errorService.handleError(error, showToaster || true, 'makes', failureMessage);
+                errorService.handleError(error, true, 'makes', failureMessage);
 
                 return $q.reject(error);
             }
@@ -248,8 +248,8 @@
                              search: searchCriteria == undefined ? null : searchCriteria.searchText,
                              searchFields: searchCriteria == undefined ? null : searchCriteria.searchTextFields,
                              $expand: searchCriteria == undefined ? null : searchCriteria.includeProperties,
-                             $filter: searchCriteria == undefined || searchCriteria.q == undefined ? null : searchCriteria.q.replace('=', ' eq '),
-                             $select: searchCriteria == undefined ? null : searchCriteria.fields
+                             $filter: searchCriteria.$filter || (searchCriteria == undefined || searchCriteria.q == undefined ? null : searchCriteria.q.replace('=', ' eq ')),
+                             $select: searchCriteria.$select || (searchCriteria == undefined ? null : searchCriteria.fields)
                          },
                 cache: cache == undefined ? false : cache
             })

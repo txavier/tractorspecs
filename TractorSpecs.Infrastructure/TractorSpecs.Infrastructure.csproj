@@ -93,7 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\EfDataDbContext.cs" />
-    <Compile Include="Data\EfQueryMakesWithModelCount.cs" />
     <Compile Include="Data\TrackingConfig.cs" />
     <Compile Include="Getters\EnvironmentConfigSettingsGetter.cs" />
     <Compile Include="Migrations\201701262142246_InitialMigration.cs" />
