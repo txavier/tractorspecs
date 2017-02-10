@@ -338,10 +338,10 @@
                         <a class="prev_testimonial" href="#"></a>
                         <a class="next_testimonial" href="#"></a>
                         <ul class="clearfix">
-                            <li data-ng-repeat="makeWithModelCount in vm.makesWithModelsCount">
+                            <li data-ng-repeat="make in vm.makes | orderBy : '-models.length'">
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.makeClick(makeWithModelCount.mfgURL)">
-                                        <div class="txt2">{{ makeWithModelCount.mfgName }}<span> ({{ makeWithModelCount.modelCountCalculated }})</span></div>
+                                    <a href="" data-ng-click="vm.makeClick(make.mfgURL)">
+                                        <div class="txt2">{{ make.mfgName }}<span> ({{ make.models.length }})</span></div>
                                     </a>
                                 </div>
                             </li>

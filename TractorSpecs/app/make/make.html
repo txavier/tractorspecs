@@ -156,33 +156,33 @@
 
                 <div class="thumb1">
                     <div class="thumbnail clearfix">
-                        <figure class="img-polaroid"><img src="theme/EcoAgriculture/images/about01.jpg" alt=""></figure>
+                        <figure class="img-polaroid"><img src="theme/TractorSpecs_Original/images/{{ vm.make.mfgLogoImg }}" alt=""></figure>
                         <div class="caption">
                             <p>
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing elit. Nunc suscipit. Suspendisse enim arcu, convallis non, cursus sed, dignissim et, est. Aenean semper aliquet libero.  In ante velit, cursus ut, ultrices vitae, tempor ut, risus. Duis pulvinar. Vestibulum vel pede at sapien sodales mattis. Quisque pretium, lacus nec iaculis vehicula, arcu libero consectetuer massa.
+                                {{ vm.make.mfgDesc }}
                             </p>
                         </div>
                     </div>
                 </div>
 
 
-                <h2>WHY CHOOSE US</h2>
+                <h2>MODELS</h2>
 
                 <div class="row">
-                    <div class="span4">
+                    <div class="span4" data-ng-repeat="model in vm.models">
                         <div class="thumb2">
                             <div class="thumbnail clearfix">
-                                <a href="#">
-                                    <figure><img src="theme/EcoAgriculture/images/about02.png" alt=""></figure>
+                                <a href="" data-ng-click="vm.modelClick(model.modelUrl)">
+                                    <figure><img src="theme/EcoAgriculture/images/about06.png" alt=""></figure>
                                     <div class="caption">
-                                        <div class="txt1">ECO PRODUCTS</div>
-                                        <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
+                                        <div class="txt1">{{ model.modelNumber }}</div>
+                                        <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="span4 offset1">
+                    <!--<div class="span4 offset1">
                         <div class="thumb2">
                             <div class="thumbnail clearfix">
                                 <a href="#">
@@ -194,10 +194,10 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
-                <div class="row">
+                <!--<div class="row">
                     <div class="span4">
                         <div class="thumb2">
                             <div class="thumbnail clearfix">
@@ -253,7 +253,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
 
 

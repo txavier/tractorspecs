@@ -10,7 +10,7 @@
     function HomeController($scope, $location, $routeParams, dataService) {
         var vm = this;
 
-        vm.makesWithModelsCount = [];
+        vm.makes = [];
         vm.models = [];
         vm.modelsCount = 0;
         vm.specificationsCount = 0;
@@ -19,6 +19,15 @@
         activate();
 
         function activate() {
+            // http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html#_System_Query_Option_2
+            var makesSearchCriteria = {
+                $select: 'makeId, mfgDesc, mfgLogoImg, mfgName, mfgURL',
+                $expand: 'models($select=modelId)',
+                $top: 26
+            };
+
+            searchMakes(makesSearchCriteria);
+
             var modelSearchCriteria = {
                 currentPage: 1,
                 itemsPerPage: 14,
@@ -29,8 +38,6 @@
                 q: null,
                 fields: null
             };
-
-            getMakesWithModelsCount();
 
             getModels(modelSearchCriteria);
 
@@ -43,11 +50,11 @@
             $location.path('/make/' + mfgURL);
         }
 
-        function getMakesWithModelsCount() {
-            return dataService.getMakesWithModelsCount(26).then(function (data) {
-                vm.makesWithModelsCount = data;
+        function searchMakes(makeSearchCriteria) {
+            return dataService.searchEntities('makes', makeSearchCriteria).then(function (data) {
+                vm.makes = data;
 
-                return vm.makesWithModelsCount;
+                return vm.makes;
             });
         }
 

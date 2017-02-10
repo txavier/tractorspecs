@@ -47,8 +47,8 @@ namespace TractorSpecs
 
             builder.EntitySet<make>("makes");
 
-            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("make"))
-                .AddProperty((typeof(make)).GetProperty("modelCountCalculated"));
+            //builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("make"))
+            //    .AddProperty((typeof(make)).GetProperty("modelCountCalculated"));
 
             // Example: http://localhost:17753/odata/makes/makesService.GetMakesWithModelsCount
             builder.EntityType<make>().Collection

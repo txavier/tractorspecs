@@ -22,10 +22,12 @@ namespace TractorSpecs.Controllers
             _makeService = makeService;
         }
 
-        [EnableQuery]
-        public IHttpActionResult GetMakesWithModelsCount()
+        public IHttpActionResult GetMakesWithModelsCount(int? top)
         {
-            var result = _makeService.Queryable().OrderByDescending(i => i.models.Count);
+            var result = _makeService
+                .Queryable()
+                .OrderByDescending(i => i.models.Count)
+                .Take(top ?? Int32.MaxValue);
 
             return Ok(result);
         }

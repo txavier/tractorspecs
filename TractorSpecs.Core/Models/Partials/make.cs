@@ -9,21 +9,21 @@ namespace TractorSpecs.Core.Models
 {
     public partial class make
     {
-        [NotMapped]
-        public int? modelCountCalculated
-        {
-            get { return GetModelCount(this.models); }
-        }
+        //[NotMapped]
+        //public int? modelCountCalculated
+        //{
+        //    get { return GetModelCount(this.models); }
+        //}
 
-        private int? GetModelCount(ICollection<model> models)
-        {
-            if(models == null)
-            {
-                return null;
-            }
+        //private int? GetModelCount(ICollection<model> models)
+        //{
+        //    if(models == null)
+        //    {
+        //        return null;
+        //    }
 
-            return models.Count;
-        }
+        //    return models.Count;
+        //}
 
     }
 }

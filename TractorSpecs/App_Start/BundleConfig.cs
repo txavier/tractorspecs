@@ -68,7 +68,9 @@ namespace TractorSpecs
                       "~/app/author/view-author.controller.js",
                       "~/app/author/add-author.controller.js",
                       "~/app/author/update-author.controller.js",
-                      "~/app/make/make.controller.js"
+                      "~/app/make/make.controller.js",
+                      "~/app/make/makes.controller.js",
+                      "~/app/model/model.controller.js"
                       ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

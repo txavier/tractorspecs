@@ -5,9 +5,9 @@
         .module('app')
         .controller('MakeController', MakeController);
 
-    MakeController.$inject = ['$scope', '$routeParams', 'dataService'];
+    MakeController.$inject = ['$scope', '$routeParams', '$location', 'dataService'];
 
-    function MakeController($scope, $routeParams, dataService) {
+    function MakeController($scope, $routeParams, $location, dataService) {
         var vm = this;
 
         vm.make = {};
@@ -15,6 +15,7 @@
         vm.modelsCount = 0;
         vm.specificationsCount = 0;
         vm.mfgURL = '';
+        vm.modelClick = modelClick;
 
         activate();
 
@@ -24,7 +25,7 @@
 
             var makeSearchCriteria = {
                 $filter: 'mfgURL eq \'' + vm.mfgURL + '\'',
-                $select: 'makeId'
+                $select: 'makeId, mfgDesc, mfgLogoImg'
             };
 
             getMake(makeSearchCriteria).then(function (data) {
@@ -41,7 +42,10 @@
 
                 getModels(modelSearchCriteria);
             });
+        }
 
+        function modelClick(modelUrl) {
+            $location.path(`make/${vm.mfgURL}/model/${modelUrl}`);
         }
 
         function getMake(makeSearchCriteria) {

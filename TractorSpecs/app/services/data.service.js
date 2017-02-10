@@ -43,7 +43,7 @@
         return service;
 
         function getMakesWithModelsCount(top) {
-            return $http.get(odataUrl + 'makes/makesService.GetMakesWithModelsCount?$top=' + top)
+            return $http.get(odataUrl + 'makes/makesService.GetMakesWithModelsCount?top=' + top)
                 .then(getMakesWithModelsCountComplete, getMakesWithModelsCountFailed);
 
             function getMakesWithModelsCountComplete(response) {
@@ -242,12 +242,12 @@
             return $http.get(odataUrl + entityDataStore, {
                 params:
                          {
-                             $skip: searchCriteria == undefined || searchCriteria.currentPage == undefined ? null : (searchCriteria.currentPage - 1) * searchCriteria.itemsPerPage,
-                             $top: searchCriteria == undefined ? null : searchCriteria.itemsPerPage,
-                             $orderby: searchCriteria == undefined ? null : searchCriteria.orderBy,
+                             $skip: searchCriteria.$skip || (searchCriteria == undefined || searchCriteria.currentPage == undefined ? null : (searchCriteria.currentPage - 1) * searchCriteria.itemsPerPage),
+                             $top: searchCriteria.$top || (searchCriteria == undefined ? null : searchCriteria.itemsPerPage),
+                             $orderby: searchCriteria.$orderby || (searchCriteria == undefined ? null : searchCriteria.orderBy),
                              search: searchCriteria == undefined ? null : searchCriteria.searchText,
                              searchFields: searchCriteria == undefined ? null : searchCriteria.searchTextFields,
-                             $expand: searchCriteria == undefined ? null : searchCriteria.includeProperties,
+                             $expand: searchCriteria.$expand || (searchCriteria == undefined ? null : searchCriteria.includeProperties),
                              $filter: searchCriteria.$filter || (searchCriteria == undefined || searchCriteria.q == undefined ? null : searchCriteria.q.replace('=', ' eq ')),
                              $select: searchCriteria.$select || (searchCriteria == undefined ? null : searchCriteria.fields)
                          },

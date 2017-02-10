@@ -30,118 +30,118 @@
     @*@Scripts.Render("~/bundles/jquery")*@
     @*@Scripts.Render("~/bundles/theme")*@
     @*<script>
-        $(document).ready(function () {
-            //carufredsel main slider
-            $('#caroufredsel_slider1').carouFredSel({
-                auto: {
-                    timeoutDuration: 9000
-                },
-                responsive: true,
-                direction: "left",
-                prev: '.prev1',
-                next: '.next1',
-                width: '100%',
-                scroll: {
-                    items: 1,
-                    duration: 1000,
-                    easing: "easeOutExpo",
-                    fx: "fade"
-                },
-                items: {
-                    width: '1000',
-                    height: 'variable',	//	optionally resize item-height
-                    visible: {
-                        min: 1,
-                        max: 1
+            $(document).ready(function () {
+                //carufredsel main slider
+                $('#caroufredsel_slider1').carouFredSel({
+                    auto: {
+                        timeoutDuration: 9000
+                    },
+                    responsive: true,
+                    direction: "left",
+                    prev: '.prev1',
+                    next: '.next1',
+                    width: '100%',
+                    scroll: {
+                        items: 1,
+                        duration: 1000,
+                        easing: "easeOutExpo",
+                        fx: "fade"
+                    },
+                    items: {
+                        width: '1000',
+                        height: 'variable',	//	optionally resize item-height
+                        visible: {
+                            min: 1,
+                            max: 1
+                        }
+                    },
+                    mousewheel: false,
+                    swipe: {
+                        onMouse: true,
+                        onTouch: true
+                    },
+                    pagination: ".pagination1"
+                });
+
+                //	carouFredSel small
+                $('#slider3 .carousel.main ul').carouFredSel({
+                    auto: {
+                        timeoutDuration: 8000
+                    },
+                    responsive: true,
+                    prev: '.prev3',
+                    next: '.next3',
+                    width: '100%',
+                    scroll: {
+                        items: 1,
+                        duration: 1000,
+                        easing: "easeOutExpo"
+                    },
+                    items: {
+                        width: '350',
+                        height: 'variable',	//	optionally resize item-height
+                        visible: {
+                            min: 1,
+                            max: 2
+                        }
+                    },
+                    mousewheel: false,
+                    swipe: {
+                        onMouse: true,
+                        onTouch: true
                     }
-                },
-                mousewheel: false,
-                swipe: {
-                    onMouse: true,
-                    onTouch: true
-                },
-                pagination: ".pagination1"
-            });
+                });
 
-            //	carouFredSel small
-            $('#slider3 .carousel.main ul').carouFredSel({
-                auto: {
-                    timeoutDuration: 8000
-                },
-                responsive: true,
-                prev: '.prev3',
-                next: '.next3',
-                width: '100%',
-                scroll: {
-                    items: 1,
-                    duration: 1000,
-                    easing: "easeOutExpo"
-                },
-                items: {
-                    width: '350',
-                    height: 'variable',	//	optionally resize item-height
-                    visible: {
-                        min: 1,
-                        max: 2
-                    }
-                },
-                mousewheel: false,
-                swipe: {
-                    onMouse: true,
-                    onTouch: true
-                }
-            });
-
-            $(window).bind("resize", updateSizes_vat).bind("load", updateSizes_vat);
-            function updateSizes_vat() {
-                $('#caroufredsel_slider1').trigger("updateSizes");
-                $('#slider3 .carousel.main ul').trigger("updateSizes");
-            }
-
-            updateSizes_vat();
-
-            // carufredsel testimonials
-            $('#caroufredsel').carouFredSel({
-                auto: {
-                    timeoutDuration: 9000
-                },
-                responsive: true,
-                direction: "left",
-                prev: '.prev_testimonial',
-                next: '.next_testimonial',
-                width: '100%',
-                scroll: {
-                    items: 1,
-                    duration: 1000,
-                    easing: "easeOutExpo",
-                    fx: "fade"
-                },
-                items: {
-                    width: '1000',
-                    height: 'variable',	//	optionally resize item-height
-                    visible: {
-                        min: 1,
-                        max: 1
-                    }
-                },
-                mousewheel: false,
-                swipe: {
-                    onMouse: true,
-                    onTouch: true
+                $(window).bind("resize", updateSizes_vat).bind("load", updateSizes_vat);
+                function updateSizes_vat() {
+                    $('#caroufredsel_slider1').trigger("updateSizes");
+                    $('#slider3 .carousel.main ul').trigger("updateSizes");
                 }
 
+                updateSizes_vat();
+
+                // carufredsel testimonials
+                $('#caroufredsel').carouFredSel({
+                    auto: {
+                        timeoutDuration: 9000
+                    },
+                    responsive: true,
+                    direction: "left",
+                    prev: '.prev_testimonial',
+                    next: '.next_testimonial',
+                    width: '100%',
+                    scroll: {
+                        items: 1,
+                        duration: 1000,
+                        easing: "easeOutExpo",
+                        fx: "fade"
+                    },
+                    items: {
+                        width: '1000',
+                        height: 'variable',	//	optionally resize item-height
+                        visible: {
+                            min: 1,
+                            max: 1
+                        }
+                    },
+                    mousewheel: false,
+                    swipe: {
+                        onMouse: true,
+                        onTouch: true
+                    }
 
 
-            });
+
+                });
 
 
 
-        }); //
-        $(window).load(function () {
-            //
+            }); //
+            $(window).load(function () {
+                //
 
-        }); //
-    </script>*@
+            }); //
+        </script>*@
     <!--[if lt IE 8]>
             <div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
         <![endif]-->
@@ -184,18 +184,21 @@
                                             </a>
                                             <div class="nav-collapse nav-collapse_ collapse">
                                                 <ul class="nav sf-menu clearfix">
-                                                    <li class="active"><a href="index.html">home page</a></li>
+                                                    <li><a href="#/home">home page</a></li>
                                                     <li><a href="index-1.html">who we are</a></li>
+                                                    <li>
+                                                        <a href="#/makes">Brands</a>
+                                                    </li>
                                                     <li class="sub-menu sub-menu-1">
-                                                        <a href="index-2.html">our services</a>
+                                                        <a href="index-3.html">Equipment Types</a>
                                                         <ul>
                                                             <li><a href="index-2.html">lorem ipsum dolor</a></li>
                                                             <li><a href="index-2.html">nunc suscipit</a></li>
-                                                            <li><a href="404.html">404 page not found</a></li>
+                                                                    <li><a href="404.html">404 page not found</a></li>
+                                                            <li><a href="404.html"></a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="index-3.html">products</a></li>
-                                                    <li><a href="index-4.html">partners & clients</a></li>
+                                                    <li><a href="http://www.nettractortalk.com/">Forums</a></li>
                                                     <li><a href="index-5.html">contacts us</a></li>
                                                     <!--@Html.Partial("_LoginPartial", new { @class = "button button_green" })-->
                                                 </ul>

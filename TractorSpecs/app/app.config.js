@@ -12,24 +12,19 @@
         $httpProvider.interceptors.push('authInterceptorService');
 
         $routeProvider
+            .when('/makes', {
+                templateUrl: 'app/make/makes.html',
+                controller: 'MakesController',
+                controllerAs: 'vm'
+            })
+            .when('/make/:mfgURL/model/:modelUrl', {
+                templateUrl: 'app/model/model.html',
+                controller: 'ModelController',
+                controllerAs: 'vm'
+            })
             .when('/make/:mfgURL', {
                 templateUrl: 'app/make/make.html',
                 controller: 'MakeController',
-                controllerAs: 'vm'
-            })
-            .when('/add-author', {
-                templateUrl: 'app/author/add-author.html',
-                controller: 'AddAuthorController',
-                controllerAs: 'vm'
-            })
-            .when('/view-author/:authorId', {
-                templateUrl: 'app/author/view-author.html',
-                controller: 'ViewAuthorController',
-                controllerAs: 'vm'
-            })
-            .when('/authors', {
-                templateUrl: 'app/author/authors.html',
-                controller: 'AuthorsController',
                 controllerAs: 'vm'
             })
             .when('/dashboard', {
