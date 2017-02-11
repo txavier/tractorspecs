@@ -12,6 +12,16 @@
         $httpProvider.interceptors.push('authInterceptorService');
 
         $routeProvider
+            .when('/equipment-classes', {
+                templateUrl: 'app/equipment-class/equipment-classes.html',
+                controller: 'EquipmentClassesController',
+                controllerAs: 'vm'
+            })
+            .when('/equipment-class/:className', {
+                templateUrl: 'app/equipment-class/equipment-class.html',
+                controller: 'EquipmentClassController',
+                controllerAs: 'vm'
+            })
             .when('/makes', {
                 templateUrl: 'app/make/makes.html',
                 controller: 'MakesController',

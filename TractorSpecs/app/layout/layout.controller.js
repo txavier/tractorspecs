@@ -5,17 +5,21 @@
         .module('app')
         .controller('LayoutController', LayoutController);
 
-    LayoutController.$inject = ['$scope', '$routeParams', 'dataService'];
+    LayoutController.$inject = ['$scope', '$routeParams', '$location', 'dataService'];
 
-    function LayoutController($scope, $routeParams, dataService) {
+    function LayoutController($scope, $routeParams, $location, dataService) {
         var vm = this;
 
         vm.user = null;
+        vm.equipmentTypesClick = equipmentTypesClick;
 
         activate();
 
         function activate() {
-            getLoggedInUser();
+        }
+
+        function equipmentTypesClick() {
+            $location.path(`/equipment-classes`);
         }
 
         function getLoggedInUser() {
