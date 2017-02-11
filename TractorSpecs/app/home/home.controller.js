@@ -15,6 +15,7 @@
         vm.modelsCount = 0;
         vm.specificationsCount = 0;
         vm.makeClick = makeClick;
+        vm.modelClick = modelClick;
 
         activate();
 
@@ -34,7 +35,7 @@
                 orderBy: 'date desc',
                 search: null,
                 searchFields: null,
-                expand: null,
+                includeProperties: 'make($select=mfgURL)',
                 q: null,
                 fields: null
             };
@@ -44,6 +45,10 @@
             getModelsCount(modelSearchCriteria);
 
             getSpecificationsCount();
+        }
+
+        function modelClick(model) {
+            $location.path(`make/${model.make.mfgURL}/model/${model.modelUrl}`);
         }
 
         function makeClick(mfgURL) {

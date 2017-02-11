@@ -150,18 +150,18 @@
         <div class="row">
             <div class="span9">
 
-                <h1>Best Services</h1>
+                <h1>{{ vm.model.make.mfgName }} {{ vm.model.modelNumber }} Specifications</h1>
 
                 <div class="thumb1">
                     <div class="thumbnail clearfix">
-                        <figure class="img-polaroid"><img src="images/services01.jpg" alt=""></figure>
-                        <div class="caption">
+                        <figure class="img-polaroid"><img src="theme/TractorSpecs_original/images/{{ vm.model.make.mfgLogoImg }}" alt=""></figure>
+                        <!--<div class="caption">
                             <h3>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </h3>
                             <p>
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing elit. Nunc suscipit. Suspendisse enim arcu, convallis non, cursus sed, dignissim et, est. Aenean semper aliquet libero.  In ante velit, cursus ut, ultrices vitae, tempor ut, risus. Duis pulvinar. Vestibulum vel pede at sapien sodales mattis. Quisque pretium, lacus nec iaculis vehicula, arcu libero consectetuer massa. auctor aliquet mauris ligula id ipsum. Vestibulum pede. Maecenas sit amet aug Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetuer adipiscing elit. Nunc suscipit. Suspendisse enim arcu, convallis non, cursus sed, dignissim et, est. Aenean semper aliquet libero.  In ante velit, cursus ut, ultrices vitae, tempor ut, risus. Duis pulvinar. Vestibulum vel pede at sapien sodales mattis. Quisque pretium, lacus nec iaculis vehicula, arcu libero consectetuer massa. auctor aliquet mauris ligula id ipsum. Vestibulum pede. Maecenas sit amet augue. Sed blandit lect us eget lectus. Mauris justo. Curabitur nibh lectus, dapibus id, tempor eu, tempor non, erat. Proin pede eros, pharetra ut, viverra sed, egestas nec, mauris.
                             </p>
                             <a href="#" class="button1">more<em></em></a>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -171,7 +171,7 @@
 
 
             </div>
-            <div class="span3">
+            <!--<div class="span3">
 
                 <h2>Services List</h2>
 
@@ -190,7 +190,7 @@
 
 
 
-            </div>
+            </div>-->
         </div>
         <div class="row">
             <div class="span12">
@@ -198,7 +198,21 @@
                 <h2>services overview</h2>
 
                 <div class="row">
-                    <div class="span4">
+                    <div class="span4" data-ng-repeat="masterSpecClass in vm.masterSpecClasses">
+                        <div class="thumb3">
+                            <div class="thumbnail clearfix">
+                                <figure class="img-polaroid"><img src="theme/TractorSpecs_original/images/{{ masterSpecClass.icon }}" alt=""></figure>
+                                <div class="caption">
+                                    <h3>{{ masterSpecClass.className }}</h3>
+                                    <p data-ng-repeat="specification in vm.model.specifications | filter:{ specName: { specClassId: masterSpecClass.specClassID }}">
+                                        {{ specification.specName.displayName }}: {{ specification.specValue }}
+                                    </p>
+                                    <!--<p><a href="#" class="button2">Read More</a></p>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="span4">
                         <div class="thumb3">
                             <div class="thumbnail clearfix">
                                 <figure class="img-polaroid"><img src="images/services02.jpg" alt=""></figure>
@@ -239,7 +253,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
 
@@ -254,7 +268,7 @@
         <div class="row">
             <div class="span12">
                 <div class="shadow1_inner">
-                    <img src="images/shadow1.png" alt="" class="img">
+                    <img src="theme/EcoAgriculture/images/shadow1.png" alt="" class="img">
                 </div>
             </div>
         </div>

@@ -58,6 +58,8 @@ namespace TractorSpecs
 
             builder.EntitySet<specification>("specifications");
 
+            builder.EntitySet<specClass>("specClasses");
+
             // http://stackoverflow.com/questions/36344979/odata-include-custom-properties-added-to-entity-framework-models-via-partial-c
             // http://stackoverflow.com/questions/27277306/odata-read-only-property
             //builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("model"))

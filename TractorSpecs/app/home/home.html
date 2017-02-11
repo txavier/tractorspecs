@@ -283,12 +283,12 @@
                         <div class="txt1">Just<br>Updated</div>
                         <div class="">
                             <ul class="clearfix" style="list-style: none;columns: 2;-webkit-columns: 2;-moz-columns: 2;">
-                                <li data-ng-repeat="model in vm.models">
-                                    <div class="testimonial1">
-                                        <div>
-                                            {{ model.modelNumber }}
+                                <li data-ng-repeat="model in vm.models" data-ng-click="vm.modelClick(model)">
+                                        <div class="testimonial1">
+                                            <div>
+                                                {{ model.modelNumber }}
+                                            </div>
                                         </div>
-                                    </div>
                                 </li>
                             </ul>
                         </div>
