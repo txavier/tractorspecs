@@ -13,3 +13,5 @@ where modelUrl = 'L210'
 order by sp
 
 select * from equipmentClass
+
+select * from specClass

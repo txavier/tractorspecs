@@ -17,7 +17,7 @@
                 controller: 'EquipmentClassesController',
                 controllerAs: 'vm'
             })
-            .when('/equipment-class/:className', {
+            .when('/equipment-class/:classURL', {
                 templateUrl: 'app/equipment-class/equipment-class.html',
                 controller: 'EquipmentClassController',
                 controllerAs: 'vm'

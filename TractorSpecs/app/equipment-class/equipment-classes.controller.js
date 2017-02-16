@@ -25,8 +25,8 @@
             searchEquipmentClasses(equipmentClassesSearchCriteria);
         }
 
-        function equipmentClassClick(classUrl) {
-            $location.path(`equipment-class/${classUrl}`);
+        function equipmentClassClick(classURL) {
+            $location.path(`equipment-class/${classURL}`);
         }
 
         function searchEquipmentClasses(equipmentClassesSearchCriteria) {

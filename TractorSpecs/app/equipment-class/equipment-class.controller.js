@@ -10,57 +10,40 @@
     function EquipmentClassController($scope, $routeParams, $location, dataService) {
         var vm = this;
 
-        vm.make = {};
-        vm.models = [];
-        vm.modelsCount = 0;
-        vm.specificationsCount = 0;
-        vm.mfgURL = '';
+        vm.makes = [];
+        vm.classURL = '';
         vm.modelClick = modelClick;
+        vm.makeClick = makeClick;
 
         activate();
 
         function activate() {
 
-            vm.mfgURL = $routeParams.mfgURL;
+            vm.classURL = $routeParams.classURL;
 
-            var makeSearchCriteria = {
-                $filter: 'mfgURL eq \'' + vm.mfgURL + '\'',
-                $select: 'makeId, mfgDesc, mfgLogoImg'
+            var makesClassSearchCriteria = {
+                $expand: `models($select=modelNumber)`,
+                $orderby: 'mfgName',
+                $select: 'mfgLogoImg,mfgName,mfgURL',
+                $filter: `models/any(d:d/equipmentClass/classURL eq '${vm.classURL}')`
             };
 
-            getMake(makeSearchCriteria).then(function (data) {
-                var modelSearchCriteria = {
-                    currentPage: 1,
-                    itemsPerPage: 99999,
-                    orderBy: 'modelNumber',
-                    search: null,
-                    searchFields: null,
-                    expand: null,
-                    q: 'makeId eq ' + vm.make.makeId,
-                    fields: 'modelNumber, modelUrl'
-                };
-
-                getModels(modelSearchCriteria);
-            });
+            getMakes(makesClassSearchCriteria);
         }
 
-        function modelClick(modelUrl) {
-            $location.path(`make/${vm.mfgURL}/model/${modelUrl}`);
+        function makeClick(mfgURL) {
+            $location.path(`make/${mfgURL}`);
         }
 
-        function getMake(makeSearchCriteria) {
-            return dataService.searchEntities('makes', makeSearchCriteria).then(function (data) {
-                vm.make = data[0];
-
-                return vm.make;
-            });
+        function modelClick(mfgURL, modelUrl) {
+            $location.path(`make/${mfgURL}/model/${modelUrl}`);
         }
 
-        function getModels(modelSearchCriteria) {
-            return dataService.searchEntities('models', modelSearchCriteria).then(function (data) {
-                vm.models = data;
+        function getMakes(makesClassSearchCriteria) {
+            return dataService.searchEntities('makes', makesClassSearchCriteria).then(function (data) {
+                vm.makes = data;
 
-                return vm.models;
+                return vm.makes;
             });
         }
 

@@ -179,6 +179,9 @@
                                         <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
                                     </div>
                                 </a>
+                                <a href="" data-ng-click="vm.modelClick(make.mfgURL, model.modelUrl)" data-ng-repeat="model in make.models | limitTo:10">
+                                    {{ model.modelNumber }}
+                                </a>
                             </div>
                         </div>
                     </div>
