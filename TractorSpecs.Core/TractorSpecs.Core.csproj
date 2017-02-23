@@ -119,6 +119,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IEfQueryModelWithEmptySpecificationsByModelId.cs" />
     <Compile Include="Interfaces\ISettingService.cs" />
     <Compile Include="Models\APIkey.cs" />
     <Compile Include="Models\APIspecReqCounter.cs" />

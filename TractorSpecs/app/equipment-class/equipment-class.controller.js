@@ -22,7 +22,7 @@
             vm.classURL = $routeParams.classURL;
 
             var makesClassSearchCriteria = {
-                $expand: `models($select=modelNumber)`,
+                $expand: `models($select=modelNumber,modelUrl)`,
                 $orderby: 'mfgName',
                 $select: 'mfgLogoImg,mfgName,mfgURL',
                 $filter: `models/any(d:d/equipmentClass/classURL eq '${vm.classURL}')`

@@ -296,6 +296,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EquipmentClassesController.cs" />
+    <Compile Include="Controllers\specNamesController.cs" />
     <Compile Include="Controllers\specClassesController.cs" />
     <Compile Include="Controllers\specificationsController.cs" />
     <Compile Include="Controllers\makesController.cs" />
@@ -330,6 +331,8 @@
     <Content Include="app\layout\layout.controller.js" />
     <Content Include="app\make\makes.html" />
     <Content Include="app\make\makes.controller.js" />
+    <Content Include="app\model\update-model.html" />
+    <Content Include="app\model\update-model.controller.js" />
     <Content Include="app\model\model.controller.js" />
     <Content Include="app\model\model.html" />
     <Content Include="app\make\make.controller.js" />

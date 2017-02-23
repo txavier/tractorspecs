@@ -27,6 +27,11 @@
                 controller: 'MakesController',
                 controllerAs: 'vm'
             })
+            .when('/update-model/:modelId', {
+                templateUrl: 'app/model/update-model.html',
+                controller: 'UpdateModelController',
+                controllerAs: 'vm'
+            })
             .when('/make/:mfgURL/model/:modelUrl', {
                 templateUrl: 'app/model/model.html',
                 controller: 'ModelController',

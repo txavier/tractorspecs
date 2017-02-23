@@ -5,9 +5,9 @@
         .module('app')
         .controller('ModelController', ModelController);
 
-    ModelController.$inject = ['$scope', '$routeParams', '$filter', '$q', 'dataService'];
+    ModelController.$inject = ['$scope', '$routeParams', '$filter', '$q', '$location', 'dataService'];
 
-    function ModelController($scope, $routeParams, $filter, $q, dataService) {
+    function ModelController($scope, $routeParams, $filter, $q, $location, dataService) {
         var vm = this;
 
         vm.model = {};
@@ -15,6 +15,7 @@
         vm.specClasses = [];
         vm.getSpecClass = getSpecClass;
         vm.masterSpecClasses = [];
+        vm.editClick = editClick;
 
         activate();
 
@@ -41,6 +42,10 @@
             promises.push(promise2);
 
             $q.all(promises).then(fillSpecClasses);
+        }
+
+        function editClick(modelId) {
+            $location.path(`/update-model/${modelId}`);
         }
 
         function fillSpecClasses() {

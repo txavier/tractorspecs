@@ -15,3 +15,9 @@ order by sp
 select * from equipmentClass
 
 select * from specClass
+
+--All class information for a specification
+select * from specClass
+join specName 
+on specClass.specClassID = specName.specClassId
+where specClass.specClassID = 14

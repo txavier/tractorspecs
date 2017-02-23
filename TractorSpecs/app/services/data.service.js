@@ -8,6 +8,7 @@
     dataService.$inject = ['$http', '$log', '$q', 'toaster', 'errorService'];
 
     // Version 1.0.1
+    // http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html
     function dataService($http, $log, $q, toaster, errorService) {
         var apiUrl = 'api/';
 
