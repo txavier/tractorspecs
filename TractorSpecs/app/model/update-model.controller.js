@@ -17,6 +17,7 @@
         vm.masterSpecClasses = [];
         vm.selectedSpecClass = {};
         vm.specifications = [];
+        vm.specNames = [];
 
         activate();
 
@@ -24,12 +25,14 @@
 
             vm.modelId = $routeParams.modelId;
 
-            var modelSearchCriteria = {
-                $filter: 'modelId eq ' + vm.modelId,
-                $expand: 'make($select=mfgLogoImg,mfgName),specifications($expand=specName)'
-            };
+            //var modelSearchCriteria = {
+            //    $filter: 'modelId eq ' + vm.modelId,
+            //    $expand: 'make($select=mfgLogoImg,mfgName),specifications($expand=specName)'
+            //};
 
-            var promise1 = searchModels(modelSearchCriteria);
+            //var promise1 = searchModels(modelSearchCriteria);
+
+            var promise1 = getSpecificationsWithEmptySpecificationsByModelId(vm.modelId);
 
             var promises = [];
             
@@ -42,38 +45,30 @@
             
             promises.push(promise2);
 
-            $q.all(promises).then(fillSpecClasses).then(addNewSpecClasses);
+            var promise3 = searchSpecNames();
+
+            promises.push(promise3);
+
+            $q.all(promises).then(function (data) {
+                fillSpecNames();
+
+                fillSpecClasses();
+            });
         }
 
-        function addNewSpecClasses() {
-            for (var i = 0; i < vm.masterSpecClasses.length; i++) {
-                // Get spec classes from the model for each master spec class.
-                var specClassResultArray = $filter('filter')(vm.masterSpecClasses, { specClassID: vm.model.specifications[i].specName.specClassId }, true);
+        function getSpecificationsWithEmptySpecificationsByModelId(modelId) {
+            return dataService.getSpecificationsWithEmptySpecificationsByModelId(modelId).then(function (data) {
+                vm.model.specifications = data.value;
 
-                var foundSpecifications = $filter('filter')(vm.model.specifications, { specClassId: vm.masterSpecClasses[i] }, true);
+                return vm.model;
+            });
+        }
 
-                // Get all spec names for this spec class
-                var specNamesSearchCriteria = { $filter: `specClassId eq ${vm.masterSpecClasses[i].specClassID}` };
+        function fillSpecNames() {
+            for (var i = 0; i < vm.model.specifications.length; i++) {
+                var specNameResultArray = $filter('filter')(vm.specNames, { specNameId: vm.model.specifications[i].specNameId }, true);
 
-                searchSpecNames(specNamesSearchCriteria).then(function (data) {
-                    var foundSpecNames = data;
-
-                    for (var j = 0; j < foundSpecNames; j++) {
-                        var modelSpecNames = $filter('filter')(vm.model.specifications, { specNameId: foundSpecNames[0].specNameId }, true);
-
-                        // If that specName is not found in the models specifications then add a new empty
-                        // specification to the models specifications array.
-                        if (modelSpecNames.length === 0) {
-                            var newSpecification = {
-                                modelId: vm.model.modelId,
-                                specNameId: foundSpecNames[0].specNameId
-                            };
-
-                            // Add empty specifications for spec classes.
-                            vm.model.specifications.push(newSpecification);
-                        }
-                    }
-                });
+                vm.model.specifications[i].specName = specNameResultArray.length > 0 ? specNameResultArray[0] : null;
             }
         }
 
@@ -95,6 +90,14 @@
             return result;
         }
 
+        function searchSpecNames(specNameSearchCriteria) {
+            return dataService.searchEntities('specNames', specNameSearchCriteria).then(function (data) {
+                vm.specNames = data;
+
+                return vm.specNames;
+            });
+        }
+
         function searchSpecClasses(specClassSearchCriteria) {
             return dataService.searchEntities('specClasses', specClassSearchCriteria).then(function (data) {
                 vm.specClasses = data;
@@ -103,13 +106,13 @@
             });
         }
 
-        function searchSpecClasses(specNamesSearchCriteria) {
-            return dataService.searchEntities('specNames', specNamesSearchCriteria).then(function (data) {
-                vm.specNames = data;
+        //function searchSpecClasses(specNamesSearchCriteria) {
+        //    return dataService.searchEntities('specNames', specNamesSearchCriteria).then(function (data) {
+        //        vm.specNames = data;
 
-                return vm.specNames;
-            });
-        }
+        //        return vm.specNames;
+        //    });
+        //}
 
         function searchModels(modelSearchCriteria) {
             return dataService.searchEntities('models', modelSearchCriteria).then(function (data) {

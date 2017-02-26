@@ -43,6 +43,19 @@ namespace TractorSpecs
 
             builder.EntitySet<model>("models");
 
+            builder.EntityType<specification>().Collection
+                .Function("GetModelWithEmptySpecificationsByModelId")
+                .Returns<IEnumerable<specification>>()
+                .Namespace = "specificationsService";
+
+            //builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("specification"))
+            //    .AddProperty((typeof(specName)).GetProperty("specName"));
+
+            //var function = builder.EntityType<model>().Function("GetModelWithEmptySpecificationsByModelId");
+            //function.ReturnsFromEntitySet<model>("models");
+            //function.Parameter<int>("modelId");
+            //function.Namespace = "modelsService";
+
             builder.EntitySet<equipmentClass>("equipmentClass");
 
             builder.EntitySet<make>("makes");

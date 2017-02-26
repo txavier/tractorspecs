@@ -149,6 +149,8 @@
     <Compile Include="Models\setting.cs" />
     <Compile Include="Objects\EventType.cs" />
     <Compile Include="Objects\makesWithModelCount.cs" />
+    <Compile Include="Interfaces\IModelService.cs" />
+    <Compile Include="Services\ModelService.cs" />
     <Compile Include="Services\SettingService.cs" />
     <Compile Include="Interfaces\IEnvironmentConfigSettingsGetter.cs" />
     <Compile Include="Interfaces\ITrackerEnabledService.cs" />

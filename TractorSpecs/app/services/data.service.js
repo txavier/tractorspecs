@@ -38,10 +38,26 @@
             // Application specific methods.
             getGeoClientInformation: getGeoClientInformation,
             getVersion: getVersion,
-            getMakesWithModelsCount: getMakesWithModelsCount
+            getMakesWithModelsCount: getMakesWithModelsCount,
+            getSpecificationsWithEmptySpecificationsByModelId: getSpecificationsWithEmptySpecificationsByModelId
         };
 
         return service;
+
+        function getSpecificationsWithEmptySpecificationsByModelId(modelId) {
+            return $http.get(odataUrl + 'specifications/specificationsService.GetModelWithEmptySpecificationsByModelId?modelId=' + modelId)
+                        .then(getSpecificationsWithEmptySpecificationsByModelIdCompleted, getSpecificationsWithEmptySpecificationsByModelIdFailed);
+
+            function getSpecificationsWithEmptySpecificationsByModelIdCompleted(response) {
+                return response.data;
+            }
+
+            function getSpecificationsWithEmptySpecificationsByModelIdFailed(error) {
+                errorService.handleError(error);
+
+                return $q.reject(error);
+            }
+        }
 
         function getMakesWithModelsCount(top) {
             return $http.get(odataUrl + 'makes/makesService.GetMakesWithModelsCount?top=' + top)
@@ -238,7 +254,9 @@
         // Replace all $values with ''.
         // OData SearchEntities.
         function searchEntities(entityDataStore, searchCriteria, cache) {
-            //return $http.get('api/users');
+            if (!searchCriteria) {
+                searchCriteria = {};
+            }
 
             return $http.get(odataUrl + entityDataStore, {
                 params:
