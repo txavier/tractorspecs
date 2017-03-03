@@ -38,8 +38,7 @@
             
             promises.push(promise1);
 
-            var specClassSearchCriteria = {
-            }
+            var specClassSearchCriteria = {}
 
             var promise2 = searchSpecClasses(specClassSearchCriteria);
             
@@ -53,6 +52,8 @@
                 fillSpecNames();
 
                 fillSpecClasses();
+
+                vm.selectedSpecClass = vm.specClasses[0];
             });
         }
 

@@ -5,9 +5,9 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', '$location', '$routeParams', 'dataService'];
+    HomeController.$inject = ['$scope', '$location', '$routeParams', '$window', 'dataService'];
 
-    function HomeController($scope, $location, $routeParams, dataService) {
+    function HomeController($scope, $location, $routeParams, $window, dataService) {
         var vm = this;
 
         vm.makes = [];
@@ -16,6 +16,7 @@
         vm.specificationsCount = 0;
         vm.makeClick = makeClick;
         vm.modelClick = modelClick;
+        vm.linkClick = linkClick;
 
         activate();
 
@@ -48,7 +49,11 @@
         }
 
         function modelClick(model) {
-            $location.path(`make/${model.make.mfgURL}/model/${model.modelUrl}`);
+            $location.path(`/make/${model.make.mfgURL}/model/${model.modelUrl}`);
+        }
+
+        function linkClick(url) {
+            $window.location.href = url;
         }
 
         function makeClick(mfgURL) {

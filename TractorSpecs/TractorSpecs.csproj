@@ -337,6 +337,8 @@
     <Content Include="app\model\model.html" />
     <Content Include="app\make\make.controller.js" />
     <Content Include="app\make\make.html" />
+    <Content Include="app\about\about.controller.js" />
+    <Content Include="app\about\about.html" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />

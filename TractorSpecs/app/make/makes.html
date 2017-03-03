@@ -169,32 +169,36 @@
                 <h2>Brands</h2>
 
                 <div class="row">
-                    <div class="span4" data-ng-repeat="make in vm.makes">
-                        <div class="thumb2">
-                            <div class="thumbnail clearfix">
-                                <a href="" data-ng-click="vm.makeClick(make.mfgURL)">
-                                    <!--<figure><img src="theme/TractorSpecs_Original/images/{{ make.mfgLogoImg }}" alt=""></figure>-->
-                                    <div class="caption">
-                                        <div class="txt1">{{ make.mfgName }} ({{ make.models.length }})</div>
-                                        <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
+                    <div class="makesColumns">
+                        <div class="span4" >
+                            <div data-ng-repeat="make in vm.makes">
+                                <div class="thumb2">
+                                    <div class="thumbnail clearfix">
+                                        <a href="" data-ng-click="vm.makeClick(make.mfgURL)">
+                                            <!--<figure><img src="theme/TractorSpecs_Original/images/{{ make.mfgLogoImg }}" alt=""></figure>-->
+                                            <div class="caption">
+                                                <div class="txt1">{{ make.mfgName }} ({{ make.models.length }})</div>
+                                                <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
+                        <!--<div class="span4 offset1">
+            <div class="thumb2">
+                <div class="thumbnail clearfix">
+                    <a href="#">
+                        <figure><img src="theme/EcoAgriculture/images/about03.png" alt=""></figure>
+                        <div class="caption">
+                            <div class="txt1">OUR TECHNOLOGIES</div>
+                            <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>-->
                     </div>
-                    <!--<div class="span4 offset1">
-                        <div class="thumb2">
-                            <div class="thumbnail clearfix">
-                                <a href="#">
-                                    <figure><img src="theme/EcoAgriculture/images/about03.png" alt=""></figure>
-                                    <div class="caption">
-                                        <div class="txt1">OUR TECHNOLOGIES</div>
-                                        <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>-->
                 </div>
 
                 <!--<div class="row">
@@ -260,32 +264,28 @@
             </div>
             <div class="span3">
 
-                <h2>RESEARCH &amp; DEVELOPMENT</h2>
+                <h2>What is TractorSpecs.com?</h2>
 
                 <p>
-                    Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec.
+                    Our website is a collection of information about farm and construction equipment. Primarily tractors, but we encompass a bit of everything. Our goal is to collect specification data, pictures, prices and any documents for each machine.
                 </p>
-                <p><a href="#" class="button2">Read More</a></p>
+                <p><a href="#/about" class="button2">Read More</a></p>
                 <br>
 
-                <h2>SEED LABORATORY</h2>
+                <h2>Where does the information come from?</h2>
 
                 <p>
-                    Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec.
+                    Nothing you find on our website is unique, we're simply an agragation of owner reports, manuals, print, and product bochures. Some of what you'll find here has been collected by our staff, other data has been submited by equipment owners and enthusists. We do not promise 100% accuracy, however we do our best.
                 </p>
-                <p><a href="#" class="button2">Read More</a></p>
+                <p><a href="#/about" class="button2">Read More</a></p>
                 <br>
 
-                <h2>SEED PLANTS</h2>
+                <h2>Can we use your data?</h2>
 
                 <p>
-                    Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec.
+                    We offer an web service for used equipment websites and dealers wishing to utilize our database to enhance their equipment listings. Contact us for details on this service.
                 </p>
-                <p><a href="#" class="button2">Read More</a></p>
-
-
-
-
+                <p><a href="#/about" class="button2">Read More</a></p>
 
             </div>
         </div>
