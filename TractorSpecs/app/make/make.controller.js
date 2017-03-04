@@ -25,7 +25,7 @@
 
             var makeSearchCriteria = {
                 $filter: 'mfgURL eq \'' + vm.mfgURL + '\'',
-                $select: 'makeId, mfgDesc, mfgLogoImg'
+                $select: 'makeId, mfgDesc, mfgLogoImg, mfgName'
             };
 
             getMake(makeSearchCriteria).then(function (data) {

@@ -234,7 +234,7 @@
                         <div class="txt2">Messicks Equipment, one of our site sponsors, has added several parts catalogs to their forward thinking website. Some of these are brand new and are availabile only at Messicks.</div>
                         <ul class="clearfix" style="list-style: none;columns: 3;-webkit-columns: 3;-moz-columns: 3;">
                             <li data-ng-click="vm.linkClick('http://www.messicks.com/vendor/landpride')">
-                               Land Pride Parts
+                                Land Pride Parts
                             </li>
                             <li data-ng-click="vm.linkClick('http://www.messicks.com/vendor/befco')">
                                 Befco Parts
@@ -263,7 +263,23 @@
                 <div class="banner_inner">
                     <a href="#">
                         <div class="txt1">NH Build<br>& Price</div>
-                        <div class="txt2">New Holland has partnered with Iron Solutions for a new build and price tool available on NewHolland.com. Select your model and options for a quick list price or forward the quote to the dealer network for a discounted sale price.</div>
+                        <div class="txt2">
+                            New Holland has partnered with Iron Solutions for a new build and price tool available on NewHolland.com. Select your model and options for a quick list price or forward the quote to the dealer network for a discounted sale price.
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
                         <div class="txt3">more<em></em></div>
                     </a>
                 </div>
@@ -284,11 +300,11 @@
                         <div class="">
                             <ul class="clearfix" style="list-style: none;columns: 2;-webkit-columns: 2;-moz-columns: 2;">
                                 <li data-ng-repeat="model in vm.models" data-ng-click="vm.modelClick(model)">
-                                        <div class="testimonial1">
-                                            <div>
-                                                {{ model.modelNumber }}
-                                            </div>
+                                    <div class="testimonial1">
+                                        <div>
+                                            {{ model.modelNumber }}
                                         </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -305,7 +321,7 @@
 <div id="content">
     <div class="container">
         <div class="row">
-            <div class="span8">
+            <div class="span9">
 
                 <h1>Welcome to Tractor Specs</h1>
 
@@ -330,7 +346,8 @@
 
 
             </div>
-            <div class="span4">
+
+            <div class="span3">
 
                 <div class="box1">
                     <div class="caroufredsel_slider">
@@ -338,13 +355,415 @@
                         <a class="prev_testimonial" href="#"></a>
                         <a class="next_testimonial" href="#"></a>
                         <ul class="clearfix">
-                            <li data-ng-repeat="make in vm.makes | orderBy : '-models.length'">
+                            <li data-ng-repeat="make in vm.makes | orderBy : '-models.length' | limitTo:7">
                                 <div class="testimonial1">
                                     <a href="" data-ng-click="vm.makeClick(make.mfgURL)">
                                         <div class="txt2">{{ make.mfgName }}<span> ({{ make.models.length }})</span></div>
                                     </a>
                                 </div>
                             </li>
+                        </ul>
+                        <!--<ul id="caroufredsel" class="clearfix">
+                    <li>
+                        <div class="testimonial1">
+                            <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                            <div class="txt2">- Mike Smith, <span>CEO Company</span></div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="testimonial1">
+                            <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                            <div class="txt2">- Olga Guz, <span>CEO Company</span></div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="testimonial1">
+                            <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                            <div class="txt2">- Ann Parker, <span>CEO Company</span></div>
+                        </div>
+
+                    </li>
+                </ul>-->
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <div class="container">
+        <div class="row">
+
+            <div class="span3">
+
+                <div class="box1">
+                    <div class="caroufredsel_slider">
+                        <div class="txt1">Tractors</div>
+                        <a class="prev_testimonial" href="#"></a>
+                        <a class="next_testimonial" href="#"></a>
+                        <ul class="clearfix">
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Farm Tractors</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Lawn Tractors</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Industrial Tractors</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Tracked Tractors</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Vintage Tractors</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Compact Tractors</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Combines</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Forage Harvesters</div>
+                                    </a>
+                                </div>
+                            </li>
+                           &nbsp;
+
+                        </ul>
+                        <!--<ul id="caroufredsel" class="clearfix">
+                            <li>
+                                <div class="testimonial1">
+                                    <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                                    <div class="txt2">- Mike Smith, <span>CEO Company</span></div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                                    <div class="txt2">- Olga Guz, <span>CEO Company</span></div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                                    <div class="txt2">- Ann Parker, <span>CEO Company</span></div>
+                                </div>
+
+                            </li>
+                        </ul>-->
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="span3">
+
+                <div class="box1">
+                    <div class="caroufredsel_slider">
+                        <div class="txt1">Implements</div>
+                        <a class="prev_testimonial" href="#"></a>
+                        <a class="next_testimonial" href="#"></a>
+                        <ul class="clearfix">
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Round Baler</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Square Baler</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Large Square Baler</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Disc Mowers</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Mower Conditions</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Hay Rakes</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Sickle Bars</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Hay Tedders</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Forage Blowers</div>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <!--<ul id="caroufredsel" class="clearfix">
+                            <li>
+                                <div class="testimonial1">
+                                    <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                                    <div class="txt2">- Mike Smith, <span>CEO Company</span></div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                                    <div class="txt2">- Olga Guz, <span>CEO Company</span></div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                                    <div class="txt2">- Ann Parker, <span>CEO Company</span></div>
+                                </div>
+
+                            </li>
+                        </ul>-->
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="span3">
+
+                <div class="box1">
+                    <div class="caroufredsel_slider">
+                        <div class="txt1">Lawn</div>
+                        <a class="prev_testimonial" href="#"></a>
+                        <a class="next_testimonial" href="#"></a>
+                        <ul class="clearfix">
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Lawn Tractors</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Garden Tractors</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Snow Blowers</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Utility Vehicles</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">ATV's</div>
+                                    </a>
+                                </div>
+                            </li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                        </ul>
+                        <!--<ul id="caroufredsel" class="clearfix">
+                            <li>
+                                <div class="testimonial1">
+                                    <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                                    <div class="txt2">- Mike Smith, <span>CEO Company</span></div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                                    <div class="txt2">- Olga Guz, <span>CEO Company</span></div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <div class="txt1">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                                    <div class="txt2">- Ann Parker, <span>CEO Company</span></div>
+                                </div>
+
+                            </li>
+                        </ul>-->
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="span3">
+
+                <div class="box1">
+                    <div class="caroufredsel_slider">
+                        <div class="txt1">Construction</div>
+                        <a class="prev_testimonial" href="#"></a>
+                        <a class="next_testimonial" href="#"></a>
+                        <ul class="clearfix">
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Skid Loaders</div>
+                                    </a>
+                                </div>
+                            </li>                           
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Track Loaders</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Backhoes</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Wheel Loaders</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Telehandlers</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Mini Excavators</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="testimonial1">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders'')">
+                                        <div class="txt2">Crawler</div>
+                                    </a>
+                                </div>
+                            </li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                         </ul>
                         <!--<ul id="caroufredsel" class="clearfix">
                             <li>
