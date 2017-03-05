@@ -11,10 +11,12 @@
         // Configure the security token bearer interceptor.
         $httpProvider.interceptors.push('authInterceptorService');
 
+        $locationProvider.html5Mode(true);
+
         $routeProvider
             .when('/about', {
                 templateUrl: 'app/about/about.html',
-                controller: 'AboutClassesController',
+                controller: 'AboutController',
                 controllerAs: 'vm'
             })
             .when('/equipment-classes', {

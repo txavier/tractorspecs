@@ -3,3 +3,6 @@
 
  - Using Bower
 	- http://stackoverflow.com/questions/31872622/using-grunt-bower-gulp-npm-with-visual-studio-2015-for-a-asp-net-4-5-project
+
+ - Angular HTML5 mode with PushState
+	- http://www.codelord.net/2015/05/12/angularjs-how-to-setup-pushstate-with-html5mode/
