@@ -14,6 +14,11 @@
         $locationProvider.html5Mode(true);
 
         $routeProvider
+            .when('/contact-us', {
+                templateUrl: 'app/contact-us/contact-us.html',
+                controller: 'ContactUsController',
+                controllerAs: 'vm'
+            })
             .when('/about', {
                 templateUrl: 'app/about/about.html',
                 controller: 'AboutController',

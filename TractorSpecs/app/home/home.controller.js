@@ -17,6 +17,7 @@
         vm.makeClick = makeClick;
         vm.modelClick = modelClick;
         vm.linkClick = linkClick;
+        vm.equipmentClassClick = equipmentClassClick;
 
         activate();
 
@@ -46,6 +47,10 @@
             getModelsCount(modelSearchCriteria);
 
             getSpecificationsCount();
+        }
+
+        function equipmentClassClick(equipmentClassUrl) {
+            $location.path('/equipment-class/' + equipmentClassUrl);
         }
 
         function modelClick(model) {

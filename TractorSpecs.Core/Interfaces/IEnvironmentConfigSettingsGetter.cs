@@ -2,6 +2,6 @@
 {
     public interface IEnvironmentConfigSettingsGetter
     {
-        string GetDocumentManagementSystemFolderName();
+        string GetValueByKey(string key);
     }
 }

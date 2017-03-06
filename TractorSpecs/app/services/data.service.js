@@ -39,10 +39,25 @@
             getGeoClientInformation: getGeoClientInformation,
             getVersion: getVersion,
             getMakesWithModelsCount: getMakesWithModelsCount,
-            getSpecificationsWithEmptySpecificationsByModelId: getSpecificationsWithEmptySpecificationsByModelId
+            getSpecificationsWithEmptySpecificationsByModelId: getSpecificationsWithEmptySpecificationsByModelId,
+            sendMessage: sendMessage
         };
 
         return service;
+
+        function sendMessage(emailInformation) {
+            return $http.post(apiUrl + 'email/sendMessage', emailInformation).then(sendMessageComplete, sendMessageFailed);
+
+            function sendMessageComplete(response) {
+                return response.data;
+            }
+
+            function sendMessageFailed(error) {
+                errorService.handleError(error);
+
+                return $q.reject(error);
+            }
+        }
 
         function getSpecificationsWithEmptySpecificationsByModelId(modelId) {
             return $http.get(odataUrl + 'specifications/specificationsService.GetModelWithEmptySpecificationsByModelId?modelId=' + modelId)

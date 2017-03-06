@@ -1,0 +1,90 @@
+﻿<div id="content">
+    <div class="breadcrumbs1">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="breadcrumbs1_inner"><a href="/home">home page</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;contact us</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+
+                <h2>contact form</h2>
+
+                <div id="note"></div>
+                <div id="fields">
+                    <form id="ajax-contact-form" class="form-horizontal" action="javascript:alert('success!');">
+                        <div class="row">
+                            <div class="span4">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputName">Your full name:</label>
+                                    <div class="controls">
+                                        <input class="span4" type="text" id="inputName" name="name" value="Your full name:" 
+                                               onblur="if(this.value=='') this.value='Your full name:'" 
+                                               onfocus="if(this.value =='Your full name:' ) this.value=''"
+                                               data-ng-model="vm.emailInformation.fullName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Your email:</label>
+                                    <div class="controls">
+                                        <input class="span4" type="text" id="inputEmail" name="email" value="Your email:" 
+                                               onblur="if(this.value=='') this.value='Your email:'" 
+                                               onfocus="if(this.value =='Your email:' ) this.value=''"
+                                               data-ng-model="vm.emailInformation.email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputPhone">Phone number:</label>
+                                    <div class="controls">
+                                        <input class="span4" type="text" id="inputPhone" name="phone" value="Phone number:" 
+                                               onblur="if(this.value=='') this.value='Phone number:'" 
+                                               onfocus="if(this.value =='Phone number:' ) this.value=''"
+                                               data-ng-model="vm.emailInformation.phoneNumber">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span12">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputMessage">Message:</label>
+                                    <div class="controls">
+                                        <textarea class="span12" id="inputMessage" name="content" 
+                                                  onblur="if(this.value=='') this.value='Message:'" 
+                                                  onfocus="if(this.value =='Message:' ) this.value=''"
+                                                  data-ng-model="vm.emailInformation.message">
+                                        Message:
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit" data-ng-click="vm.sendMessage(vm.emailInformation)">Submit</button>
+                    </form>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="shadow1">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="shadow1_inner">
+                    <img src="theme/EcoAgriculture/images/shadow1.png" alt="" class="img">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

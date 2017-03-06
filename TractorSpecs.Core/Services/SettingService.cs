@@ -13,12 +13,24 @@ namespace TractorSpecs.Core.Services
 {
     public class SettingService : Service<setting>, ISettingService
     {
+        private IEnvironmentConfigSettingsGetter _environmentConfigSettingsGetter;
         private readonly IRepository<setting> _settingRepository;
 
-        public SettingService(IRepository<setting> settingRepository)
+        public SettingService(IRepository<setting> settingRepository, IEnvironmentConfigSettingsGetter environmentConfigSettingsGetter)
             : base(settingRepository)
         {
             _settingRepository = settingRepository;
+
+            _environmentConfigSettingsGetter = environmentConfigSettingsGetter;
+        }
+
+        public setting GetEnvironmentSettingBySettingKey(string settingKey)
+        {
+            var result = _environmentConfigSettingsGetter.GetValueByKey(settingKey);
+
+            var newSetting = new setting { settingKey = settingKey, settingValue = result };
+
+            return newSetting;
         }
 
         public setting GetSettingBySettingKey(string settingKey)

@@ -10,9 +10,9 @@ namespace TractorSpecs.Infrastructure.Getters
 {
     public class EnvironmentConfigSettingsGetter : IEnvironmentConfigSettingsGetter
     {
-        public string GetDocumentManagementSystemFolderName()
+        public string GetValueByKey(string key)
         {
-            string result = ConfigurationManager.AppSettings.Get("DocumentManagementServiceFolderName");
+            string result = ConfigurationManager.AppSettings.Get(key);
 
             return result;
         }

@@ -74,7 +74,8 @@ namespace TractorSpecs
                       "~/app/equipment-class/equipment-class.controller.js",
                       "~/app/equipment-class/equipment-classes.controller.js",
                       "~/app/model/update-model.controller.js",
-                      "~/app/about/about.controller.js"
+                      "~/app/about/about.controller.js",
+                      "~/app/contact-us/contact-us.controller.js"
                       ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

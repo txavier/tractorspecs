@@ -147,6 +147,7 @@
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\Partials\user.cs" />
     <Compile Include="Models\setting.cs" />
+    <Compile Include="Objects\EmailInformation.cs" />
     <Compile Include="Objects\EventType.cs" />
     <Compile Include="Objects\makesWithModelCount.cs" />
     <Compile Include="Interfaces\IModelService.cs" />
