@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bio Products</title>
+    <title>TractorSpecs</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Your description">
@@ -242,9 +242,10 @@
                                 </ul>
                             </div>
                             <div class="search-form-wrapper">
-                                <form id="search-form" action="search.php" method="GET" accept-charset="utf-8" class="navbar-form">
-                                    <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
-                                    <a href="#" onClick="document.getElementById('search-form').submit()"></a>
+                                <form id="search-form" ng-submit="vm.searchSubmit(vm.searchTerm)" class="navbar-form">
+                                    <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''"
+                                           data-ng-model="vm.searchTerm">
+                                    <a href="/search/{{ vm.searchTerm }}"></a>
                                 </form>
                             </div>
                         </div>
@@ -257,7 +258,7 @@
                 <div class="row">
                     <div class="span12">
                         <div class="bot2_inner clearfix">
-                            <footer><div class="copyright">Copyright  © 2013. All rights reserved. &nbsp; <a href="#">Privacy policy</a></div></footer>
+                            <footer><div class="copyright">Copyright  © 2017. TractorSpecs.com, All Rights Reserved. &nbsp; @*<a href="#">Privacy policy</a>*@</div></footer>
                             <div class="follow1 clearfix">
                                 <div class="follow1_inner clearfix">
                                     <div class="block1">follow us and become our fan on</div>

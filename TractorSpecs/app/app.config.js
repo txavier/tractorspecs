@@ -14,6 +14,16 @@
         $locationProvider.html5Mode(true);
 
         $routeProvider
+            .when('/search/:searchTerm', {
+                templateUrl: 'app/search/search.html',
+                controller: 'SearchController',
+                controllerAs: 'vm'
+            })
+            .when('/search', {
+                templateUrl: 'app/search/search.html',
+                controller: 'SearchController',
+                controllerAs: 'vm'
+            })
             .when('/contact-us', {
                 templateUrl: 'app/contact-us/contact-us.html',
                 controller: 'ContactUsController',

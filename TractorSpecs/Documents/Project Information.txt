@@ -6,3 +6,4 @@
 
  - Angular HTML5 mode with PushState
 	- http://www.codelord.net/2015/05/12/angularjs-how-to-setup-pushstate-with-html5mode/
+	- https://blog.johnnyreilly.com/2015/05/a-tale-of-angular-html5mode-aspnet-mvc.html

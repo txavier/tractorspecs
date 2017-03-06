@@ -12,10 +12,16 @@
 
         vm.user = null;
         vm.equipmentTypesClick = equipmentTypesClick;
+        vm.searchTerm = '';
+        vm.searchSubmit = searchSubmit;
 
         activate();
 
         function activate() {
+        }
+
+        function searchSubmit(searchTerm) {
+            $location.path('/search/' + searchTerm);
         }
 
         function equipmentTypesClick() {
