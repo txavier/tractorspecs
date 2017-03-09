@@ -54,7 +54,7 @@
         }
 
         function modelClick(model) {
-            $location.path(`/make/${model.make.mfgURL}/model/${model.modelUrl}`);
+            $location.path('/make/' + model.make.mfgURL + '/model/' + model.modelUrl);
         }
 
         function linkClick(url) {
