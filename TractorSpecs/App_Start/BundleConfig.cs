@@ -100,7 +100,7 @@ namespace TractorSpecs
                 "~/wwwroot/lib/superfish/dist/js/superfish.js",
                 "~/wwwroot/lib/jquery.easing/js/jquery.easing.js"));
 
-            BundleTable.EnableOptimizations = false;
+            //BundleTable.EnableOptimizations = true;
         }
     }
 }

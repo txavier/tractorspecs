@@ -242,7 +242,7 @@
                                 </ul>
                             </div>
                             <div class="search-form-wrapper">
-                                <form id="search-form" ng-submit="vm.searchSubmit(vm.searchTerm)" class="navbar-form">
+                                <form ng-submit="vm.searchSubmit(vm.searchTerm)" class="navbar-form">
                                     <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''"
                                            data-ng-model="vm.searchTerm">
                                     <a href="/search/{{ vm.searchTerm }}"></a>

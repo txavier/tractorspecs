@@ -12,7 +12,7 @@
 
         vm.user = null;
         vm.equipmentTypesClick = equipmentTypesClick;
-        vm.searchTerm = '';
+        vm.searchTerm = 'Search';
         vm.searchSubmit = searchSubmit;
 
         activate();
