@@ -89,16 +89,25 @@ namespace TractorSpecs
                 "~/wwwroot/lib/respond/dest/respond.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                //"~/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
-                //"~/wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css",
-                //"~/wwwroot/lib/AngularJS-Toaster/toaster.min.css",
-                //"~/wwwroot/lib/textAngular/dist/textAngular.css",
-                //"~/wwwroot/lib/angular-carousel/dist/angular-carousel.min.css",
                 "~/Content/Site.css"));
 
+            //bundles.Add(new ScriptBundle("~/Content/theme").Include(
+            //    "~/theme/EcoAgriculture/css/bootstrap.css",
+            //    "~/theme/EcoAgriculture/css/bootstrap-responsive.css",
+            //    "~/theme/EcoAgriculture/css/style.css"
+            //    ));
+
             bundles.Add(new ScriptBundle("~/bundles/theme").Include(
-                "~/wwwroot/lib/superfish/dist/js/superfish.js",
-                "~/wwwroot/lib/jquery.easing/js/jquery.easing.js"));
+                "~/theme/EcoAgriculture/js/jquery.js",
+                "~/theme/EcoAgriculture/js/jquery.easing.1.3.js",
+                "~/theme/EcoAgriculture/js/superfish.js",
+                "~/theme/EcoAgriculture/js/jquery.spritely-0.6.1.js",
+                "~/theme/EcoAgriculture/js/jquery.ui.totop.js",
+                "~/theme/EcoAgriculture/js/jquery.caroufredsel.js",
+                "~/theme/EcoAgriculture/js/jquery.touchSwipe.min.js",
+                "~/theme/EcoAgriculture/js/script.js",
+                "~/theme/EcoAgriculture/js/bootstrap.js"
+                ));
 
             //BundleTable.EnableOptimizations = true;
         }

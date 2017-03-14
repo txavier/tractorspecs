@@ -30,28 +30,28 @@
                 $select: 'makeId, mfgDesc, mfgLogoImg, mfgName, mfgURL'
             };
 
-            getMakes(makeSearchCriteria).then(function (data) {
-                var modelSearchCriteria = {
-                    currentPage: 1,
-                    itemsPerPage: 99999,
-                    orderBy: 'modelNumber',
-                    search: null,
-                    searchFields: null,
-                    expand: null,
-                    q: 'contains(modelNumber, \'' + vm.searchTerm + '\')',
-                    fields: 'modelNumber, modelUrl'
-                };
+            getMakes(makeSearchCriteria);
 
-                getModels(modelSearchCriteria);
-            });
+            var modelSearchCriteria = {
+                currentPage: 1,
+                itemsPerPage: 99999,
+                orderBy: 'modelNumber',
+                search: null,
+                searchFields: null,
+                $expand: 'make($select=mfgURL)',
+                q: 'contains(modelNumber, \'' + vm.searchTerm + '\')',
+                $select: 'modelNumber, modelUrl'
+            };
+
+            getModels(modelSearchCriteria);
         }
 
         function makeClick(mfgURL) {
             $location.path('/mfg/' + mfgURL);
         }
 
-        function modelClick(modelUrl) {
-            $location.path('specs/' + vm.mfgURL + '/' + modelUrl);
+        function modelClick(model) {
+            $location.path('specs/' + model.make.mfgURL + '/' + model.modelUrl);
         }
 
         function getMakes(makeSearchCriteria) {

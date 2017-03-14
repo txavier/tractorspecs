@@ -68,6 +68,12 @@
                 controller: 'ModelController',
                 controllerAs: 'vm'
             })
+            .when('/mfg/:mfgURL/:classURL', {
+                title: 'Manufacturers',
+                templateUrl: 'app/make/make.html',
+                controller: 'MakeController',
+                controllerAs: 'vm'
+            })
             .when('/mfg/:mfgURL', {
                 title: 'Manufacturers',
                 templateUrl: 'app/make/make.html',
