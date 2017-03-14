@@ -45,7 +45,7 @@
         }
 
         function modelClick(modelUrl) {
-            $location.path('make/' + vm.mfgURL + '/model/' + modelUrl);
+            $location.path('specs/' + vm.mfgURL + '/' + modelUrl);
         }
 
         function getMake(makeSearchCriteria) {

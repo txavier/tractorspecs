@@ -25,7 +25,7 @@
         }
 
         function makeClick(mfgURL) {
-            $location.path('make/' + mfgURL);
+            $location.path('mfg/' + mfgURL);
         }
 
         function searchMakes(makeSearchCriteria) {

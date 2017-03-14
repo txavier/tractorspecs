@@ -50,11 +50,11 @@
         }
 
         function equipmentClassClick(equipmentClassUrl) {
-            $location.path('/equipment-class/' + equipmentClassUrl);
+            $location.path('/class/' + equipmentClassUrl);
         }
 
         function modelClick(model) {
-            $location.path('/make/' + model.make.mfgURL + '/model/' + model.modelUrl);
+            $location.path('/specs/' + model.make.mfgURL + '/' + model.modelUrl);
         }
 
         function linkClick(url) {
@@ -62,7 +62,7 @@
         }
 
         function makeClick(mfgURL) {
-            $location.path('/make/' + mfgURL);
+            $location.path('/mfg/' + mfgURL);
         }
 
         function searchMakes(makeSearchCriteria) {

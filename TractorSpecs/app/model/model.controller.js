@@ -45,7 +45,7 @@
         }
 
         function editClick(modelId) {
-            $location.path('/update-model/' + modelId);
+            $location.path('/edit/' + modelId);
         }
 
         function fillSpecClasses() {

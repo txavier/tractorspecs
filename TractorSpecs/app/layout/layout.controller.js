@@ -25,7 +25,7 @@
         }
 
         function equipmentTypesClick() {
-            $location.path('/equipment-classes');
+            $location.path('/categories');
         }
 
         function getLoggedInUser() {

@@ -11,3 +11,8 @@
 .makeColumns {
     columns: 3;
 }
+
+.search-top {
+    padding-top: 12px;
+    padding-left: 90px;
+}

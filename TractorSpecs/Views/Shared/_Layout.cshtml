@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="app" ng-strict-di>
 <head>
-    <title>TractorSpecs</title>
+    <title ng-bind="'TractorSpecs &mdash; ' + title">TractorSpecs</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Your description">
@@ -153,10 +153,10 @@
     <base href="/">
 </head>
 
-<body class="main" data-ng-app="app" ng-strict-di data-ng-controller="LayoutController as vm">
+<body class="main" data-ng-controller="LayoutController as vm">
     <div id="main">
-        <div id="clouds1"></div>
-        <div class="leaf1"><img src="theme/EcoAgriculture/images/leaf1.png" alt="" class="img"></div>
+        @*<div id="clouds1"></div>*@
+        <div class="leaf1"><img src="theme/EcoAgriculture/images/leaf1.png" alt="Leaf" class="img"></div>
         <div id="inner">
 
             <div class="top1">
@@ -164,7 +164,7 @@
                     <div class="row">
                         <div class="span12">
                             <div class="top1_inner clearfix">
-                                <header><div class="logo_wrapper"><a href="index.html" class="logo2"><img src="Images/image005.png" alt=""></a></div></header>
+                                <header><div class="logo_wrapper"><a href="/home" class="logo2" title="Tractor Specs Logo"><img src="Images/image005.png" alt="Tractor Specs Logo"></a></div></header>
                             </div>
                         </div>
                     </div>
@@ -186,13 +186,13 @@
                                             </a>
                                             <div class="nav-collapse nav-collapse_ collapse">
                                                 <ul class="nav sf-menu clearfix">
-                                                    <li><a href="/home">home page</a></li>
-                                                    <li><a href="/about">who we are</a></li>
+                                                    <li><a href="/home" title="Home">home page</a></li>
+                                                    <li><a href="/about" title="About">who we are</a></li>
                                                     <li>
-                                                        <a href="/makes">Brands</a>
+                                                        <a href="/allmakes" title="Brand Listing">Brands</a>
                                                     </li>
                                                     <li class="sub-menu sub-menu-1">
-                                                        <a href="" data-ng-click="vm.equipmentTypesClick()">Equipment Types</a>
+                                                        <a href="" data-ng-click="vm.equipmentTypesClick()" title="Equipment Types">Equipment Types</a>
                                                         @*<ul>
                                                             <li><a href="index-2.html">lorem ipsum dolor</a></li>
                                                             <li><a href="index-2.html">nunc suscipit</a></li>
@@ -200,9 +200,19 @@
                                                             <li><a href="404.html"></a></li>
                                                         </ul>*@
                                                     </li>
-                                                    <li><a target="_blank" href="http://www.nettractortalk.com/">Forums</a></li>
-                                                    <li><a href="/contact-us">contacts us</a></li>
-                                                    <!--@Html.Partial("_LoginPartial", new { @class = "button button_green" })-->
+                                                    <li><a target="_blank" href="http://www.nettractortalk.com/" title="Forums">Forums</a></li>
+                                                    <li><a href="/contact-us" title="Contact Us">contacts us</a></li>
+                                                    <li class="search-top">
+                                                        <div class="search-form-wrapper">
+                                                            @*<form ng-submit="vm.searchSubmit(vm.searchTerm)" class="navbar-form">*@
+                                                            <div class="navbar-form">
+                                                                <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''"
+                                                                       data-ng-model="vm.searchTerm" ng-keyup="$event.keyCode == 13 && vm.searchSubmit(vm.searchTerm)">
+                                                                <a href="/search/{{ vm.searchTerm }}" title="Search"></a>
+                                                            </div>
+                                                            @*</form>*@
+                                                        </div>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -229,23 +239,23 @@
                         <div class="bot1_inner clearfix">
                             <div class="menu_bot">
                                 <ul id="menu_bot" class="clearfix">
-                                    <li><a href="/home">home page</a></li>
-                                    <li><a href="/about">who we are</a></li>
+                                    <li><a href="/home" title="Home">home</a></li>
+                                    <li><a href="/about" title="About">about</a></li>
                                     <li>
-                                        <a href="/makes">Brands</a>
+                                        <a href="/allmakes" title="Brand Listing">all makes</a>
                                     </li>
                                     <li>
-                                        <a href="" data-ng-click="vm.equipmentTypesClick()">Equipment Types</a>
+                                        <a href="" data-ng-click="vm.equipmentTypesClick()" title="Equipment Types">Equipment Types</a>
                                     </li>
-                                    <li><a target="_blank" href="http://www.nettractortalk.com/">Forums</a></li>
-                                    <li><a href="/contact-us">contacts us</a></li>
+                                    <li><a target="_blank" href="http://www.nettractortalk.com/" title="Forums">Forums</a></li>
+                                    <li><a href="/contact-us" title="Contact Us">contacts us</a></li>
                                 </ul>
                             </div>
                             <div class="search-form-wrapper">
                                 <form ng-submit="vm.searchSubmit(vm.searchTerm)" class="navbar-form">
                                     <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''"
                                            data-ng-model="vm.searchTerm">
-                                    <a href="/search/{{ vm.searchTerm }}"></a>
+                                    <a href="/search/{{ vm.searchTerm }}" title="Search"></a>
                                 </form>
                             </div>
                         </div>
@@ -266,9 +276,9 @@
                                     <div class="block3">
                                         <div class="social_wrapper">
                                             <ul class="social clearfix">
-                                                <li><a href="#"><img src="theme/EcoAgriculture/images/social_ic1.png"></a></li>
-                                                <li><a href="#"><img src="theme/EcoAgriculture/images/social_ic2.png"></a></li>
-                                                <li><a href="#"><img src="theme/EcoAgriculture/images/social_ic3.png"></a></li>
+                                                <li><a href="#" title="Social Link"><img src="theme/EcoAgriculture/images/social_ic2.png" alt="Social Link"></a></li>
+                                                <li><a href="#" title="Social Link"><img src="theme/EcoAgriculture/images/social_ic3.png" alt="Social Link"></a></li>
+                                                <li><a href="#" title="Social Link"><img src="theme/EcoAgriculture/images/social_ic1.png" alt="Social Link"></a></li>
                                             </ul>
                                         </div>
                                     </div>

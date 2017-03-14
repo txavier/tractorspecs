@@ -1,11 +1,11 @@
 ﻿(function () {
     angular
         .module('app')
-        .controller('contactUsController', contactUsController);
+        .controller('ContactUsController', ContactUsController);
 
-    contactUsController.$inject = ['$scope', '$routeParams', '$location', 'dataService', 'toaster'];
+    ContactUsController.$inject = ['$scope', '$routeParams', '$location', 'dataService', 'toaster'];
 
-    function contactUsController($scope, $routeParams, $location, dataService, toaster) {
+    function ContactUsController($scope, $routeParams, $location, dataService, toaster) {
         var vm = this;
 
         vm.sendMessage = sendMessage;

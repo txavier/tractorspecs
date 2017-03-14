@@ -1,8 +1,4 @@
-﻿<link rel="stylesheet" href="theme/EcoAgriculture/css/bootstrap.css" type="text/css" media="screen">
-<link rel="stylesheet" href="theme/EcoAgriculture/css/bootstrap-responsive.css" type="text/css" media="screen">
-<link rel="stylesheet" href="theme/EcoAgriculture/css/style.css" type="text/css" media="screen">
-
-<script type="text/javascript" src="theme/EcoAgriculture/js/jquery.js"></script>
+﻿<script type="text/javascript" src="theme/EcoAgriculture/js/jquery.js"></script>
 <script type="text/javascript" src="theme/EcoAgriculture/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="theme/EcoAgriculture/js/superfish.js"></script>
 
@@ -13,7 +9,7 @@
 <script type="text/javascript" src="theme/EcoAgriculture/js/jquery.caroufredsel.js"></script>
 <script type="text/javascript" src="theme/EcoAgriculture/js/jquery.touchSwipe.min.js"></script>
 
-<script type="text/javascript" src="theme/EcoAgriculture/js/script.js"></script>
+<!--<script type="text/javascript" src="theme/EcoAgriculture/js/script.js"></script>-->
 <script>
     $(document).ready(function () {
         //carufredsel main slider
@@ -143,8 +139,8 @@
                 <div class="caroufredsel_slider1_wrapper">
                     <ul id="caroufredsel_slider1" class="clearfix">
                         <li>
-                            <div class="caroufredsel_slide1">
-                                <img src="Images/1.jpg" alt="">
+                            <div class="caroufredsel_slide1 hidden-md hidden-sm hidden-xs" style="height: 581px">
+                                <img src="Images/1.jpg" alt="McCormick Tractor">
                                 <div class="txt1">
                                     McCormick Tractors International Ltd. is a manufacturer of tractors for agricultural and general use
                                 </div>
@@ -155,7 +151,7 @@
                         </li>
                         <li>
                             <div class="caroufredsel_slide1">
-                                <img src="Images/2.jpg" alt="">
+                                <img src="Images/2.jpg" alt="Snapper Tractor">
                                 <div class="txt1">
                                     Snapper, Inc. was a United States company, formerly based in McDonough, Georgia, that manufactured residential and professional lawn-care and snow-removal equipment
                                 </div>
@@ -166,7 +162,7 @@
                         </li>
                         <li>
                             <div class="caroufredsel_slide1">
-                                <img src="Images/3.jpg" alt="">
+                                <img src="Images/3.jpg" alt="Caterpillar Tractor">
                                 <div class="txt1">
                                     Caterpillar is a leading manufacturer of construction and mining equipment, diesel and natural gas engines, industrial gas turbines and diesel-electric locomotives
                                 </div>
@@ -178,7 +174,7 @@
                         </li>
                         <li>
                             <div class="caroufredsel_slide1">
-                                <img src="Images/4.jpg" alt="">
+                                <img src="Images/4.jpg" alt="John Deere Tractor">
                                 <div class="txt1">
                                     Todays John Deere is one of the most recognizable brand names in the USA
                                 </div>
@@ -190,7 +186,7 @@
                         </li>
                         <li>
                             <div class="caroufredsel_slide1">
-                                <img src="Images/5.jpg" alt="">
+                                <img src="Images/5.jpg" alt="LS Tractor">
                                 <div class="txt1">
                                     LS currently builds tractors for Montana Tractors for sale in North America; and for sale under their own name as of 2009
                                 </div>
@@ -201,8 +197,8 @@
                         </li>
                     </ul>
                     <div class="pagination1" id="caroufredsel_pag1"></div>
-                    <a class="prev1" href="#"></a>
-                    <a class="next1" href="#"></a>
+                    <a class="prev1" href="#" title="Previous"></a>
+                    <a class="next1" href="#" title="Next"></a>
                 </div>
             </div>
         </div>
@@ -226,7 +222,7 @@
         <div class="row">
             <div class="span4 banner banner2">
                 <div class="banner_inner">
-                    <a href="#">
+                    <a href="#" title="Equipment Parts">
                         <div class="txt1">Equipment<br>Parts</div>
                         <div class="txt2">Messicks Equipment, one of our site sponsors, has added several parts catalogs to their forward thinking website. Some of these are brand new and are availabile only at Messicks.</div>
                         <ul class="clearfix" style="list-style: none;columns: 3;-webkit-columns: 3;-moz-columns: 3;">
@@ -258,7 +254,7 @@
             </div>
             <div class="span4 banner banner1">
                 <div class="banner_inner">
-                    <a href="#">
+                    <a href="#" title="NH Build & Price">
                         <div class="txt1">NH Build<br>& Price</div>
                         <div class="txt2">
                             New Holland has partnered with Iron Solutions for a new build and price tool available on NewHolland.com. Select your model and options for a quick list price or forward the quote to the dealer network for a discounted sale price.
@@ -292,7 +288,7 @@
             </div>-->
             <div class="span4 banner banner4">
                 <div class="banner_inner">
-                    <a href="">
+                    <a href="" title="Just Updated">
                         <div class="txt1">Just<br>Updated</div>
                         <div class="">
                             <ul class="clearfix" style="list-style: none;columns: 2;-webkit-columns: 2;-moz-columns: 2;">
@@ -330,12 +326,12 @@
 
                 <div class="thumb1 last">
                     <div class="thumbnail clearfix">
-                        <figure class="img-polaroid"><img src="Images/img_pro_43.jpg" alt=""></figure>
+                        <figure class="img-polaroid"><img src="Images/img_pro_43.jpg" alt="New Holland Tractor"></figure>
                         <div class="caption">
                             <p>
                                 We're a community resource. The information on our pages is largly user submited. You can help make the site more useful by submitting what you know about specifications and pricing. Today we have {{ vm.modelsCount | number }} models and {{ vm.specificationsCount | number }} datapoints.
                             </p>
-                            <a href="#" class="button2">read more about us</a>
+                            <a href="/About" class="button2" title="About">read more about us</a>
                         </div>
                     </div>
                 </div>
@@ -349,12 +345,12 @@
                 <div class="box1">
                     <div class="caroufredsel_slider">
                         <div class="txt1">Manufacturers</div>
-                        <a class="prev_testimonial" href="#"></a>
-                        <a class="next_testimonial" href="#"></a>
+                        <a class="prev_testimonial" href="#" title="Previous"></a>
+                        <a class="next_testimonial" href="#" title="Next"></a>
                         <ul class="clearfix">
                             <li data-ng-repeat="make in vm.makes | orderBy : '-models.length' | limitTo:7">
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.makeClick(make.mfgURL)">
+                                    <a href="" data-ng-click="vm.makeClick(make.mfgURL)" title="Manufacturer">
                                         <div class="txt2">{{ make.mfgName }}<span> ({{ make.models.length }})</span></div>
                                     </a>
                                 </div>
@@ -404,61 +400,61 @@
                 <div class="box1">
                     <div class="caroufredsel_slider">
                         <div class="txt1">Tractors</div>
-                        <a class="prev_testimonial" href="#"></a>
-                        <a class="next_testimonial" href="#"></a>
+                        <a class="prev_testimonial" href="#" title="Previous"></a>
+                        <a class="next_testimonial" href="#" title="Next"></a>
                         <ul class="clearfix">
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('FarmTractors')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('FarmTractors')" title="Farm Tractors">
                                         <div class="txt2">Farm Tractors</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('LawnTractors')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('LawnTractors')" title="Lawn Tractors">
                                         <div class="txt2">Lawn Tractors</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('Industrial')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('Industrial')" title="Industrial">
                                         <div class="txt2">Industrial Tractors</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('TrackTractors')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('TrackTractors')" title="Track Tractors">
                                         <div class="txt2">Tracked Tractors</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('Vintage')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('Vintage')" title="Vintage">
                                         <div class="txt2">Vintage Tractors</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('CompactTractors')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('CompactTractors')" title="Compact Tractors">
                                         <div class="txt2">Compact Tractors</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('Combines')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('Combines')" title="Combines">
                                         <div class="txt2">Combines</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('Forage Harvesters')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('Forage Harvesters')" title="Forage Harvesters">
                                         <div class="txt2">Forage Harvesters</div>
                                     </a>
                                 </div>
@@ -503,68 +499,68 @@
                 <div class="box1">
                     <div class="caroufredsel_slider">
                         <div class="txt1">Implements</div>
-                        <a class="prev_testimonial" href="#"></a>
-                        <a class="next_testimonial" href="#"></a>
+                        <a class="prev_testimonial" href="#" title="Previous"></a>
+                        <a class="next_testimonial" href="#" title="Next"></a>
                         <ul class="clearfix">
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('RoundBaler')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('RoundBaler')" title="Round Baler">
                                         <div class="txt2">Round Baler</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('SquareBaler')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SquareBaler')" title="Square Baler">
                                         <div class="txt2">Square Baler</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('BigBaler')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('BigBaler')" title="Big Baler">
                                         <div class="txt2">Large Square Baler</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('DiscMowers')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('DiscMowers')" title="Disc Mowers">
                                         <div class="txt2">Disc Mowers</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('MowerConditioners')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('MowerConditioners')" title="Mower Conditioners">
                                         <div class="txt2">Mower Conditions</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('HayRakes')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('HayRakes')" title="Hay Rakes">
                                         <div class="txt2">Hay Rakes</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('SickleBars')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SickleBars')" title="Sickle Bars">
                                         <div class="txt2">Sickle Bars</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('HayTedders')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('HayTedders')" title="Hay Tedders">
                                         <div class="txt2">Hay Tedders</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('Blowers')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('Blowers')" title="Blowers">
                                         <div class="txt2">Forage Blowers</div>
                                     </a>
                                 </div>
@@ -608,12 +604,12 @@
                 <div class="box1">
                     <div class="caroufredsel_slider">
                         <div class="txt1">Lawn</div>
-                        <a class="prev_testimonial" href="#"></a>
-                        <a class="next_testimonial" href="#"></a>
+                        <a class="prev_testimonial" href="#" title="Previous"></a>
+                        <a class="next_testimonial" href="#" title="Next"></a>
                         <ul class="clearfix">
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('LawnTractors')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('LawnTractors')" title="Lawn Tractors">
                                         <div class="txt2">Lawn Tractors</div>
                                     </a>
                                 </div>
@@ -627,21 +623,21 @@
                             </li>-->
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('WalkBehindSnowBlowers')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('WalkBehindSnowBlowers')" title="Walk Behind Snow Blowers">
                                         <div class="txt2">Snow Blowers</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('UtilityVehicles')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('UtilityVehicles')" title="Utility Vehicles">
                                         <div class="txt2">Utility Vehicles</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('ATVs')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('ATVs')" title="ATVs">
                                         <div class="txt2">ATV's</div>
                                     </a>
                                 </div>
@@ -702,54 +698,54 @@
                 <div class="box1">
                     <div class="caroufredsel_slider">
                         <div class="txt1">Construction</div>
-                        <a class="prev_testimonial" href="#"></a>
-                        <a class="next_testimonial" href="#"></a>
+                        <a class="prev_testimonial" href="#" title="Previous"></a>
+                        <a class="next_testimonial" href="#" title="Next"></a>
                         <ul class="clearfix">
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('SkidLoaders')" title="Skid Loaders">
                                         <div class="txt2">Skid Loaders</div>
                                     </a>
                                 </div>
                             </li>                           
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('TrackLoaders')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('TrackLoaders')" title="Track Loaders">
                                         <div class="txt2">Track Loaders</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('BackhoeAttachments')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('BackhoeAttachments')" title="Backhoe Attachments">
                                         <div class="txt2">Backhoes</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('WheelLoaders')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('WheelLoaders')" title="Wheel Loaders">
                                         <div class="txt2">Wheel Loaders</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('Telehandlers')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('Telehandlers')" title="Telehandlers">
                                         <div class="txt2">Telehandlers</div>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('MiniExcavators')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('MiniExcavators')" title="MiniExcavators">
                                         <div class="txt2">Mini Excavators</div>
                                     </a>
                                 </div>
                             </li>
                             <!--<li>
                                 <div class="testimonial1">
-                                    <a href="" data-ng-click="vm.equipmentClassClick('crawler')">
+                                    <a href="" data-ng-click="vm.equipmentClassClick('crawler')" title="Crawler">
                                         <div class="txt2">Crawler</div>
                                     </a>
                                 </div>

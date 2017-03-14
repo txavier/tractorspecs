@@ -15,81 +15,74 @@
 
         $routeProvider
             .when('/search/:searchTerm', {
+                title: 'Search',
                 templateUrl: 'app/search/search.html',
                 controller: 'SearchController',
                 controllerAs: 'vm'
             })
             .when('/search', {
+                title: 'Search',
                 templateUrl: 'app/search/search.html',
                 controller: 'SearchController',
                 controllerAs: 'vm'
             })
             .when('/contact-us', {
+                title: 'Contact Us',
                 templateUrl: 'app/contact-us/contact-us.html',
                 controller: 'ContactUsController',
                 controllerAs: 'vm'
             })
             .when('/about', {
+                title: 'About',
                 templateUrl: 'app/about/about.html',
                 controller: 'AboutController',
                 controllerAs: 'vm'
             })
-            .when('/equipment-classes', {
+            .when('/categories', {
+                title: 'Categories',
                 templateUrl: 'app/equipment-class/equipment-classes.html',
                 controller: 'EquipmentClassesController',
                 controllerAs: 'vm'
             })
-            .when('/equipment-class/:classURL', {
+            .when('/class/:classURL', {
+                title: 'Home',
                 templateUrl: 'app/equipment-class/equipment-class.html',
                 controller: 'EquipmentClassController',
                 controllerAs: 'vm'
             })
-            .when('/makes', {
+            .when('/allmakes', {
+                title: 'Brands',
                 templateUrl: 'app/make/makes.html',
                 controller: 'MakesController',
                 controllerAs: 'vm'
             })
-            .when('/update-model/:modelId', {
+            .when('/edit/:modelId', {
+                title: 'Edit',
                 templateUrl: 'app/model/update-model.html',
                 controller: 'UpdateModelController',
                 controllerAs: 'vm'
             })
-            .when('/make/:mfgURL/model/:modelUrl', {
+            .when('/specs/:mfgURL/:modelUrl', {
+                title: 'Specifications',
                 templateUrl: 'app/model/model.html',
                 controller: 'ModelController',
                 controllerAs: 'vm'
             })
-            .when('/make/:mfgURL', {
+            .when('/mfg/:mfgURL', {
+                title: 'Manufacturers',
                 templateUrl: 'app/make/make.html',
                 controller: 'MakeController',
                 controllerAs: 'vm'
             })
-            .when('/dashboard', {
-                templateUrl: 'app/user/dashboard.html',
-                controller: 'DashboardController',
-                controllerAs: 'vm'
-            })
-            .when('/update-blog-entry/:blogEntryId', {
-                templateUrl: 'app/blog-entry/update-blog-entry.html',
-                controller: 'UpdateBlogEntryController',
-                controllerAs: 'vm'
-            })
-            .when('/add-blog-entry', {
-                templateUrl: 'app/blog-entry/add-blog-entry.html',
-                controller: 'AddBlogEntryController',
-                controllerAs: 'vm'
-            })
-            .when('/view-blog-entry/:blogEntryId', {
-                templateUrl: 'app/blog-entry/view-blog-entry.html',
-                controller: 'ViewBlogEntryController',
-                controllerAs: 'vm'
-            })
-            .when('/blog-entries', {
-                templateUrl: 'app/blog-entry/blog-entries.html',
-                controller: 'BlogEntriesController',
-                controllerAs: 'vm'
-            })
             .when('/home', {
+                title: 'Home',
+                templateUrl: 'app/home/home.html',
+                controller: 'HomeController',
+                controllerAs: 'vm',
+                redirectTo: ''
+            })
+            .when('/', {
+                title: 'Home',
                 templateUrl: 'app/home/home.html',
                 controller: 'HomeController',
                 controllerAs: 'vm'

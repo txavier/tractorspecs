@@ -22,7 +22,7 @@
             vm.classURL = $routeParams.classURL;
 
             var makesClassSearchCriteria = {
-                $expand: 'models($select=modelNumber,modelUrl)',
+                $expand: 'models($select=modelNumber,modelUrl),models($filter=equipmentClass/classURL eq \'' + vm.classURL + '\')',
                 $orderby: 'mfgName',
                 $select: 'mfgLogoImg,mfgName,mfgURL',
                 $filter: 'models/any(d:d/equipmentClass/classURL eq \'' + vm.classURL + '\')'
@@ -32,11 +32,11 @@
         }
 
         function makeClick(mfgURL) {
-            $location.path('make/' + mfgURL);
+            $location.path('mfg/' + mfgURL);
         }
 
         function modelClick(mfgURL, modelUrl) {
-            $location.path('make/' + mfgURL + '/model/' + modelUrl);
+            $location.path('/specs/' + mfgURL + '/' + modelUrl);
         }
 
         function getMakes(makesClassSearchCriteria) {

@@ -47,11 +47,11 @@
         }
 
         function makeClick(mfgURL) {
-            $location.path('/make/' + mfgURL);
+            $location.path('/mfg/' + mfgURL);
         }
 
         function modelClick(modelUrl) {
-            $location.path('make/' + vm.mfgURL + '/model/' + modelUrl);
+            $location.path('specs/' + vm.mfgURL + '/' + modelUrl);
         }
 
         function getMakes(makeSearchCriteria) {
