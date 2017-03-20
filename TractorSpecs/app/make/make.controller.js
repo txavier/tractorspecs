@@ -39,7 +39,7 @@
                     orderBy: 'modelNumber',
                     search: null,
                     searchFields: null,
-                    $expand: 'equipmentClass($select=classURL)',
+                    $expand: 'equipmentClass($select=classURL,className)',
                     q: 'makeId eq ' + vm.make.makeId,
                     $select: 'modelNumber, modelUrl, equipmentClassId'
                 };
@@ -57,7 +57,7 @@
                         orderBy: 'modelNumber',
                         search: null,
                         searchFields: null,
-                        expand: 'equipmentClass',
+                        $expand: 'equipmentClass($select=className)',
                         $filter: 'makeId eq ' + vm.make.makeId + ' and equipmentClass/classURL eq \'' + classURLToUse + '\'',
                         fields: 'modelNumber, modelUrl'
                     };

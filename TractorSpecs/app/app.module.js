@@ -12,16 +12,16 @@
             'angular-carousel'
         ]);
 
-    http://stackoverflow.com/questions/12506329/how-to-dynamically-change-header-based-on-angularjs-partial-view
-    angular
-        .module('app')
-        .run(['$rootScope', function ($rootScope) {
-        $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-            if (current.$$route) {
-                $rootScope.title = current.$$route.title;
-            }
-        });
-    }]);
+    // http://stackoverflow.com/questions/12506329/how-to-dynamically-change-header-based-on-angularjs-partial-view
+    //angular
+    //    .module('app')
+    //    .run(['$rootScope', function ($rootScope) {
+    //    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+    //        if (current.$$route) {
+    //            $rootScope.title = current.$$route.title;
+    //        }
+    //    });
+    //}]);
 
 })();
 
