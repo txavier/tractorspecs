@@ -3,9 +3,9 @@
         .module('app')
         .controller('ContactUsController', ContactUsController);
 
-    ContactUsController.$inject = ['$scope', '$routeParams', '$location', 'dataService', 'toaster'];
+    ContactUsController.$inject = ['$scope', '$routeParams', '$location', 'dataService', 'toaster', 'seoService'];
 
-    function ContactUsController($scope, $routeParams, $location, dataService, toaster) {
+    function ContactUsController($scope, $routeParams, $location, dataService, toaster, seoService) {
         var vm = this;
 
         vm.sendMessage = sendMessage;
@@ -14,6 +14,7 @@
         activate();
 
         function activate() {
+            seoService.setTitle('Contact Us');
         }
 
         function sendMessage(emailInformation) {

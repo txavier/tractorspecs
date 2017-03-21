@@ -344,6 +344,7 @@
     <Content Include="app\about\about.html" />
     <Content Include="app\search\search.controller.js" />
     <Content Include="app\search\search.html" />
+    <Content Include="app\services\seo.service.js" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />

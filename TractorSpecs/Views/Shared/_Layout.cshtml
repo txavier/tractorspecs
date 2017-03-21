@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-ng-app="app" ng-strict-di>
+<html lang="en" data-ng-app="app" ng-strict-di data-ng-controller="LayoutController as vm">
 <head>
-    <title ng-bind="'TractorSpecs &mdash; ' + title">TractorSpecs</title>
+    <title>{{ vm.getTitle() }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Specifications and information for tractors and all types of agricultural and industrial equipment.">
@@ -41,7 +41,7 @@
     <base href="/">
 </head>
 
-<body class="main" data-ng-controller="LayoutController as vm">
+<body class="main">
     <div id="main">
         @*<div id="clouds1"></div>*@
         <div class="leaf1"><img src="theme/EcoAgriculture/images/leaf1.png" alt="Leaf" class="img"></div>

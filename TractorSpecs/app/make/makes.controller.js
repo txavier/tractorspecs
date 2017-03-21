@@ -5,9 +5,9 @@
         .module('app')
         .controller('MakesController', MakesController);
 
-    MakesController.$inject = ['$scope', '$routeParams', '$location', 'dataService'];
+    MakesController.$inject = ['$scope', '$routeParams', '$location', 'dataService', 'seoService'];
 
-    function MakesController($scope, $routeParams, $location, dataService) {
+    function MakesController($scope, $routeParams, $location, dataService, seoService) {
         var vm = this;
 
         vm.makes = [];
@@ -16,6 +16,8 @@
         activate();
 
         function activate() {
+            seoService.setTitle('TractorSpecs Manufacturer Listing');
+
             var makesSearchCriteria = {
                 $select: 'makeId, mfgDesc, mfgLogoImg, mfgName, mfgURL',
                 $expand: 'models($select=modelId)'

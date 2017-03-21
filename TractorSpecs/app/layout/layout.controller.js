@@ -5,19 +5,26 @@
         .module('app')
         .controller('LayoutController', LayoutController);
 
-    LayoutController.$inject = ['$scope', '$routeParams', '$location', 'dataService'];
+    LayoutController.$inject = ['$scope', '$routeParams', '$location', 'dataService', 'seoService'];
 
-    function LayoutController($scope, $routeParams, $location, dataService) {
+    function LayoutController($scope, $routeParams, $location, dataService, seoService) {
         var vm = this;
 
         vm.user = null;
         vm.equipmentTypesClick = equipmentTypesClick;
         vm.searchTerm = 'Search';
         vm.searchSubmit = searchSubmit;
+        vm.getTitle = getTitle;
 
         activate();
 
         function activate() {
+        }
+
+        function getTitle() {
+            var title = seoService.getTitle();
+
+            return title;
         }
 
         function searchSubmit(searchTerm) {

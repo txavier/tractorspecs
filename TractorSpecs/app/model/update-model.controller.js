@@ -5,9 +5,9 @@
         .module('app')
         .controller('UpdateModelController', UpdateModelController);
 
-    UpdateModelController.$inject = ['$scope', '$routeParams', '$filter', '$q', 'dataService'];
+    UpdateModelController.$inject = ['$scope', '$routeParams', '$filter', '$q', 'dataService', 'seoService'];
 
-    function UpdateModelController($scope, $routeParams, $filter, $q, dataService) {
+    function UpdateModelController($scope, $routeParams, $filter, $q, dataService, seoService) {
         var vm = this;
 
         vm.model = {};
@@ -24,13 +24,6 @@
         function activate() {
 
             vm.modelId = $routeParams.modelId;
-
-            //var modelSearchCriteria = {
-            //    $filter: 'modelId eq ' + vm.modelId,
-            //    $expand: 'make($select=mfgLogoImg,mfgName),specifications($expand=specName)'
-            //};
-
-            //var promise1 = searchModels(modelSearchCriteria);
 
             var promise1 = getSpecificationsWithEmptySpecificationsByModelId(vm.modelId);
 
@@ -54,6 +47,27 @@
                 fillSpecClasses();
 
                 vm.selectedSpecClass = vm.specClasses[0];
+            });
+
+            var modelSearchCriteria = {
+                $expand: 'make($select=mfgName)',
+                $select: 'modelNumber',
+                $filter: 'modelId eq ' + vm.modelId
+            };
+
+            getModel(modelSearchCriteria).then(function (data) {
+                // Set the title of the page.
+                seoService.setTitle('Edit listing for the ' + vm.model.make.mfgName + ' ' + vm.model.modelNumber);
+            });
+        }
+
+        function getModel(modelSearchCriteria) {
+            return dataService.searchEntities('models', modelSearchCriteria).then(function (data) {
+                vm.model.modelNumber = data[0].modelNumber;
+
+                vm.model.make = data[0].make;
+
+                return vm.model;
             });
         }
 
@@ -106,14 +120,6 @@
                 return vm.specClasses;
             });
         }
-
-        //function searchSpecClasses(specNamesSearchCriteria) {
-        //    return dataService.searchEntities('specNames', specNamesSearchCriteria).then(function (data) {
-        //        vm.specNames = data;
-
-        //        return vm.specNames;
-        //    });
-        //}
 
         function searchModels(modelSearchCriteria) {
             return dataService.searchEntities('models', modelSearchCriteria).then(function (data) {

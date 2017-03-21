@@ -5,9 +5,9 @@
         .module('app')
         .controller('ModelController', ModelController);
 
-    ModelController.$inject = ['$scope', '$routeParams', '$filter', '$q', '$location', 'dataService'];
+    ModelController.$inject = ['$scope', '$routeParams', '$filter', '$q', '$location', 'dataService', 'seoService'];
 
-    function ModelController($scope, $routeParams, $filter, $q, $location, dataService) {
+    function ModelController($scope, $routeParams, $filter, $q, $location, dataService, seoService) {
         var vm = this;
 
         vm.model = {};
@@ -20,7 +20,6 @@
         activate();
 
         function activate() {
-
             vm.modelUrl = $routeParams.modelUrl;
 
             var modelSearchCriteria = {
@@ -41,7 +40,12 @@
             
             promises.push(promise2);
 
-            $q.all(promises).then(fillSpecClasses);
+            $q.all(promises)
+                .then(fillSpecClasses)
+                .then(function (data) {
+                    // Set the title of the page.
+                    seoService.setTitle(vm.model.make.mfgName + ' ' + vm.model.modelNumber);
+            });
         }
 
         function editClick(modelId) {

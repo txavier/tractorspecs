@@ -5,9 +5,9 @@
         .module('app')
         .controller('MakeController', MakeController);
 
-    MakeController.$inject = ['$scope', '$routeParams', '$location', '$filter', 'dataService'];
+    MakeController.$inject = ['$scope', '$routeParams', '$location', '$filter', 'dataService', 'seoService'];
 
-    function MakeController($scope, $routeParams, $location, $filter, dataService) {
+    function MakeController($scope, $routeParams, $location, $filter, dataService, seoService) {
         var vm = this;
 
         vm.make = {};
@@ -51,6 +51,10 @@
                     // model that is returned to use for this make.
                     var classURLToUse = (vm.classURL === '' || !vm.classURL) ? vm.firstModel.equipmentClass.classURL : vm.classURL;
 
+                    // Set the page title.
+                    seoService.setTitle(vm.make.mfgName + ' ' + vm.firstModel.equipmentClass.className);
+
+                    // Get all models of this equipment class.
                     var modelsSearchCriteria = {
                         currentPage: 1,
                         itemsPerPage: 99999,

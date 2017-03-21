@@ -5,9 +5,9 @@
         .module('app')
         .controller('EquipmentClassesController', EquipmentClassesController);
 
-    EquipmentClassesController.$inject = ['$scope', '$routeParams', '$location', 'dataService'];
+    EquipmentClassesController.$inject = ['$scope', '$routeParams', '$location', 'dataService', 'seoService'];
 
-    function EquipmentClassesController($scope, $routeParams, $location, dataService) {
+    function EquipmentClassesController($scope, $routeParams, $location, dataService, seoService) {
         var vm = this;
 
         vm.equipmentClasses = [];
@@ -16,6 +16,8 @@
         activate();
 
         function activate() {
+            seoService.setTitle('TractorSpecs Equipment Categories');
+
             var equipmentClassesSearchCriteria = {
                 $select: 'className,classURL',
                 $expand: 'models($select=modelId)',

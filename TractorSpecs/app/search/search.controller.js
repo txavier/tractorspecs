@@ -5,9 +5,9 @@
         .module('app')
         .controller('SearchController', SearchController);
 
-    SearchController.$inject = ['$scope', '$routeParams', '$location', 'dataService'];
+    SearchController.$inject = ['$scope', '$routeParams', '$location', 'dataService', 'seoService'];
 
-    function SearchController($scope, $routeParams, $location, dataService) {
+    function SearchController($scope, $routeParams, $location, dataService, seoService) {
         var vm = this;
 
         vm.makes = [];
@@ -22,8 +22,9 @@
         activate();
 
         function activate() {
-
             vm.searchTerm = $routeParams.searchTerm;
+
+            seoService.setTitle(vm.searchTerm + ' Search');
 
             var makeSearchCriteria = {
                 $filter: 'contains(mfgName, \'' + vm.searchTerm + '\')',

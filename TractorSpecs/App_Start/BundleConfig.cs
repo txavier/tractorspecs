@@ -53,6 +53,7 @@ namespace TractorSpecs
                       "~/app/services/data.service.js",
                       "~/app/services/error.service.js",
                       "~/app/services/auth-interceptor.service.js",
+                      "~/app/services/seo.service.js",
                       "~/app/home/home.controller.js",
                       "~/app/action-figures/add-action-figure.controller.js",
                       "~/app/action-figures/update-action-figure.controller.js",

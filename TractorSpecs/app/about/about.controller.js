@@ -5,14 +5,15 @@
         .module('app')
         .controller('AboutController', AboutController);
 
-    AboutController.$inject = ['$scope'];
+    AboutController.$inject = ['$scope', 'seoService'];
 
-    function AboutController($scope, $routeParams, $location, dataService) {
+    function AboutController($scope, seoService) {
         var vm = this;
 
         activate();
 
         function activate() {
+            seoService.setTitle('About');
         }
     }
 

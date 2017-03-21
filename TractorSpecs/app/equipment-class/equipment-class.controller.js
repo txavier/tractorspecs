@@ -5,20 +5,20 @@
         .module('app')
         .controller('EquipmentClassController', EquipmentClassController);
 
-    EquipmentClassController.$inject = ['$scope', '$routeParams', '$location', 'dataService'];
+    EquipmentClassController.$inject = ['$scope', '$routeParams', '$location', 'dataService', 'seoService'];
 
-    function EquipmentClassController($scope, $routeParams, $location, dataService) {
+    function EquipmentClassController($scope, $routeParams, $location, dataService, seoService) {
         var vm = this;
 
         vm.makes = [];
         vm.classURL = '';
         vm.modelClick = modelClick;
         vm.makeClick = makeClick;
+        vm.equipmentClass = {};
 
         activate();
 
         function activate() {
-
             vm.classURL = $routeParams.classURL;
 
             var makesClassSearchCriteria = {
@@ -29,6 +29,24 @@
             };
 
             getMakes(makesClassSearchCriteria);
+
+            var equipmentClassSearchCriteria = {
+                $select: 'className',
+                $filter: 'classURL eq \'' + vm.classURL + '\''
+            };
+            
+            // Set the title of the html page.
+            getEquipmentClass(equipmentClassSearchCriteria).then(function (data) {
+                seoService.setTitle(vm.equipmentClass.className + ' Specifications');
+            });
+        }
+
+        function getEquipmentClass(equipmentClassSearchCriteria) {
+            return dataService.searchEntities('equipmentClasses', equipmentClassSearchCriteria).then(function (data) {
+                vm.equipmentClass = data[0];
+
+                return vm.equipmentClass;
+            });
         }
 
         function makeClick(mfgURL) {

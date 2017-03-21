@@ -5,9 +5,9 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', '$location', '$routeParams', '$window', 'dataService'];
+    HomeController.$inject = ['$scope', '$location', '$routeParams', '$window', 'dataService', 'seoService'];
 
-    function HomeController($scope, $location, $routeParams, $window, dataService) {
+    function HomeController($scope, $location, $routeParams, $window, dataService, seoService) {
         var vm = this;
 
         vm.makes = [];
@@ -22,6 +22,8 @@
         activate();
 
         function activate() {
+            seoService.setTitle('TractorSpecs.com | The Machinery Database Project');
+
             // http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html#_System_Query_Option_2
             var makesSearchCriteria = {
                 $select: 'makeId, mfgDesc, mfgLogoImg, mfgName, mfgURL',
