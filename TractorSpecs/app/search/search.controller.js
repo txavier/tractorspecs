@@ -27,7 +27,8 @@
             seoService.setTitle(vm.searchTerm + ' Search');
 
             var makeSearchCriteria = {
-                $filter: 'contains(mfgName, \'' + vm.searchTerm + '\')',
+                //$filter: 'contains(mfgName, \'' + vm.searchTerm + '\')',
+                $filter: createFilterFromSearchTerm(vm.searchTerm, 'mfgName'),
                 $select: 'makeId, mfgDesc, mfgLogoImg, mfgName, mfgURL'
             };
 
@@ -40,11 +41,28 @@
                 search: null,
                 searchFields: null,
                 $expand: 'make($select=mfgURL)',
-                q: 'contains(modelNumber, \'' + vm.searchTerm + '\')',
+                $filter: createFilterFromSearchTerm(vm.searchTerm, 'modelNumber'),
+                //q: 'contains(modelNumber, \'' + vm.searchTerm + '\')',
                 $select: 'modelNumber, modelUrl'
             };
 
             getModels(modelSearchCriteria);
+        }
+
+        function createFilterFromSearchTerm(searchTerm, fieldName) {
+            var searchTerms = searchTerm.split(' ');
+
+            var result = '';
+
+            for (var i = 0; i < searchTerms.length; i++) {
+                if (i > 0) {
+                    result += ' or '
+                }
+
+                result += 'contains(' + fieldName + ',\'' + searchTerms[i] + '\')';
+            }
+
+            return result;
         }
 
         function makeClick(mfgURL) {

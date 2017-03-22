@@ -30,132 +30,42 @@
                 <h2>Brands</h2>
 
                 <div class="row">
-                    <div class="makesColumns">
-                        <div class="span4">
-                            <div data-ng-repeat="make in vm.makes">
-                                <div class="thumb2">
-                                    <div class="thumbnail clearfix">
-                                        <a href="" data-ng-click="vm.makeClick(make.mfgURL)" title="{{ make.mfgName }}">
-                                            <figure><img style="width: 38px" src="theme/TractorSpecs_Original/images/{{ make.mfgLogoImg }}" alt="{{ make.mfgName }}"></figure>
-                                            <div class="caption">
-                                                <div class="txt1">{{ make.mfgName }}</div>
-                                                <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--<div class="span4 offset1">
+                    <div data-ng-repeat="make in vm.makes">
+                        <div class="span3">
                             <div class="thumb2">
                                 <div class="thumbnail clearfix">
-                                    <a href="#">
-                                        <figure><img src="theme/EcoAgriculture/images/about03.png" alt=""></figure>
+                                    <a href="" data-ng-click="vm.makeClick(make.mfgURL)" title="{{ make.mfgName }}">
+                                        <figure><img style="width: 38px" src="theme/TractorSpecs_Original/images/{{ make.mfgLogoImg }}" alt="{{ make.mfgName }}"></figure>
                                         <div class="caption">
-                                            <div class="txt1">OUR TECHNOLOGIES</div>
-                                            <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
+                                            <div class="txt1">{{ make.mfgName }}</div>
+                                            <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
                                         </div>
                                     </a>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
                     </div>
                 </div>
 
                 <h2>MODELS</h2>
 
                 <div class="row">
-                    <div class="makeColumns">
-                        <div class="span2">
-                            <div data-ng-repeat="model in vm.models">
-                                <div class="thumb2">
-                                    <div class="thumbnail clearfix">
-                                        <a href="" data-ng-click="vm.modelClick(model)" title="{{ model.modelNumber }}">
-                                            <figure><img src="theme/EcoAgriculture/images/about06.png" alt="Binoculars"></figure>
-                                            <div class="caption">
-                                                <div class="txt1">{{ model.modelNumber }}</div>
-                                                <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
-                                            </div>
-                                        </a>
-                                    </div>
+                    <div data-ng-repeat="model in vm.models">
+                        <div class="span3">
+                            <div class="thumb2">
+                                <div class="thumbnail clearfix">
+                                    <a href="" data-ng-click="vm.modelClick(model)" title="{{ model.modelNumber }}">
+                                        <figure><img src="theme/EcoAgriculture/images/about06.png" alt="Binoculars"></figure>
+                                        <div class="caption">
+                                            <div class="txt1">{{ model.modelNumber }}</div>
+                                            <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--<div class="span4 offset1">
-            <div class="thumb2">
-                <div class="thumbnail clearfix">
-                    <a href="#">
-                        <figure><img src="theme/EcoAgriculture/images/about03.png" alt=""></figure>
-                        <div class="caption">
-                            <div class="txt1">OUR TECHNOLOGIES</div>
-                            <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
-                        </div>
-                    </a>
                 </div>
-            </div>
-        </div>-->
-                </div>
-
-                <!--<div class="row">
-                    <div class="span4">
-                        <div class="thumb2">
-                            <div class="thumbnail clearfix">
-                                <a href="#">
-                                    <figure><img src="theme/EcoAgriculture/images/about04.png" alt=""></figure>
-                                    <div class="caption">
-                                        <div class="txt1">PREMIUM PRODUCTS</div>
-                                        <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span4 offset1">
-                        <div class="thumb2">
-                            <div class="thumbnail clearfix">
-                                <a href="#">
-                                    <figure><img src="theme/EcoAgriculture/images/about05.png" alt=""></figure>
-                                    <div class="caption">
-                                        <div class="txt1">PARTNERSHIP</div>
-                                        <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="span4">
-                        <div class="thumb2">
-                            <div class="thumbnail clearfix">
-                                <a href="#">
-                                    <figure><img src="theme/EcoAgriculture/images/about06.png" alt=""></figure>
-                                    <div class="caption">
-                                        <div class="txt1">RESEARCH</div>
-                                        <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span4 offset1">
-                        <div class="thumb2">
-                            <div class="thumbnail clearfix">
-                                <a href="#">
-                                    <figure><img src="theme/EcoAgriculture/images/about07.png" alt=""></figure>
-                                    <div class="caption">
-                                        <div class="txt1">MARKET</div>
-                                        <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-
-
 
             </div>
             <div class="span3">
@@ -185,9 +95,9 @@
 
             </div>
         </div>
+
     </div>
 </div>
-
 <div class="shadow1">
     <div class="container">
         <div class="row">
