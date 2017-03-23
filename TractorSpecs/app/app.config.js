@@ -14,6 +14,9 @@
         $locationProvider.html5Mode(true);
 
         $routeProvider
+            .when('/search.aspx', {
+                redirectTo: 'search'
+            })
             .when('/search/:searchTerm', {
                 title: 'Search',
                 templateUrl: 'app/search/search.html',
@@ -32,11 +35,17 @@
                 controller: 'ContactUsController',
                 controllerAs: 'vm'
             })
+            .when('/about.aspx', {
+                redirectTo: 'about'
+            })
             .when('/about', {
                 title: 'About',
                 templateUrl: 'app/about/about.html',
                 controller: 'AboutController',
                 controllerAs: 'vm'
+            })
+            .when('/categories.aspx', {
+                redirectTo: 'categories'
             })
             .when('/categories', {
                 title: 'Categories',
@@ -44,17 +53,26 @@
                 controller: 'EquipmentClassesController',
                 controllerAs: 'vm'
             })
+            .when('/class.aspx', {
+                redirectTo: 'class',
+            })
             .when('/class/:classURL', {
-                title: 'Home',
+                title: 'Class',
                 templateUrl: 'app/equipment-class/equipment-class.html',
                 controller: 'EquipmentClassController',
                 controllerAs: 'vm'
             })
+             .when('/allmakes.aspx', {
+                 redirectTo: 'Brands'
+             })
             .when('/allmakes', {
                 title: 'Brands',
                 templateUrl: 'app/make/makes.html',
                 controller: 'MakesController',
                 controllerAs: 'vm'
+            })
+            .when('/edit.aspx', {
+                redirectTo: 'Edit'
             })
             .when('/edit/:modelId', {
                 title: 'Edit',
@@ -62,11 +80,17 @@
                 controller: 'UpdateModelController',
                 controllerAs: 'vm'
             })
+            .when('/specs.aspx', {
+                redirectTo: 'Specifications'
+            })
             .when('/specs/:mfgURL/:modelUrl', {
                 title: 'Specifications',
                 templateUrl: 'app/model/model.html',
                 controller: 'ModelController',
                 controllerAs: 'vm'
+            })
+            .when('/mfg.aspx', {
+                redirectTo: 'Manufacturers'
             })
             .when('/mfg/:mfgURL/:classURL', {
                 title: 'Manufacturers',

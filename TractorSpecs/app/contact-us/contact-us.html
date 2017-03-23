@@ -22,9 +22,8 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputName">Your full name:</label>
                                     <div class="controls">
-                                        <input class="span4" type="text" id="inputName" name="name" value="Your full name:" 
-                                               onblur="if(this.value=='') this.value='Your full name:'" 
-                                               onfocus="if(this.value =='Your full name:' ) this.value=''"
+                                        <input class="span4" type="text" id="inputName" name="name"
+                                               placeholder="Your full name:"
                                                data-ng-model="vm.emailInformation.fullName">
                                     </div>
                                 </div>
@@ -33,9 +32,8 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Your email:</label>
                                     <div class="controls">
-                                        <input class="span4" type="text" id="inputEmail" name="email" value="Your email:" 
-                                               onblur="if(this.value=='') this.value='Your email:'" 
-                                               onfocus="if(this.value =='Your email:' ) this.value=''"
+                                        <input class="span4" type="text" id="inputEmail" name="email" 
+                                               placeholder="Your email:"
                                                data-ng-model="vm.emailInformation.email">
                                     </div>
                                 </div>
@@ -44,9 +42,8 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputPhone">Phone number:</label>
                                     <div class="controls">
-                                        <input class="span4" type="text" id="inputPhone" name="phone" value="Phone number:" 
-                                               onblur="if(this.value=='') this.value='Phone number:'" 
-                                               onfocus="if(this.value =='Phone number:' ) this.value=''"
+                                        <input class="span4" type="text" id="inputPhone" name="phone"
+                                               placeholder="Phone number:"
                                                data-ng-model="vm.emailInformation.phoneNumber">
                                     </div>
                                 </div>
@@ -58,10 +55,8 @@
                                     <label class="control-label" for="inputMessage">Message:</label>
                                     <div class="controls">
                                         <textarea class="span12" id="inputMessage" name="content" 
-                                                  onblur="if(this.value=='') this.value='Message:'" 
-                                                  onfocus="if(this.value =='Message:' ) this.value=''"
+                                                  placeholder="Message:"
                                                   data-ng-model="vm.emailInformation.message">
-                                        Message:
                                         </textarea>
                                     </div>
                                 </div>

@@ -38,6 +38,8 @@
             // Set the title of the html page.
             getEquipmentClass(equipmentClassSearchCriteria).then(function (data) {
                 seoService.setTitle(vm.equipmentClass.className + ' Specifications');
+
+                seoService.setDescription(vm.equipmentClass.className + ' specifications.');
             });
         }
 

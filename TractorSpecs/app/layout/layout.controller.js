@@ -15,10 +15,26 @@
         vm.searchTerm = 'Search';
         vm.searchSubmit = searchSubmit;
         vm.getTitle = getTitle;
+        vm.getDescription = getDescription;
+        vm.getKeywords = getKeywords;
 
         activate();
 
         function activate() {
+        }
+
+        function getKeywords() {
+            var keywords = seoService.getKeywords()
+                || 'tractor specs data info price used value engine trade';
+
+            return keywords;
+        }
+
+        function getDescription() {
+            var description = seoService.getDescription()
+                || 'Specifications and information for tractors and all types of agricultural and industrial equipment.';
+
+            return description;
         }
 
         function getTitle() {
