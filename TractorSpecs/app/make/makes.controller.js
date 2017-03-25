@@ -17,6 +17,8 @@
 
         function activate() {
             seoService.setTitle('TractorSpecs Manufacturer Listing');
+            seoService.setDescription('Listing of manufacturers represented on tractorspecs.com.');
+            seoService.setKeywords('Tractor Companies');
 
             var makesSearchCriteria = {
                 $select: 'makeId, mfgDesc, mfgLogoImg, mfgName, mfgURL',

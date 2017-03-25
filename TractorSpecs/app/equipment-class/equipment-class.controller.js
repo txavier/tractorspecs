@@ -40,6 +40,8 @@
                 seoService.setTitle(vm.equipmentClass.className + ' Specifications');
 
                 seoService.setDescription(vm.equipmentClass.className + ' specifications.');
+
+                seoService.setKeywords(vm.equipmentClass.className);
             });
         }
 

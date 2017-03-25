@@ -17,6 +17,8 @@
 
         function activate() {
             seoService.setTitle('TractorSpecs Equipment Categories');
+            seoService.setDescription('Equipment Categories to find specification for different models of equipment.');
+            seoService.setKeywords('tractor equipment mower specification categories find models search');
 
             var equipmentClassesSearchCriteria = {
                 $select: 'className,classURL',

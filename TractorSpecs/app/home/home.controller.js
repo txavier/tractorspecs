@@ -23,6 +23,8 @@
 
         function activate() {
             seoService.setTitle('TractorSpecs.com | The Machinery Database Project');
+            seoService.setDescription('Specifications and information for tractors and all types of agricultural and industrial equipment.');
+            seoService.setKeywords('tractor specs data info price used value engine trade');
 
             // http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html#_System_Query_Option_2
             var makesSearchCriteria = {

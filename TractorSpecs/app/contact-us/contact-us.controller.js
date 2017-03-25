@@ -15,6 +15,8 @@
 
         function activate() {
             seoService.setTitle('Contact Us');
+            seoService.setDescription('Tractor Specifications Website');
+            seoService.setKeywords('Tractor Specifications');
         }
 
         function sendMessage(emailInformation) {

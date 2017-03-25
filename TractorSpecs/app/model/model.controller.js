@@ -45,6 +45,12 @@
                 .then(function (data) {
                     // Set the title of the page.
                     seoService.setTitle(vm.model.make.mfgName + ' ' + vm.model.modelNumber);
+
+                    seoService.setKeywords(vm.model.make.mfgName + ' ' + vm.model.modelNumber +
+                        ' specifications,specs, pictures, prices, data, horsepower, information, values');
+
+                    seoService.setDescription('Tractor-Specs.com database listing for the ' + vm.model.make.mfgName + ' ' + vm.model.modelNumber
+                        + ' Everything you need to know. Used Values, Specs, Pictures and More.');
             });
         }
 

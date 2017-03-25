@@ -58,6 +58,10 @@
             getModel(modelSearchCriteria).then(function (data) {
                 // Set the title of the page.
                 seoService.setTitle('Edit listing for the ' + vm.model.make.mfgName + ' ' + vm.model.modelNumber);
+
+                seoService.setDescription('Edit listing for the ' + vm.model.make.mfgName + ' ' + vm.model.modelNumber);
+
+                seoService.setKeywords(vm.model.make.mfgName + ' ' + vm.model.modelNumber);
             });
         }
 

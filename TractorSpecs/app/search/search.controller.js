@@ -27,7 +27,6 @@
             seoService.setTitle(vm.searchTerm + ' Search');
 
             var makeSearchCriteria = {
-                //$filter: 'contains(mfgName, \'' + vm.searchTerm + '\')',
                 $filter: createFilterFromSearchTerm(vm.searchTerm, 'mfgName'),
                 $select: 'makeId, mfgDesc, mfgLogoImg, mfgName, mfgURL'
             };
@@ -42,7 +41,6 @@
                 searchFields: null,
                 $expand: 'make($select=mfgURL)',
                 $filter: createFilterFromSearchTerm(vm.searchTerm, 'modelNumber'),
-                //q: 'contains(modelNumber, \'' + vm.searchTerm + '\')',
                 $select: 'modelNumber, modelUrl'
             };
 
@@ -56,7 +54,7 @@
 
             for (var i = 0; i < searchTerms.length; i++) {
                 if (i > 0) {
-                    result += ' or '
+                    result += ' or ';
                 }
 
                 result += 'contains(' + fieldName + ',\'' + searchTerms[i] + '\')';

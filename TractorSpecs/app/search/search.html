@@ -30,6 +30,11 @@
                 <h2>Brands</h2>
 
                 <div class="row">
+                    <div class="span4"  data-ng-if="vm.makes.length === 0">
+                        <h3>
+                            No manufacturers have been found.
+                        </h3>
+                    </div>
                     <div data-ng-repeat="make in vm.makes">
                         <div class="span3">
                             <div class="thumb2">
@@ -50,6 +55,11 @@
                 <h2>MODELS</h2>
 
                 <div class="row">
+                    <div class="span4" data-ng-if="vm.models.length === 0">
+                        <h3>
+                            No models have been found.
+                        </h3>
+                    </div>
                     <div data-ng-repeat="model in vm.models">
                         <div class="span3">
                             <div class="thumb2">

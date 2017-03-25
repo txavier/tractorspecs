@@ -14,6 +14,8 @@
 
         function activate() {
             seoService.setTitle('About');
+            seoService.setDescription('Tractor Specifications Website');
+            seoService.setKeywords('Tractor Specifications');
         }
     }
 

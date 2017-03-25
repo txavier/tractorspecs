@@ -54,6 +54,12 @@
                     // Set the page title.
                     seoService.setTitle(vm.make.mfgName + ' ' + vm.firstModel.equipmentClass.className);
 
+                    seoService.setKeywords(vm.make.mfgName + ' ' + vm.firstModel.equipmentClass.className +
+                        ' Specifications, Pictures, Prices, Data, Horsepower, Information, Values');
+
+                    seoService.setDescription(vm.make.mfgName + ' ' + vm.firstModel.equipmentClass.className +
+                        ' Information, Specifications, Pricing, and More.');
+
                     // Get all models of this equipment class.
                     var modelsSearchCriteria = {
                         currentPage: 1,
