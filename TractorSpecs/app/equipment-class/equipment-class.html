@@ -33,14 +33,14 @@
                     <div class="span4" data-ng-repeat="make in vm.makes">
                         <div class="thumb2">
                             <div class="thumbnail clearfix">
-                                <a href="" data-ng-click="vm.makeClick(make.mfgURL)"  title="Make">
+                                <a href="" data-ng-click="vm.makeClick(make.mfgURL)"  title="{{ make.mfgName }}">
                                     <!--<figure><img src="theme/TractorSpecs_Original/images/{{ make.mfgLogoImg }}" alt=""></figure>-->
                                     <div class="caption">
                                         <div class="txt1">{{ make.mfgName }} ({{ make.models.length }})</div>
                                         <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
                                     </div>
                                 </a>
-                                <a href="" data-ng-click="vm.modelClick(make.mfgURL, model.modelUrl)" data-ng-repeat="model in make.models | limitTo:10"  title="Model">
+                                <a href="" data-ng-click="vm.modelClick(make.mfgURL, model.modelUrl)" data-ng-repeat="model in make.models | limitTo:10"  title="{{ model.modelNumber }}">
                                     {{ model.modelNumber }}
                                 </a>
                             </div>
@@ -158,7 +158,7 @@
         <div class="row">
             <div class="span12">
                 <div class="shadow1_inner">
-                    <img src="theme/EcoAgriculture/images/shadow1.png" alt="" class="img">
+                    <img src="theme/EcoAgriculture/images/shadow1.png" alt="shadow image" class="img">
                 </div>
             </div>
         </div>

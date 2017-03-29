@@ -333,6 +333,7 @@
                 params:
                         {
                             $count: true,
+                            $top: 0,
                             search: searchCriteria == undefined ? null : searchCriteria.searchText,
                             searchFields: searchCriteria == undefined ? null : searchCriteria.searchTextFields,
                             q: searchCriteria == undefined ? null : searchCriteria.q

@@ -24,24 +24,28 @@ namespace TractorSpecs.Controllers
         [HttpPost]
         public IHttpActionResult SendMessage(EmailInformation emailInformation)
         {
-            MailMessage message = new MailMessage();
+            using (MailMessage message = new MailMessage())
+            {
+                var to = _settingService.GetEnvironmentSettingBySettingKey("to");
 
-            var from = _settingService.GetEnvironmentSettingBySettingKey("from");
+                message.To.Add(new MailAddress(to.settingValue));
 
-            var to = _settingService.GetEnvironmentSettingBySettingKey("to");
+                message.Subject = "EducaTours - Email from " + emailInformation.fullName;
 
-            message.From = new MailAddress(from.settingValue);
+                message.Body = @"Name: " + emailInformation.fullName + "\n Address: " + emailInformation.email +
+                    "\n Message: " + emailInformation.message;
 
-            message.To.Add(new MailAddress(to.settingValue));
+                using (SmtpClient client = new SmtpClient())
+                {
+                    client.Port = 25;
 
-            message.Subject = "EducaTours - Email from " + emailInformation.fullName;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
 
-            message.Body = @"Name: " + emailInformation.fullName + "\n Address: " + emailInformation.email +
-                "\n Message: " + emailInformation.message;
+                    client.UseDefaultCredentials = false;
 
-            SmtpClient client = new SmtpClient();
-
-            client.Send(message);
+                    client.Send(message);
+                }
+            }
 
             return Ok();
         }

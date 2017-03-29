@@ -33,7 +33,7 @@
                     <div class="span4" data-ng-repeat="equipmentClass in vm.equipmentClasses">
                         <div class="thumb2">
                             <div class="thumbnail clearfix">
-                                <a href="" data-ng-click="vm.equipmentClassClick(equipmentClass.classURL)"  title="Equipment Class">
+                                <a href="" data-ng-click="vm.equipmentClassClick(equipmentClass.classURL)"  title="{{ equipmentClass.className }}">
                                     <!--<figure><img src="theme/TractorSpecs_Original/images/{{ make.mfgLogoImg }}" alt=""></figure>-->
                                     <div class="caption">
                                         <div class="txt1">{{ equipmentClass.className }} ({{ equipmentClass.models.length }})</div>
@@ -154,7 +154,7 @@
         <div class="row">
             <div class="span12">
                 <div class="shadow1_inner">
-                    <img src="theme/EcoAgriculture/images/shadow1.png" alt="" class="img">
+                    <img src="theme/EcoAgriculture/images/shadow1.png" alt="shadow image" class="img">
                 </div>
             </div>
         </div>
