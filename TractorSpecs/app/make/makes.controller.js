@@ -22,7 +22,8 @@
 
             var makesSearchCriteria = {
                 $select: 'makeId, mfgDesc, mfgLogoImg, mfgName, mfgURL',
-                $expand: 'models($select=modelId)'
+                $expand: 'models($select=modelId)',
+                $orderby: 'mfgName'
             };
 
             searchMakes(makesSearchCriteria);
