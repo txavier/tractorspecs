@@ -5,6 +5,7 @@
         .module('app', [
             'ngRoute',
             'toaster',
+            'angular-loading-bar',
             'ngAnimate',
             'ngSessionStorage',
             'textAngular',

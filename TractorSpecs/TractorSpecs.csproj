@@ -951,6 +951,8 @@
     <Content Include="wwwroot\lib\angular-carousel\dist\angular-carousel.js" />
     <Content Include="wwwroot\lib\angular-carousel\dist\angular-carousel.min.css" />
     <Content Include="wwwroot\lib\angular-carousel\dist\angular-carousel.min.js" />
+    <Content Include="wwwroot\lib\angular-loading-bar\build\loading-bar.min.css" />
+    <Content Include="wwwroot\lib\angular-loading-bar\build\loading-bar.min.js" />
     <Content Include="wwwroot\lib\angular-route\.bower.json" />
     <Content Include="wwwroot\lib\angular-route\angular-route.min.js.map" />
     <Content Include="wwwroot\lib\angular-route\bower.json" />

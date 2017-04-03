@@ -90,6 +90,7 @@ namespace TractorSpecs
                 "~/wwwroot/lib/respond/dest/respond.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/wwwroot/lib/angular-loading-bar/build/loading-bar.min.css",
                 "~/Content/Site.css"));
 
             //bundles.Add(new ScriptBundle("~/Content/theme").Include(

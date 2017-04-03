@@ -16,3 +16,35 @@
     padding-top: 12px;
     padding-left: 90px;
 }
+
+/*Angular Loading Bar*/
+#loading-bar .bar {
+  -webkit-transition: width 350ms;
+  -moz-transition: width 350ms;
+  -o-transition: width 350ms;
+  transition: width 350ms;
+
+  background: #dd223c;
+  position: fixed;
+  z-index: 10002;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-bottom-right-radius: 1px;
+  border-top-right-radius: 1px;
+}
+
+/* Fancy blur effect */
+#loading-bar .peg {
+  -moz-box-shadow: #dd223c 1px 0 6px 1px;
+  -ms-box-shadow: #dd223c 1px 0 6px 1px;
+  -webkit-box-shadow: #dd223c 1px 0 6px 1px;
+  box-shadow: #dd223c 1px 0 6px 1px;
+}
+
+#loading-bar-spinner .spinner-icon {
+  border-top-color:  #dd223c;
+  border-left-color: #dd223c;
+}
+/*End Section Angular Loading Bar*/
