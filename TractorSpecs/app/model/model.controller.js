@@ -24,7 +24,7 @@
 
             var modelSearchCriteria = {
                 $filter: 'modelUrl eq \'' + vm.modelUrl + '\'',
-                $expand: 'make($select=mfgLogoImg,mfgName),specifications($expand=specName)'
+                $expand: 'make($select=mfgLogoImg,mfgName,mfgURL),specifications($expand=specName)'
             };
 
             var promise1 = searchModels(modelSearchCriteria);

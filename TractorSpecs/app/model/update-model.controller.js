@@ -50,8 +50,8 @@
             });
 
             var modelSearchCriteria = {
-                $expand: 'make($select=mfgName)',
-                $select: 'modelNumber',
+                $expand: 'make($select=mfgName,mfgURL)',
+                $select: 'modelNumber,modelUrl',
                 $filter: 'modelId eq ' + vm.modelId
             };
 
@@ -68,6 +68,8 @@
         function getModel(modelSearchCriteria) {
             return dataService.searchEntities('models', modelSearchCriteria).then(function (data) {
                 vm.model.modelNumber = data[0].modelNumber;
+
+                vm.model.modelUrl = data[0].modelUrl;
 
                 vm.model.make = data[0].make;
 

@@ -52,7 +52,7 @@ namespace TractorSpecs.Infrastructure.Data
 
             var allPertinentSpecNames = specifications.SelectMany(i => i.specName.specClass.specNames);
 
-            var specificationSpecNameIds = specifications.Select(j => j.specNameId.Value).ToList();
+            var specificationSpecNameIds = specifications.Where(i => i.specNameId.HasValue).Select(j => j.specNameId.Value).ToList();
 
             var specNamesNotIntersecting = allPertinentSpecNames.Where(i => !specificationSpecNameIds.Contains(i.specNameId));
 
