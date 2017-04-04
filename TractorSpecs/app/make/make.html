@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="span12">
-                    <div class="breadcrumbs1_inner"><a href="/home" title="Home">home page</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<a href="/allmakes" title="All Manufacturers">manufacturers</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;manufacturer</div>
+                    <div class="breadcrumbs1_inner"><a href="/home" title="Home">home page</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<a href="/allmakes" title="All Manufacturers">manufacturers</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;{{ vm.make.mfgName }}</div>
                 </div>
             </div>
         </div>
@@ -28,38 +28,58 @@
                 </div>
 
 
-                <h2>MODELS</h2>
+                <h2>{{ vm.make.mfgName }} Equip Types</h2>
 
                 <div class="row">
-                        <div data-ng-repeat="model in vm.models">
-                            <div class="span3">
-                                <div class="thumb2">
-                                    <div class="thumbnail clearfix">
-                                        <a href="" data-ng-click="vm.modelClick(model.modelUrl)" title="{{ model.modelNumber }}">
-                                            <figure><img src="theme/EcoAgriculture/images/about06.png" alt="Binoculars"></figure>
-                                            <div class="caption">
-                                                <div class="txt1">{{ model.modelNumber.trim() }}</div>
-                                                <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
-                                            </div>
-                                        </a>
-                                    </div>
+                    <div data-ng-repeat="equipmentClass in vm.equipmentClasses">
+                        <div class="span3">
+                            <div class="thumb2">
+                                <div class="thumbnail clearfix">
+                                    <a href="/mfg/{{ vm.mfgURL }}/{{ equipmentClass.classURL }}" title="{{ equipmentClass.className }}">
+                                        <figure><img src="theme/EcoAgriculture/images/about06.png" alt="Binoculars"></figure>
+                                        <div class="caption">
+                                            <div class="txt1">{{ equipmentClass.className }}</div>
+                                            <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <!--<div class="span4 offset1">
-            <div class="thumb2">
-                <div class="thumbnail clearfix">
-                    <a href="#">
-                        <figure><img src="theme/EcoAgriculture/images/about03.png" alt=""></figure>
-                        <div class="caption">
-                            <div class="txt1">OUR TECHNOLOGIES</div>
-                            <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>-->
                     </div>
+                </div>
+
+                <h2>MODELS</h2>
+
+                <div class="row">
+                    <div data-ng-repeat="model in vm.models">
+                        <div class="span3">
+                            <div class="thumb2">
+                                <div class="thumbnail clearfix">
+                                    <a href="" data-ng-click="vm.modelClick(model.modelUrl)" title="{{ model.modelNumber }}">
+                                        <figure><img src="theme/EcoAgriculture/images/about06.png" alt="Binoculars"></figure>
+                                        <div class="caption">
+                                            <div class="txt1">{{ model.modelNumber.trim() }}</div>
+                                            <!--<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>-->
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="span4 offset1">
+                        <div class="thumb2">
+                            <div class="thumbnail clearfix">
+                                <a href="#">
+                                    <figure><img src="theme/EcoAgriculture/images/about03.png" alt=""></figure>
+                                    <div class="caption">
+                                        <div class="txt1">OUR TECHNOLOGIES</div>
+                                        <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
 
                 <!--<div class="row">
                     <div class="span4">
@@ -123,13 +143,18 @@
 
             </div>
             <div class="span3">
-                <h2>{{ vm.make.mfgName }} Equip Types </h2>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+                <div class="row"></div>
+
+                <!--<h2>{{ vm.make.mfgName }} Equip Types </h2>
 
                 <p data-ng-repeat="equipmentClass in vm.equipmentClasses">
                     <a href="/mfg/{{ vm.mfgURL }}/{{ equipmentClass.classURL }}" title="{{ vm.make.mfgName }} {{ equipmentClass.className }}">{{ equipmentClass.className }}</a>
                 </p>
                 <p><a href="/categories" class="button2" title="Categories">Read More</a></p>
-                <br>
+                <br>-->
 
                 <h2>What is TractorSpecs.com?</h2>
 

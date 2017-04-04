@@ -18,6 +18,7 @@
         vm.selectedSpecClass = {};
         vm.specifications = [];
         vm.specNames = [];
+        vm.addOrUpdateReview = addOrUpdateReview;
 
         activate();
 
@@ -62,6 +63,28 @@
                 seoService.setDescription('Edit listing for the ' + vm.model.make.mfgName + ' ' + vm.model.modelNumber);
 
                 seoService.setKeywords(vm.model.make.mfgName + ' ' + vm.model.modelNumber);
+            });
+        }
+
+        function addOrUpdateReview(review) {
+            return dataService.getClientIp().then(function (data) {
+                review.ip = data;
+
+                review.modelId = vm.model.modelId;
+
+                review.reviewDate = new Date();
+
+                // If this already exists then update it.
+                if (review.reviewId) {
+                    return dataService.updateReview('reviews', review.reviewId, review).then(function (data) {
+                        vm.review = data;
+                    });
+                }
+                else {
+                    return dataService.addReview('reviews', review).then(function (data) {
+                        vm.review = data;
+                    });
+                }
             });
         }
 

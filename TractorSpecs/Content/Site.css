@@ -48,3 +48,9 @@
   border-left-color: #dd223c;
 }
 /*End Section Angular Loading Bar*/
+
+/*Begin section rating radio boxes*/
+.no-block-label {
+    display: inline-block;
+}
+/*End section rating radio boxes*/

@@ -35,6 +35,7 @@
             getLatestUserActionLogs: getLatestUserActionLogs,
             // End of semi-standard methods.
             getDashboardMetric: getDashboardMetric,
+            getClientIp: getClientIp,
             // Application specific methods.
             getGeoClientInformation: getGeoClientInformation,
             getVersion: getVersion,
@@ -44,6 +45,20 @@
         };
 
         return service;
+
+        function getClientIp() {
+            return $http.get(apiUrl + 'clientInformation/getClientIp').then(getClientIpComplete, getClientIpFailed);
+
+            function getClientIpComplete(response) {
+                return reponse.data;
+            }
+
+            function getClientIpFailed(response) {
+                errorService.handleError(error);
+
+                return $q.reject(error);
+            }
+        }
 
         function sendMessage(emailInformation) {
             return $http.post(apiUrl + 'email/sendMessage', emailInformation).then(sendMessageComplete, sendMessageFailed);

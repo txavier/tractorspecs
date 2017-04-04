@@ -18,7 +18,7 @@
         <div class="row">
             <div class="span12">
 
-                <h1>Edit Listing for {{ vm.model.make.mfgName }} {{ vm.model.modelNumber }}</h1>
+                <h1>Edit Listing for <a href="/mfg/{{ vm.model.make.mfgURL }}" title="{{ vm.model.make.mfgName }}">{{ vm.model.make.mfgName }}</a> {{ vm.model.modelNumber }}</h1>
 
                 <div id="note"></div>
                 <div id="fields">
@@ -29,7 +29,12 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputName">Your full name:</label>
                                     <div class="controls">
-                                        <input class="span4" type="text" id="inputName" name="name" value="Your full name:" onblur="if(this.value=='') this.value='Your full name:'" onfocus="if(this.value =='Your full name:' ) this.value=''">
+                                        <input class="span4" 
+                                               type="text" 
+                                               id="inputName" 
+                                               name="name" 
+                                               placeholder="Your full name:"
+                                               data-ng-model="vm.review.reviewName">
                                     </div>
                                 </div>
                             </div>
@@ -37,17 +42,38 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Your email:</label>
                                     <div class="controls">
-                                        <input class="span4" type="text" id="inputEmail" name="email" value="Your email:" onblur="if(this.value=='') this.value='Your email:'" onfocus="if(this.value =='Your email:' ) this.value=''">
+                                        <input class="span4" 
+                                               type="text" 
+                                               id="inputEmail" 
+                                               name="email" 
+                                               value="Your email:" 
+                                               placeholder="Your email:"
+                                               data-ng-model="vm.review.email">
                                     </div>
                                 </div>
                             </div>
-                            <div class="span4">
+                            <!--<div class="span4">
                                 <div class="control-group">
                                     <label class="control-label" for="inputPhone">Phone number:</label>
                                     <div class="controls">
                                         <input class="span4" type="text" id="inputPhone" name="phone" value="Phone number:" onblur="if(this.value=='') this.value='Phone number:'" onfocus="if(this.value =='Phone number:' ) this.value=''">
                                     </div>
                                 </div>
+                            </div>-->
+                        </div>
+                        <div class="row">
+                            <div class="span4">
+                                <h3 style="display: -webkit-inline-box;" value="Rating">Rating</h3>
+                                <input type="radio" value="1" data-ng-model="vm.review.reviewScore">
+                                <label class="no-block-label" for="ctl00_ContentPlaceHolderLeft_RadioButtonList1_0">1</label>
+                                <input type="radio" value="2" data-ng-model="vm.review.reviewScore">
+                                <label class="no-block-label" for="ctl00_ContentPlaceHolderLeft_RadioButtonList1_1">2</label>
+                                <input type="radio" value="3" data-ng-model="vm.review.reviewScore">
+                                <label class="no-block-label" for="ctl00_ContentPlaceHolderLeft_RadioButtonList1_2">3</label>
+                                <input type="radio" value="4" data-ng-model="vm.review.reviewScore">
+                                <label class="no-block-label" for="ctl00_ContentPlaceHolderLeft_RadioButtonList1_3">4</label>
+                                <input type="radio" value="5" data-ng-model="vm.review.reviewScore">
+                                <label class="no-block-label" for="ctl00_ContentPlaceHolderLeft_RadioButtonList1_4">5</label>
                             </div>
                         </div>
                         <div class="row">
@@ -55,7 +81,8 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputMessage">Review Text:</label>
                                     <div class="controls">
-                                        <textarea class="span12" id="inputMessage" name="content" onblur="if(this.value=='') this.value='Message:'" onfocus="if(this.value =='Message:' ) this.value=''">Review Text:</textarea>
+                                        <textarea class="span12" id="inputMessage" name="content" data-ng-model="vm.review.reviewText"
+                                                  placeholder="Review Text:">Review Text:</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +90,7 @@
                         <div class="row">
                             <div class="span12">
                                 <div class="control-group">
-                                    <button type="submit" class="submit">Submit</button>
+                                    <button type="submit" class="submit" data-ng-click="vm.addReview(vm.review)">Submit</button>
                                 </div>
                             </div>
                         </div>
