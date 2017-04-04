@@ -29,10 +29,10 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputName">Your full name:</label>
                                     <div class="controls">
-                                        <input class="span4" 
-                                               type="text" 
-                                               id="inputName" 
-                                               name="name" 
+                                        <input class="span4"
+                                               type="text"
+                                               id="inputName"
+                                               name="name"
                                                placeholder="Your full name:"
                                                data-ng-model="vm.review.reviewName">
                                     </div>
@@ -42,11 +42,11 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Your email:</label>
                                     <div class="controls">
-                                        <input class="span4" 
-                                               type="text" 
-                                               id="inputEmail" 
-                                               name="email" 
-                                               value="Your email:" 
+                                        <input class="span4"
+                                               type="text"
+                                               id="inputEmail"
+                                               name="email"
+                                               value="Your email:"
                                                placeholder="Your email:"
                                                data-ng-model="vm.review.email">
                                     </div>
@@ -82,7 +82,9 @@
                                     <label class="control-label" for="inputMessage">Review Text:</label>
                                     <div class="controls">
                                         <textarea class="span12" id="inputMessage" name="content" data-ng-model="vm.review.reviewText"
-                                                  placeholder="Review Text:">Review Text:</textarea>
+                                                  placeholder="Review Text:">
+                                            Review Text:
+                                        </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +92,7 @@
                         <div class="row">
                             <div class="span12">
                                 <div class="control-group">
-                                    <button type="submit" class="submit" data-ng-click="vm.addReview(vm.review)">Submit</button>
+                                    <button type="submit" class="submit" data-ng-click="vm.addOrUpdateReview(vm.review)">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +128,8 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputName">Enter URL (http://):</label>
                                     <div class="controls">
-                                        <input class="span4" type="text" id="inputName" name="name" value="Enter URL (http://):" onblur="if(this.value=='') this.value='Your full name:'" onfocus="if(this.value =='Your full name:' ) this.value=''">
+                                        <input class="span4" type="text" id="inputName" name="name" value="Enter URL (http://):"
+                                               placeholder="Enter URL (http://):" data-ng-model="vm.link.linkURL">
                                     </div>
                                 </div>
                             </div>
@@ -134,8 +137,16 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Enter Description:</label>
                                     <div class="controls">
-                                        <input class="span4" type="text" id="inputEmail" name="email" value="Enter Description:" onblur="if(this.value=='') this.value='Your email:'" onfocus="if(this.value =='Your email:' ) this.value=''">
+                                        <input class="span4" type="text" id="inputEmail" name="email" value="Enter Description:"
+                                               placeholder="Enter Description:" data-ng-model="vm.link.linkText">
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span12">
+                                <div class="control-group">
+                                    <button type="submit" class="submit" data-ng-click="vm.addOrUpdateLink(vm.link)">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -143,9 +154,13 @@
                         <div class="row">
                             <div class="span3">
                                 <div class="control-group">
-                                    <label class="control-label" for="inputName">Dealer/Pricing:</label>
+                                    <label class="control-label" for="inputName">Dealer/Private:</label>
                                     <div class="controls">
-                                        <input class="span3" type="text" id="inputName" name="name" value="Dealer/Pricing:" onblur="if(this.value=='') this.value='Your full name:'" onfocus="if(this.value =='Your full name:' ) this.value=''">
+                                        <!--<input class="span3" type="text" id="inputName" name="name" value="Dealer/Pricing:" onblur="if(this.value=='') this.value='Your full name:'" onfocus="if(this.value =='Your full name:' ) this.value=''">-->
+                                        <select data-ng-model="vm.modelPrice.DorP">
+                                            <option value="D">Dealer</option>
+                                            <option value="P">Private</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +168,8 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Price:</label>
                                     <div class="controls">
-                                        <input class="span3" type="text" id="inputEmail" name="email" value="Price:" onblur="if(this.value=='') this.value='Your email:'" onfocus="if(this.value =='Your email:' ) this.value=''">
+                                        <input class="span3" type="text" id="inputEmail" name="email"
+                                               placeholder="Price:" data-ng-model="vm.modelPrice.price">
                                     </div>
                                 </div>
                             </div>
@@ -161,16 +177,27 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputPhone">Model Year:</label>
                                     <div class="controls">
-                                        <input class="span3" type="text" id="inputPhone" name="phone" value="Model Year:" onblur="if(this.value=='') this.value='Phone number:'" onfocus="if(this.value =='Phone number:' ) this.value=''">
+                                        <input class="span3" type="text" id="inputPhone" name="phone"
+                                               placeholder="Model Year:" data-ng-model="vm.modelPrice.modelYear">
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="span3">
                                 <div class="control-group">
                                     <label class="control-label" for="inputPhone">Notes:</label>
                                     <div class="controls">
-                                        <input class="span3" type="text" id="inputPhone" name="phone" value="Notes:" onblur="if(this.value=='') this.value='Phone number:'" onfocus="if(this.value =='Phone number:' ) this.value=''">
+                                        <textarea class="span12" id="inputMessage" name="content" data-ng-model="vm.modelPrice.notes"
+                                                  placeholder="Notes:"></textarea>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span12">
+                                <div class="control-group">
+                                    <button type="submit" class="submit" data-ng-click="vm.addOrUpdateModelPrice(vm.modelPrice)">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -180,44 +207,33 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputName">Your full name:</label>
                                     <div class="controls">
-                                        <select data-ng-options="specClass as specClass.className for specClass in vm.specClasses track by specClass.specClassID" data-ng-model="vm.selectedSpecClass"></select>
-                                        <!--{{ vm.selectedSpecClass }}-->
+                                        <select data-ng-options="specClass as specClass.className for specClass in vm.specClasses track by specClass.specClassID"
+                                                data-ng-model="vm.selectedSpecClass"></select>
                                     </div>
                                 </div>
-                            <!--</div>
-                            <div class="span4">-->
                                 <div class="thumb3">
                                     <div class="thumbnail clearfix">
-                                        <!--<figure class="img-polaroid">
-                                        <img src="theme/TractorSpecs_original/images/{{ vm.selectedSpecClass.icon }}" alt="">
-                                        </figure>-->
                                         <div class="caption">
-                                            <!--<h3>{{ vm.selectedSpecClass.className }}</h3>-->
                                             <div data-ng-repeat="specification in vm.model.specifications | filter:{ specName: { specClassId: vm.selectedSpecClass.specClassID }}">
                                                 <h3>
-                                                    <!--{{ specification.specificationId }}-->
                                                     {{ specification.specName.displayName }}: <input class="span4" type="text" data-ng-model="specification.specValue" />
                                                 </h3>
                                             </div>
-                                            <!--<p><a href="#" class="button2">Read More</a></p>-->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="span4">
-                                <div class="control-group">
-                                    <label class="control-label" for="inputEmail">Source(website, book, etc):</label>
-                                    <div class="controls">
-                                        <input class="span4" type="text" id="inputEmail" name="email" value="Source(website, book, etc):" onblur="if(this.value=='') this.value='Your email:'" onfocus="if(this.value =='Source(website, book, etc):' ) this.value=''">
-                                    </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputEmail">Source(website, book, etc):</label>
+                                <div class="controls">
+                                    <input class="span4" type="text" id="inputEmail" name="email" value="Source(website, book, etc):" 
+                                           onblur="if(this.value=='') this.value='Your email:'" onfocus="if(this.value =='Source(website, book, etc):' ) this.value=''">
                                 </div>
                             </div>
                         </div>
                         <button type="submit" class="submit">Submit</button>
                     </form>
                 </div>
-
-
 
             </div>
         </div>

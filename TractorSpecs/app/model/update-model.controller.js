@@ -76,13 +76,53 @@
 
                 // If this already exists then update it.
                 if (review.reviewId) {
-                    return dataService.updateReview('reviews', review.reviewId, review).then(function (data) {
+                    return dataService.updateEntity('reviews', review.reviewId, review).then(function (data) {
                         vm.review = data;
                     });
                 }
                 else {
-                    return dataService.addReview('reviews', review).then(function (data) {
+                    return dataService.addEntity('reviews', review).then(function (data) {
                         vm.review = data;
+                    });
+                }
+            });
+        }
+
+        function addOrUpdateLink(link) {
+            return dataService.getClientIp().then(function (data) {
+                link.IP = data;
+
+                link.modelId = vm.model.modelId;
+
+                // If this already exists then update it.
+                if (link.linkId) {
+                    return dataService.updateEntity('links', link.linkId, link).then(function (data) {
+                        vm.link = data;
+                    });
+                }
+                else {
+                    return dataService.addEntity('links', link).then(function (data) {
+                        vm.link = data;
+                    });
+                }
+            });
+        }
+
+        function addOrUpdateModelPrice(modelPrice) {
+            return dataService.getClientIp().then(function (data) {
+                modelPrice.modelId = vm.model.modelId;
+
+                modelPrice.date = new Date();
+
+                // If this already exists then update it.
+                if (modelPrice.modelPriceId) {
+                    return dataService.updateEntity('modelPrices', modelPrice.modelPriceId, modelPrice).then(function (data) {
+                        vm.modelPrice = data;
+                    });
+                }
+                else {
+                    return dataService.addEntity('modelPrices', modelPrice).then(function (data) {
+                        vm.modelPrice = data;
                     });
                 }
             });
