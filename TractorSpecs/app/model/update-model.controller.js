@@ -52,7 +52,7 @@
 
             var modelSearchCriteria = {
                 $expand: 'make($select=mfgName,mfgURL)',
-                $select: 'modelNumber,modelUrl',
+                $select: 'modelId,modelNumber,modelUrl',
                 $filter: 'modelId eq ' + vm.modelId
             };
 
@@ -81,7 +81,7 @@
                     });
                 }
                 else {
-                    return dataService.addEntity('reviews', review).then(function (data) {
+                    return dataService.addEntity('reviews', review, true).then(function (data) {
                         vm.review = data;
                     });
                 }
@@ -135,6 +135,8 @@
                 vm.model.modelUrl = data[0].modelUrl;
 
                 vm.model.make = data[0].make;
+
+                vm.model.modelId = data[0].modelId;
 
                 return vm.model;
             });

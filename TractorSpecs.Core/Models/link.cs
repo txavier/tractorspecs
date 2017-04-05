@@ -9,7 +9,7 @@ namespace TractorSpecs.Core.Models
     [Table("link")]
     public partial class link
     {
-        public long linkId { get; set; }
+        public int linkId { get; set; }
 
         [StringLength(200)]
         public string linkURL { get; set; }

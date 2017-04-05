@@ -9,7 +9,7 @@ namespace TractorSpecs.Core.Models
     [Table("review")]
     public partial class review
     {
-        public long reviewId { get; set; }
+        public int reviewId { get; set; }
 
         [StringLength(8000)]
         public string reviewText { get; set; }

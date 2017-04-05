@@ -91,6 +91,10 @@ namespace TractorSpecs
             //builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("blogEntry"))
             //    .AddProperty((typeof(blogEntry)).GetProperty("year"));
 
+            builder.EntitySet<link>("links");
+
+            builder.EntitySet<review>("reviews");
+
             builder.EntitySet<user>("users");
 
             builder.EntityType<user>().Collection

@@ -50,10 +50,10 @@
             return $http.get(apiUrl + 'clientInformation/getClientIp').then(getClientIpComplete, getClientIpFailed);
 
             function getClientIpComplete(response) {
-                return reponse.data;
+                return response.data;
             }
 
-            function getClientIpFailed(response) {
+            function getClientIpFailed(error) {
                 errorService.handleError(error);
 
                 return $q.reject(error);

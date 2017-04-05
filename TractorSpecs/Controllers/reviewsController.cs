@@ -12,8 +12,8 @@ namespace TractorSpecs.Controllers
 {
     public class reviewsController : ODataApiController<review>
     {
-        public reviewsController(IService<review> reviewService, ILogService<review> reviewLogService)
-            : base(reviewService, reviewLogService)
+        public reviewsController(IService<review> reviewService)
+            : base(reviewService)
         { }
     }
 }
