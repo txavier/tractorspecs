@@ -7,13 +7,13 @@ namespace TractorSpecs.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ConvertLinkIdFromBigIntToInt : IMigrationMetadata
+    public sealed partial class ModelPriceModelConvertPriceFromMoneyToDouble : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ConvertLinkIdFromBigIntToInt));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ModelPriceModelConvertPriceFromMoneyToDouble));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704052203149_ConvertLinkIdFromBigIntToInt"; }
+            get { return "201704071938440_ModelPriceModelConvertPriceFromMoneyToDouble"; }
         }
         
         string IMigrationMetadata.Source

@@ -9,7 +9,7 @@ namespace TractorSpecs.Core.Models
     [Table("modelPicture")]
     public partial class modelPicture
     {
-        public long modelPictureId { get; set; }
+        public int modelPictureId { get; set; }
 
         [StringLength(50)]
         public string filename { get; set; }

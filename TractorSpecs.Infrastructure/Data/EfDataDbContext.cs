@@ -162,9 +162,9 @@ namespace TractorSpecs.Infrastructure.Data
                 .Property(e => e.description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<modelPrice>()
-                .Property(e => e.price)
-                .HasPrecision(19, 4);
+            //modelBuilder.Entity<modelPrice>()
+            //    .Property(e => e.price)
+            //    .HasPrecision(19, 4);
 
             modelBuilder.Entity<modelPrice>()
                 .Property(e => e.notes)

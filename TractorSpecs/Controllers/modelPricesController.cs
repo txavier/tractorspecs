@@ -10,10 +10,10 @@ using TractorSpecs.Core.Models;
 
 namespace TractorSpecs.Controllers
 {
-    public class linksController : ODataApiController<link>
+    public class modelPricesController : ODataApiController<modelPrice>
     {
-        public linksController(IService<link> linkService)
-            : base(linkService)
+        public modelPricesController(IService<modelPrice> modelPriceService)
+            : base(modelPriceService, null)
         { }
     }
 }

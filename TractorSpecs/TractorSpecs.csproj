@@ -299,6 +299,7 @@
     <Compile Include="Controllers\ClientInformationController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\linksController.cs" />
+    <Compile Include="Controllers\modelPricesController.cs" />
     <Compile Include="Controllers\reviewsController.cs" />
     <Compile Include="Controllers\EquipmentClassesController.cs" />
     <Compile Include="Controllers\specNamesController.cs" />

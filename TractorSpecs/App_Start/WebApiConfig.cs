@@ -95,6 +95,8 @@ namespace TractorSpecs
 
             builder.EntitySet<review>("reviews");
 
+            builder.EntitySet<modelPrice>("modelPrices");
+
             builder.EntitySet<user>("users");
 
             builder.EntityType<user>().Collection

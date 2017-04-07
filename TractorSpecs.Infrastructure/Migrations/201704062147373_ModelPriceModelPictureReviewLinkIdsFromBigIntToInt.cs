@@ -3,7 +3,7 @@ namespace TractorSpecs.Infrastructure.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ConvertLinkIdFromBigIntToInt : DbMigration
+    public partial class ModelPriceModelPictureReviewLinkIdsFromBigIntToInt : DbMigration
     {
         public override void Up()
         {

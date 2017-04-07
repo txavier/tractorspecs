@@ -112,13 +112,13 @@
     <Compile Include="Migrations\201701291925510_UpdatedObjectModel.Designer.cs">
       <DependentUpon>201701291925510_UpdatedObjectModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704052141038_ConvertReviewIdFromBigIntToInt.cs" />
-    <Compile Include="Migrations\201704052141038_ConvertReviewIdFromBigIntToInt.Designer.cs">
-      <DependentUpon>201704052141038_ConvertReviewIdFromBigIntToInt.cs</DependentUpon>
+    <Compile Include="Migrations\201704062147373_ModelPriceModelPictureReviewLinkIdsFromBigIntToInt.cs" />
+    <Compile Include="Migrations\201704062147373_ModelPriceModelPictureReviewLinkIdsFromBigIntToInt.Designer.cs">
+      <DependentUpon>201704062147373_ModelPriceModelPictureReviewLinkIdsFromBigIntToInt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704052203149_ConvertLinkIdFromBigIntToInt.cs" />
-    <Compile Include="Migrations\201704052203149_ConvertLinkIdFromBigIntToInt.Designer.cs">
-      <DependentUpon>201704052203149_ConvertLinkIdFromBigIntToInt.cs</DependentUpon>
+    <Compile Include="Migrations\201704071938440_ModelPriceModelConvertPriceFromMoneyToDouble.cs" />
+    <Compile Include="Migrations\201704071938440_ModelPriceModelConvertPriceFromMoneyToDouble.Designer.cs">
+      <DependentUpon>201704071938440_ModelPriceModelConvertPriceFromMoneyToDouble.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,11 +165,11 @@
     <EmbeddedResource Include="Migrations\201701291925510_UpdatedObjectModel.resx">
       <DependentUpon>201701291925510_UpdatedObjectModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704052141038_ConvertReviewIdFromBigIntToInt.resx">
-      <DependentUpon>201704052141038_ConvertReviewIdFromBigIntToInt.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704062147373_ModelPriceModelPictureReviewLinkIdsFromBigIntToInt.resx">
+      <DependentUpon>201704062147373_ModelPriceModelPictureReviewLinkIdsFromBigIntToInt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704052203149_ConvertLinkIdFromBigIntToInt.resx">
-      <DependentUpon>201704052203149_ConvertLinkIdFromBigIntToInt.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704071938440_ModelPriceModelConvertPriceFromMoneyToDouble.resx">
+      <DependentUpon>201704071938440_ModelPriceModelConvertPriceFromMoneyToDouble.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

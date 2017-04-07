@@ -19,6 +19,9 @@
         vm.specifications = [];
         vm.specNames = [];
         vm.addOrUpdateReview = addOrUpdateReview;
+        vm.addOrUpdateModelPicture = addOrUpdateModelPicture;
+        vm.addOrUpdateLink = addOrUpdateLink;
+        vm.addOrUpdateModelPrice = addOrUpdateModelPrice;
 
         activate();
 
@@ -76,7 +79,7 @@
 
                 // If this already exists then update it.
                 if (review.reviewId) {
-                    return dataService.updateEntity('reviews', review.reviewId, review).then(function (data) {
+                    return dataService.updateEntity('reviews', review.reviewId, review, true).then(function (data) {
                         vm.review = data;
                     });
                 }
@@ -96,12 +99,12 @@
 
                 // If this already exists then update it.
                 if (link.linkId) {
-                    return dataService.updateEntity('links', link.linkId, link).then(function (data) {
+                    return dataService.updateEntity('links', link.linkId, link, true).then(function (data) {
                         vm.link = data;
                     });
                 }
                 else {
-                    return dataService.addEntity('links', link).then(function (data) {
+                    return dataService.addEntity('links', link, true).then(function (data) {
                         vm.link = data;
                     });
                 }
@@ -116,16 +119,31 @@
 
                 // If this already exists then update it.
                 if (modelPrice.modelPriceId) {
-                    return dataService.updateEntity('modelPrices', modelPrice.modelPriceId, modelPrice).then(function (data) {
+                    return dataService.updateEntity('modelPrices', modelPrice.modelPriceId, modelPrice, true).then(function (data) {
                         vm.modelPrice = data;
                     });
                 }
                 else {
-                    return dataService.addEntity('modelPrices', modelPrice).then(function (data) {
+                    return dataService.addEntity('modelPrices', modelPrice, true).then(function (data) {
                         vm.modelPrice = data;
                     });
                 }
             });
+        }
+
+        function addOrUpdateModelPicture(modelPicture) {
+            modelPicture.modelId = vm.model.modelId;
+
+            if (modelPicture.modelPictureId) {
+                return dataService.updateEntity('modelPictures', modelPicture.modelPictureId, modelPicture, true).then(function (data) {
+                    vm.modelPicture = data;
+                });
+            }
+            else {
+                return dataService.addEntity('modelPictures', modelPicture, true).then(function (data) {
+                    vm.modelPicture = data;
+                });
+            }
         }
 
         function getModel(modelSearchCriteria) {

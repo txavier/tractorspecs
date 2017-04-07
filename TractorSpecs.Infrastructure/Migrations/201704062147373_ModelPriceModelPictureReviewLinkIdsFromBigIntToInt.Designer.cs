@@ -7,13 +7,13 @@ namespace TractorSpecs.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ConvertReviewIdFromBigIntToInt : IMigrationMetadata
+    public sealed partial class ModelPriceModelPictureReviewLinkIdsFromBigIntToInt : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ConvertReviewIdFromBigIntToInt));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ModelPriceModelPictureReviewLinkIdsFromBigIntToInt));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704052141038_ConvertReviewIdFromBigIntToInt"; }
+            get { return "201704062147373_ModelPriceModelPictureReviewLinkIdsFromBigIntToInt"; }
         }
         
         string IMigrationMetadata.Source

@@ -11,10 +11,9 @@ namespace TractorSpecs.Core.Models
     {
         public long? modelId { get; set; }
 
-        public long modelPriceId { get; set; }
+        public int modelPriceId { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal? price { get; set; }
+        public double? price { get; set; }
 
         public DateTime? date { get; set; }
 

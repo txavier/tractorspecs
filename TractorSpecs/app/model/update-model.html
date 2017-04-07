@@ -102,7 +102,7 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputName">Select the file:</label>
                                     <div class="controls">
-                                        <input class="span4" type="file" id="inputName" name="name" value="Your full name:" onblur="if(this.value=='') this.value='Your full name:'" onfocus="if(this.value =='Your full name:' ) this.value=''">
+                                        <input class="span4" type="file" id="inputName" name="name" value="Your full name:">
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Description:</label>
                                     <div class="controls">
-                                        <input class="span4" type="text" id="inputEmail" name="email" value="Description:" onblur="if(this.value=='') this.value='Your email:'" onfocus="if(this.value =='Your email:' ) this.value=''">
+                                        <input class="span4" type="text" id="inputEmail" name="email" placeholder="Description:" data-ng-model="vm.modelPicture.description">
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                         <div class="row">
                             <div class="span12">
                                 <div class="control-group">
-                                    <a class="submit">Submit</a>
+                                    <a class="submit" data-ng-click="vm.addOrUpdateModelPicture(vm.modelPicture)">Submit</a>
                                 </div>
                             </div>
                         </div>
@@ -226,8 +226,7 @@
                             <div class="control-group">
                                 <label class="control-label" for="inputEmail">Source(website, book, etc):</label>
                                 <div class="controls">
-                                    <input class="span4" type="text" id="inputEmail" name="email" value="Source(website, book, etc):" 
-                                           onblur="if(this.value=='') this.value='Your email:'" onfocus="if(this.value =='Source(website, book, etc):' ) this.value=''">
+                                    <input class="span4" type="text" id="inputEmail" name="email" value="Source(website, book, etc):" >
                                 </div>
                             </div>
                         </div>

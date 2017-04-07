@@ -13,7 +13,7 @@ namespace TractorSpecs.Controllers
     public class reviewsController : ODataApiController<review>
     {
         public reviewsController(IService<review> reviewService)
-            : base(reviewService)
+            : base(reviewService, null)
         { }
     }
 }
