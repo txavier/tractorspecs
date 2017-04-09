@@ -99,6 +99,11 @@ namespace TractorSpecs
 
             builder.EntitySet<user>("users");
 
+            builder.EntitySet<modelPicture>("modelPictures");
+
+            builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("modelPicture"))
+                .AddProperty((typeof(modelPicture)).GetProperty("base64String"));
+
             builder.EntityType<user>().Collection
                 .Function("GetLoggedInUser")
                 .Returns<string>()

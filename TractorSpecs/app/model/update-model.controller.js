@@ -134,14 +134,26 @@
         function addOrUpdateModelPicture(modelPicture) {
             modelPicture.modelId = vm.model.modelId;
 
+            modelPicture.base64String = modelPicture.fileModel.data;
+
+            modelPicture.filename = modelPicture.fileModel.name;
+
+            var tempFileModel = modelPicture.fileModel;
+
+            modelPicture.fileModel = undefined;
+
             if (modelPicture.modelPictureId) {
                 return dataService.updateEntity('modelPictures', modelPicture.modelPictureId, modelPicture, true).then(function (data) {
                     vm.modelPicture = data;
+                }, function (err) {
+                    modelPicture.fileModel = tempFileModel;
                 });
             }
             else {
                 return dataService.addEntity('modelPictures', modelPicture, true).then(function (data) {
                     vm.modelPicture = data;
+                }, function (err) {
+                    modelPicture.fileModel = tempFileModel;
                 });
             }
         }

@@ -16,6 +16,7 @@ using TractorSpecs.Infrastructure;
 using TractorSpecs.Core.Interfaces;
 using TractorSpecs.Infrastructure.Getters;
 using TractorSpecs.Infrastructure.Data;
+using TractorSpecs.Core.Services;
 
 namespace TractorSpecs.CompositionRoot
 {
@@ -37,6 +38,8 @@ namespace TractorSpecs.CompositionRoot
             For(typeof(IRepository<>)).Use(typeof(Repository<>));
 
             For<IEnvironmentConfigSettingsGetter>().Use<EnvironmentConfigSettingsGetter>();
+
+            //For<IModelPictureService>().Use<ModelPictureService>();
 
             For(typeof(AutoClutch.Core.Interfaces.ILogService<>)).Use(typeof(UserActionLogService<>));
         }

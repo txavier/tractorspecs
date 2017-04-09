@@ -299,6 +299,7 @@
     <Compile Include="Controllers\ClientInformationController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\linksController.cs" />
+    <Compile Include="Controllers\modelPicturesController.cs" />
     <Compile Include="Controllers\modelPricesController.cs" />
     <Compile Include="Controllers\reviewsController.cs" />
     <Compile Include="Controllers\EquipmentClassesController.cs" />
@@ -350,6 +351,7 @@
     <Content Include="app\search\search.controller.js" />
     <Content Include="app\search\search.html" />
     <Content Include="app\services\seo.service.js" />
+    <Content Include="equimages\badimage.jpg" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />
