@@ -21,9 +21,10 @@
 
         function activate() {
             vm.modelUrl = $routeParams.modelUrl;
+            vm.mfgURL = $routeParams.mfgURL;
 
             var modelSearchCriteria = {
-                $filter: 'modelUrl eq \'' + vm.modelUrl + '\'',
+                $filter: 'modelUrl eq \'' + vm.modelUrl + '\' and make/mfgURL eq \'' + vm.mfgURL + '\'',
                 $expand: 'make($select=mfgLogoImg,mfgName,mfgURL),specifications($expand=specName)'
             };
 

@@ -39,7 +39,7 @@
                 orderBy: 'modelNumber',
                 search: null,
                 searchFields: null,
-                $expand: 'make($select=mfgURL)',
+                $expand: 'make($select=mfgURL,mfgName)',
                 $filter: createFilterFromSearchTerm(vm.searchTerm, 'modelNumber'),
                 $select: 'modelNumber, modelUrl'
             };
