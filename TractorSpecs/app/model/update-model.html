@@ -216,7 +216,7 @@
                                         <div class="caption">
                                             <div data-ng-repeat="specification in vm.model.specifications | filter:{ specName: { specClassId: vm.selectedSpecClass.specClassID }}">
                                                 <h3>
-                                                    {{ specification.specName.displayName }}: <input class="span4" type="text" data-ng-model="specification.specValue" />
+                                                    {{ specification.specName.displayName }}: <input class="span4" type="text" data-ng-model="specification.specValue" data-ng-change="specification.isDirty = true" />
                                                 </h3>
                                             </div>
                                         </div>
@@ -226,11 +226,11 @@
                             <div class="control-group">
                                 <label class="control-label" for="inputEmail">Source(website, book, etc):</label>
                                 <div class="controls">
-                                    <input class="span4" type="text" id="inputEmail" name="email" value="Source(website, book, etc):" >
+                                    <input class="span4" type="text" placeholder="Source(website, book, etc):" data-ng-model="vm.specChangeLog.source">
                                 </div>
                             </div>
                         </div>
-                        <a class="submit">Submit</a>
+                        <a class="submit" data-ng-click="vm.addOrUpdateSpecifications(vm.model.specifications)">Submit</a>
                     </form>
                 </div>
 

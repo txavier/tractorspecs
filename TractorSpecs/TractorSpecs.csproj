@@ -303,6 +303,7 @@
     <Compile Include="Controllers\modelPricesController.cs" />
     <Compile Include="Controllers\reviewsController.cs" />
     <Compile Include="Controllers\EquipmentClassesController.cs" />
+    <Compile Include="Controllers\specChangeLogsController.cs" />
     <Compile Include="Controllers\specNamesController.cs" />
     <Compile Include="Controllers\specClassesController.cs" />
     <Compile Include="Controllers\specificationsController.cs" />

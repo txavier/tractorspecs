@@ -22,6 +22,8 @@
         vm.addOrUpdateModelPicture = addOrUpdateModelPicture;
         vm.addOrUpdateLink = addOrUpdateLink;
         vm.addOrUpdateModelPrice = addOrUpdateModelPrice;
+        vm.addOrUpdateSpecifications = addOrUpdateSpecifications;
+        vm.specChangeLog = {};
 
         activate();
 
@@ -32,13 +34,13 @@
             var promise1 = getSpecificationsWithEmptySpecificationsByModelId(vm.modelId);
 
             var promises = [];
-            
+
             promises.push(promise1);
 
             var specClassSearchCriteria = {}
 
             var promise2 = searchSpecClasses(specClassSearchCriteria);
-            
+
             promises.push(promise2);
 
             var promise3 = searchSpecNames();
@@ -112,23 +114,21 @@
         }
 
         function addOrUpdateModelPrice(modelPrice) {
-            return dataService.getClientIp().then(function (data) {
-                modelPrice.modelId = vm.model.modelId;
+            modelPrice.modelId = vm.model.modelId;
 
-                modelPrice.date = new Date();
+            modelPrice.date = new Date();
 
-                // If this already exists then update it.
-                if (modelPrice.modelPriceId) {
-                    return dataService.updateEntity('modelPrices', modelPrice.modelPriceId, modelPrice, true).then(function (data) {
-                        vm.modelPrice = data;
-                    });
-                }
-                else {
-                    return dataService.addEntity('modelPrices', modelPrice, true).then(function (data) {
-                        vm.modelPrice = data;
-                    });
-                }
-            });
+            // If this already exists then update it.
+            if (modelPrice.modelPriceId) {
+                return dataService.updateEntity('modelPrices', modelPrice.modelPriceId, modelPrice, true).then(function (data) {
+                    vm.modelPrice = data;
+                });
+            }
+            else {
+                return dataService.addEntity('modelPrices', modelPrice, true).then(function (data) {
+                    vm.modelPrice = data;
+                });
+            }
         }
 
         function addOrUpdateModelPicture(modelPicture) {
@@ -156,6 +156,39 @@
                     modelPicture.fileModel = tempFileModel;
                 });
             }
+        }
+
+        function addOrUpdateSpecifications(specifications) {
+            for (var i = 0; i < specifications.length; i++) {
+                if (specifications[i].isDirty) {
+                    return dataService.getClientIp().then(function (data) {
+                        specifications[i].isDirty = undefined;
+                        specifications[i].ip = data;
+                        specifications[i].date = new Date();
+
+                        if (specifications[i].specificationId) {
+                            return dataService.updateEntity('specifications', specifications[i].specificationId, specifications[i]).then(function (data) {
+                                addSpecChangeLog(specifications[i]);
+                            });
+                        }
+                        else {
+                            return dataService.addEntity('specifications', specifications[i]).then(function (data) {
+                                addSpecChangeLog(specifications[i]);
+                            });
+                        }
+                    });
+                }
+            }
+        }
+
+        function addSpecChangeLog(specification) {
+            vm.specChangeLog.modelId = specification.modelId;
+            vm.specChangeLog.specValue = specification.specValue;
+            vm.specChangeLog.ipAddr = specification.ip;
+
+            return dataService.addEntity('specChangeLogs', vm.specChangeLog).then(function (data) {
+                vm.specChangeLog = data;
+            });
         }
 
         function getModel(modelSearchCriteria) {

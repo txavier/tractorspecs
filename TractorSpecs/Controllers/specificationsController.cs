@@ -16,9 +16,9 @@ namespace TractorSpecs.Controllers
     {
         private IEfQueryModelWithEmptySpecificationsByModelId _efQueryModelWithEmptySpecificationsByModelId;
 
-        public specificationsController(IService<specification> specificationService, ILogService<specification> specificationLogService,
+        public specificationsController(IService<specification> specificationService, 
             Core.Interfaces.IEfQueryModelWithEmptySpecificationsByModelId efQueryModelWithEmptySpecificationsByModelId)
-            : base(specificationService, specificationLogService)
+            : base(specificationService)
         {
             _efQueryModelWithEmptySpecificationsByModelId = efQueryModelWithEmptySpecificationsByModelId;
         }
@@ -27,18 +27,6 @@ namespace TractorSpecs.Controllers
         public IHttpActionResult GetModelWithEmptySpecificationsByModelId(int modelId)
         {
             var result = _efQueryModelWithEmptySpecificationsByModelId.GetModelWithEmptySpecificationsByModelId2(modelId);
-
-            //_modelService.LazyLoadingEnabled = false;
-
-            //_modelService.ProxyCreationEnabled = false;
-
-            //_modelService.ValidateOnSaveEnabled = false;
-
-            //var result1 = _modelService.Queryable().Where(i => i.modelId == modelId).ToList();
-
-            //result1.Add(result);
-
-            //return Ok(result1);
 
             return Ok(result);
         }

@@ -54,7 +54,7 @@
         }
 
         function makeClick(mfgURL) {
-            $location.path('mfg/' + mfgURL);
+            $location.path('mfg/' + mfgURL + '/' + vm.classURL);
         }
 
         function modelClick(mfgURL, modelUrl) {

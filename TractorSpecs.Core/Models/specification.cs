@@ -15,7 +15,7 @@ namespace TractorSpecs.Core.Models
             specChangeLogs = new HashSet<specChangeLog>();
         }
 
-        public long specificationId { get; set; }
+        public int specificationId { get; set; }
 
         public long? modelId { get; set; }
 

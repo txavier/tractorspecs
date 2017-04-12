@@ -101,6 +101,8 @@ namespace TractorSpecs
 
             builder.EntitySet<modelPicture>("modelPictures");
 
+            builder.EntitySet<specChangeLog>("specChangeLogs");
+
             builder.StructuralTypes.First(x => x.ClrType.FullName.Contains("modelPicture"))
                 .AddProperty((typeof(modelPicture)).GetProperty("base64String"));
 

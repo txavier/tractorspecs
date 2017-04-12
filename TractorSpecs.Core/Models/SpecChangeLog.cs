@@ -11,7 +11,7 @@ namespace TractorSpecs.Core.Models
     {
         public long? modelId { get; set; }
 
-        public long? specificationId { get; set; }
+        public int? specificationId { get; set; }
 
         [StringLength(50)]
         public string specValue { get; set; }
@@ -22,7 +22,7 @@ namespace TractorSpecs.Core.Models
         [StringLength(50)]
         public string source { get; set; }
 
-        public long specChangeLogId { get; set; }
+        public int specChangeLogId { get; set; }
 
         public virtual model model { get; set; }
 
